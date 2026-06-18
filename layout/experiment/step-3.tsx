@@ -124,7 +124,7 @@ export default function Step3({ lab }: { lab: number }) {
           simulation: experiment.simulation,
         });
       }
-      console.log("upstream", experiment.oplog);
+      // console.log("upstream", experiment.oplog);
     }
   }, [experiment.oplog]);
   // useEffect(() => {

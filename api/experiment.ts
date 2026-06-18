@@ -364,15 +364,19 @@ export class Collaboration {
   retry = true;
   timeout = 1e3 * 5;
   constructor(param: {}) {
-    if (location.hostname != "localhost") {
-      // const base = `ws://${location.hostname}:${PORT}`;
-      // console.log("base", base);
-      let protocol = "ws";
-      if (location.protocol == "https:" && !LOCAL) {
+    // if (location.hostname != "localhost") {
+    // const base = `ws://${location.hostname}:${PORT}`;
+    // console.log("base", base);
+    // }
+    let protocol = "ws";
+    let port = PORT;
+    if (!LOCAL) {
+      if (isSecureContext) {
         protocol = "wss";
       }
-      this.url = `${protocol}://${location.hostname}:${PORT}/message/experiment/`;
+      port = location.port;
     }
+    this.url = `${protocol}://${location.hostname}:${port}/message/experiment/`;
   }
   connect() {
     if (this.connection) {
@@ -409,17 +413,17 @@ export class Collaboration {
       console.warn("call send while connection unactive");
       return;
     }
-    console.log("send:", message);
+    // console.log("send:", message);
     const payload = JSON.stringify(message);
     this.connection.send(payload);
   }
   onOpen = (event: Event) => {
-    console.log("onOpen:", event);
+    // console.log("onOpen:", event);
     this.send({ authorization: token });
     this.onConnected();
   };
   onMessage = async (event: MessageEvent<string>) => {
-    console.log("onMessage:", event);
+    // console.log("onMessage:", event);
     if (typeof event.data == "string") {
       const message: ExperimentMessage = JSON.parse(event.data);
       if (typeof message == "object") {
@@ -484,7 +488,7 @@ export class Collaboration {
     }
   };
   onClose = (event: CloseEvent) => {
-    console.log("onClose:", event);
+    // console.log("onClose:", event);
     this.onDisconnected();
     if (event.isTrusted && this.retry) {
       this.onRetry();
@@ -498,8 +502,9 @@ export class Collaboration {
     //   }, 1e3 * 5);
     // }
   };
-  onError = (event: Event) => {
-    console.log("onError:", event);
+  onError = (event: ErrorEvent) => {
+    // console.log("onError:", event);
+    console.error(event.error);
   };
 
   onConnected() {
