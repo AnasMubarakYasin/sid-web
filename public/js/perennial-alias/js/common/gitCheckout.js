@@ -1,0 +1,22 @@
+// Copyright 2017-2026, University of Colorado Boulder
+/**
+ * git checkout
+ *
+ * @author Jonathan Olson (PhET Interactive Simulations)
+ */ const gitCheckoutDirectory = require('./gitCheckoutDirectory');
+const assert = require('assert');
+/**
+ * Executes git checkout
+ * @public
+ *
+ * @param {string} repo - The repository name
+ * @param {string} target - The SHA/branch/whatnot to check out
+ * @returns {Promise.<string>} - Stdout
+ * @rejects {ExecuteError}
+ */ module.exports = async function gitCheckout(repo, target) {
+    assert(typeof repo === 'string');
+    assert(typeof target === 'string');
+    return gitCheckoutDirectory(target, `../${repo}`);
+};
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3BlcmVubmlhbC1hbGlhcy9qcy9jb21tb24vZ2l0Q2hlY2tvdXQuanMiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gQ29weXJpZ2h0IDIwMTctMjAyNiwgVW5pdmVyc2l0eSBvZiBDb2xvcmFkbyBCb3VsZGVyXG5cbi8qKlxuICogZ2l0IGNoZWNrb3V0XG4gKlxuICogQGF1dGhvciBKb25hdGhhbiBPbHNvbiAoUGhFVCBJbnRlcmFjdGl2ZSBTaW11bGF0aW9ucylcbiAqL1xuXG5jb25zdCBnaXRDaGVja291dERpcmVjdG9yeSA9IHJlcXVpcmUoICcuL2dpdENoZWNrb3V0RGlyZWN0b3J5JyApO1xuY29uc3QgYXNzZXJ0ID0gcmVxdWlyZSggJ2Fzc2VydCcgKTtcblxuLyoqXG4gKiBFeGVjdXRlcyBnaXQgY2hlY2tvdXRcbiAqIEBwdWJsaWNcbiAqXG4gKiBAcGFyYW0ge3N0cmluZ30gcmVwbyAtIFRoZSByZXBvc2l0b3J5IG5hbWVcbiAqIEBwYXJhbSB7c3RyaW5nfSB0YXJnZXQgLSBUaGUgU0hBL2JyYW5jaC93aGF0bm90IHRvIGNoZWNrIG91dFxuICogQHJldHVybnMge1Byb21pc2UuPHN0cmluZz59IC0gU3Rkb3V0XG4gKiBAcmVqZWN0cyB7RXhlY3V0ZUVycm9yfVxuICovXG5tb2R1bGUuZXhwb3J0cyA9IGFzeW5jIGZ1bmN0aW9uIGdpdENoZWNrb3V0KCByZXBvLCB0YXJnZXQgKSB7XG4gIGFzc2VydCggdHlwZW9mIHJlcG8gPT09ICdzdHJpbmcnICk7XG4gIGFzc2VydCggdHlwZW9mIHRhcmdldCA9PT0gJ3N0cmluZycgKTtcblxuICByZXR1cm4gZ2l0Q2hlY2tvdXREaXJlY3RvcnkoIHRhcmdldCwgYC4uLyR7cmVwb31gICk7XG59OyJdLCJuYW1lcyI6WyJnaXRDaGVja291dERpcmVjdG9yeSIsInJlcXVpcmUiLCJhc3NlcnQiLCJtb2R1bGUiLCJleHBvcnRzIiwiZ2l0Q2hlY2tvdXQiLCJyZXBvIiwidGFyZ2V0Il0sIm1hcHBpbmdzIjoiQUFBQSxzREFBc0Q7QUFFdEQ7Ozs7Q0FJQyxHQUVELE1BQU1BLHVCQUF1QkMsUUFBUztBQUN0QyxNQUFNQyxTQUFTRCxRQUFTO0FBRXhCOzs7Ozs7OztDQVFDLEdBQ0RFLE9BQU9DLE9BQU8sR0FBRyxlQUFlQyxZQUFhQyxJQUFJLEVBQUVDLE1BQU07SUFDdkRMLE9BQVEsT0FBT0ksU0FBUztJQUN4QkosT0FBUSxPQUFPSyxXQUFXO0lBRTFCLE9BQU9QLHFCQUFzQk8sUUFBUSxDQUFDLEdBQUcsRUFBRUQsTUFBTTtBQUNuRCJ9

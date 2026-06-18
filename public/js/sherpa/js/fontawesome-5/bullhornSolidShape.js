@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import bullhornSolidString from"./bullhornSolidString.js";export default new Shape(bullhornSolidString).makeImmutable();

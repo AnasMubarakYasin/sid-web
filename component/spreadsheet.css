@@ -1,0 +1,122 @@
+:root .jss_spreadsheet {
+  --header_color: #000;
+  --header_color_highlighted: #000;
+  --header_background: #f3f3f3;
+  --header_background_highlighted: #dcdcdc;
+  --content_color: #000;
+  --content_color_highlighted: #000;
+  --content_background: #fff;
+  --content_background_highlighted: rgba(0, 0, 0, 0.05);
+  --menu_background: #fff;
+  --menu_background_highlighted: #ebebeb;
+  --menu_color: #555;
+  --menu_color_highlighted: #555;
+  --menu_box_shadow: 2px 2px 2px 0px rgba(143, 144, 145, 1);
+  --border_color: #ccc;
+  --border_color_highlighted: #000;
+  --cursor: #eee;
+  --selection: rgba(0, 0, 0, 0.05);
+}
+
+.jtoolbar {
+  cursor: auto;
+}
+.jtoolbar > div {
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.jtoolbar .material-icons {
+  font-size: 18px;
+}
+.jtoolbar-item:not(.jtoolbar-divisor) {
+  min-width: 32px;
+  height: 32px;
+  display: grid;
+  place-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.jtoolbar-item .jtoolbar-divisor {
+  width: 2px;
+}
+.jss_container {
+  padding: 0;
+}
+.jss_toolbar {
+  background-color: var(--mui-palette-background-paper);
+  color: var(--mui-palette-text-primary);
+  border: none;
+}
+.jss_content {
+  width: 100%;
+  padding: 0;
+  overflow-x: auto;
+}
+.jss_worksheet {
+  min-width: 100%;
+  border: 1px solid #5f5f5f;
+}
+.jss_worksheet > thead > tr > td {
+  background-color: var(--mui-palette-background-paper);
+  color: var(--mui-palette-text-primary);
+}
+.jss_worksheet > tbody > tr > td,
+.jss_worksheet > tbody > tr > td:first-child {
+  background-color: var(--mui-palette-background-paper);
+  color: var(--mui-palette-text-primary);
+}
+
+:root .jcontextmenu > div {
+  font-size: 14px;
+}
+:root .jpicker-content {
+  color: var(--menu_color);
+  background-color: var(--menu_background);
+}
+:root .jpicker-content > div:hover {
+  color: var(--menu_color_highlighted);
+  background-color: var(--menu_background_highlighted);
+}
+:root .jpicker-content > div > i {
+  color: inherit;
+  background-color: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root .jss_spreadsheet {
+    --header_color: #888;
+    --header_color_highlighted: #292929;
+    --header_background: #313131;
+    --header_background_highlighted: #777;
+    --content_color: #ededed;
+    --content_color_highlighted: #fcfcfc;
+    --content_background: #0a0a0a;
+    --content_background_highlighted: #333;
+    --menu_background: #7e7e7e;
+    --menu_background_highlighted: #ebebeb;
+    --menu_color: #ddd;
+    --menu_color_highlighted: #222;
+    --menu_box_shadow: unset;
+    --border_color: #5f5f5f;
+    --border_color_highlighted: #999;
+    --cursor: #333;
+    --selection: #303030;
+  }
+
+  /* :root .fortune-container,
+  :root .fortune-modal-container,
+  :root .fortune-toolbar,
+  :root .fortune-add-row-button,
+  :root .fortune-fx-input,
+  :root .fortune-left-top,
+  :root .luckysheet-input-box-inner,
+  :root .luckysheet-cell-selected-focus,
+  :root .fortune-message-box-button.button-default,
+  :root .fortune-link-modify-modal .button-default,
+  :root .fortune-sheettab-container .boundary,
+  :root .luckysheet-filter-bycolor-submenu .button-default,
+  :root .fortune-filter-menu .button-default {
+    color: var(--foreground);
+    background-color: var(--background);
+  } */
+}

@@ -1,0 +1,1 @@
+const babel=require("@babel/core");export default function transpileForBuild(jsInput,supportInternetExplorer=false){const browsers=["defaults","safari >= 13","iOS >= 13"];if(supportInternetExplorer){browsers.push("IE 11")}return babel.transform(jsInput,{compact:true,presets:[["../chipper/node_modules/@babel/preset-env",{modules:false,targets:{browsers:browsers}}]]}).code}

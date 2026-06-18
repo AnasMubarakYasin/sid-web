@@ -1,0 +1,1 @@
+export const CircuitElementTypeValues=["wire","battery","resistor","capacitor","inductor","lightBulb","acSource","fuse","switch","voltmeter","ammeter","stopwatch"];

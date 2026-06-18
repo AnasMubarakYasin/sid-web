@@ -1,0 +1,1 @@
+import dot from"../dot.js";function toSVGNumber(number){return number.toFixed(20)}dot.register("toSVGNumber",toSVGNumber);export default toSVGNumber;

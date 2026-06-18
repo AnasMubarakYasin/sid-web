@@ -1,0 +1,1 @@
+import Rectangle from"../nodes/Rectangle.js";import scenery from"../scenery.js";export default class Plane extends Rectangle{constructor(options){super(-2e3,-2e3,6e3,6e3,options)}}scenery.register("Plane",Plane);

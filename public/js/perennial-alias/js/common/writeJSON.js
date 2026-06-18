@@ -1,0 +1,1 @@
+import fsPromises from"fs/promises";import winston from"winston";export const writeJSON=async(file,content)=>{winston.debug(`Writing JSON to ${file}`);try{await fsPromises.writeFile(file,JSON.stringify(content,null,2))}catch(err){throw new Error(`Could not write to file: ${file} due to: ${err}`)}};

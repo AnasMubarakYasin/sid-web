@@ -1,0 +1,1 @@
+import _ from"lodash";export default function pascalCase(string){return`${_.startCase(_.camelCase(string)).split(" ").join("")}`}

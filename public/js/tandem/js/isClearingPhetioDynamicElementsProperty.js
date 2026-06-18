@@ -1,0 +1,1 @@
+import TinyProperty from"../../axon/js/TinyProperty.js";import tandemNamespace from"./tandemNamespace.js";const isClearingPhetioDynamicElementsProperty=new TinyProperty(false);tandemNamespace.register("isClearingPhetioDynamicElementsProperty",isClearingPhetioDynamicElementsProperty);export default isClearingPhetioDynamicElementsProperty;

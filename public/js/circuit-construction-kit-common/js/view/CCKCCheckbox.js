@@ -1,0 +1,1 @@
+import{combineOptions}from"../../../phet-core/js/optionize.js";import Checkbox from"../../../sun/js/Checkbox.js";const BOX_WIDTH=16;export default class CCKCCheckbox extends Checkbox{constructor(property,content,providedOptions){providedOptions=combineOptions({boxWidth:BOX_WIDTH},providedOptions);super(property,content,providedOptions)}}

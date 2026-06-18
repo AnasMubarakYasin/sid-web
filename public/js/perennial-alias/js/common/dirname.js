@@ -1,0 +1,1 @@
+import path from"path";import{fileURLToPath}from"url";export default function dirname(url){const filename=fileURLToPath(url);return path.dirname(filename)}

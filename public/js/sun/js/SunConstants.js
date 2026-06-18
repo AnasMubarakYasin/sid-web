@@ -1,0 +1,1 @@
+const SunConstants={VALUE_NAMED_PLACEHOLDER:"{{value}}",VALUE_NUMBERED_PLACEHOLDER:"{0}",SLIDER_VERTICAL_ROTATION:-Math.PI/2};export default SunConstants;

@@ -1,0 +1,1 @@
+import phetCore from"./phetCore.js";export default function identity(t){return t}phetCore.register("identity",identity);

@@ -1,0 +1,1 @@
+import SpinnerControlsKeyboardHelpSection from"../../keyboard/help/SpinnerControlsKeyboardHelpSection.js";export default function demoSpinnerControlsKeyboardHelpSection(layoutBounds){const spinnerSection=new SpinnerControlsKeyboardHelpSection;spinnerSection.center=layoutBounds.center;return spinnerSection}

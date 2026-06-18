@@ -1,0 +1,1 @@
+import dot from"../dot.js";import{mod}from"./mod.js";export function gcd(a,b){return Math.abs(b===0?a:gcd(b,mod(a,b)))}dot.register("gcd",gcd);

@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import globeSolidString from"./globeSolidString.js";export default new Shape(globeSolidString).makeImmutable();

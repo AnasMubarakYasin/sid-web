@@ -1,0 +1,1 @@
+export default[{files:["**/*.ts","**/*.tsx"],rules:{"@typescript-eslint/ban-ts-comment":["error",{"ts-expect-error":true,"ts-ignore":true,"ts-check":true,"ts-nocheck":true}]}}];

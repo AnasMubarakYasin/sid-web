@@ -1,0 +1,1 @@
+import MNACircuitElement from"./MNACircuitElement.js";export default class MNABattery extends MNACircuitElement{constructor(nodeId0,nodeId1,voltage){super(nodeId0,nodeId1);this.voltage=voltage}}

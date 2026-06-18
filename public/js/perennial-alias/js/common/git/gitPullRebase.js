@@ -1,0 +1,1 @@
+import winston from"winston";import{gitMutableExecute}from"./gitMutex.js";export const gitPullRebase=async()=>{winston.info("git pull --rebase");return gitMutableExecute(["pull","--rebase"],"..")};

@@ -1,0 +1,1 @@
+import{gitImmutableExecute}from"./gitMutex.js";export const gitDoesCommitExist=async sha=>{const result=await gitImmutableExecute(["cat-file","-e",sha],"..",{errors:"resolve"});if(result.code===0){return true}else if(result.code===1){return false}else{throw new Error(`Non-zero and non-one exit code from git cat-file: ${result}`)}};

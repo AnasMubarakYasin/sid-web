@@ -1,0 +1,1 @@
+import path from"path";import dirname from"./dirname.js";const __dirname=dirname(import.meta.url);const PERENNIAL_ROOT_PATH=`${__dirname}/../..`;export const PERENNIAL_ROOT=path.resolve(PERENNIAL_ROOT_PATH);export const PERENNIAL_REPO_NAME=PERENNIAL_ROOT.split(/[\\/]/).pop();

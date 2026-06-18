@@ -1,0 +1,1 @@
+import Color from"../../scenery/js/util/Color.js";const ColorConstants={LIGHT_BLUE:new Color(153,206,255),LIGHT_GRAY:new Color(220,220,220)};export default ColorConstants;

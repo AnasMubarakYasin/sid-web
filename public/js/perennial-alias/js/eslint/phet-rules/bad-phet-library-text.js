@@ -1,0 +1,1 @@
+const getBadTextTester=require("./getBadTextTester");module.exports={create:function(context){const forbiddenTextObjects=[{id:"phet.joist",codeTokens:["phet",".","joist"]},"nopedy"];return{Program:getBadTextTester("bad-phet-library-text",forbiddenTextObjects,context)}}};module.exports.schema=[];

@@ -1,0 +1,1 @@
+import axon from"./axon.js";const ObservableArrayDef={isObservableArray(observableArray){return!!(Array.isArray(observableArray)&&observableArray.elementAddedEmitter&&observableArray.elementRemovedEmitter&&observableArray.lengthProperty)}};axon.register("ObservableArrayDef",ObservableArrayDef);export default ObservableArrayDef;

@@ -1,0 +1,1 @@
+import dot from"../dot.js";export function linear(a1,a2,b1,b2,a3){return(b2-b1)/(a2-a1)*(a3-a1)+b1}dot.register("linear",linear);

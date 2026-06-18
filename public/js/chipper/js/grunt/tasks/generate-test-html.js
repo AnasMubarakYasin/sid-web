@@ -1,0 +1,1 @@
+import getRepo from"../../../../perennial-alias/js/grunt/tasks/util/getRepo.js";import generateTestHTML from"../generateTestHTML.js";const repo=getRepo();(async()=>{await generateTestHTML(repo)})();

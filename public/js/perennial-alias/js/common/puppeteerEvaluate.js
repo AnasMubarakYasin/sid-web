@@ -1,0 +1,1 @@
+const puppeteerLoad=require("./puppeteerLoad");const _=require("lodash");module.exports=async function(url,evaluate,options){options=_.assignIn({evaluate:evaluate},options);return puppeteerLoad(url,options)};

@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import pencilAltSolidString from"./pencilAltSolidString.js";export default new Shape(pencilAltSolidString).makeImmutable();

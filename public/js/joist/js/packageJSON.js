@@ -1,0 +1,1 @@
+import joist from"./joist.js";const packageJSON=window.phet&&phet.chipper?phet.chipper.packageObject:{name:"placeholder"};joist.register("packageJSON",packageJSON);export default packageJSON;

@@ -1,0 +1,1 @@
+import{gitImmutableExecute}from"./gitMutex.js";export const getGitFile=async function(gitObject,filename){return gitImmutableExecute(["show",`${gitObject}:./${filename}`],"..")};

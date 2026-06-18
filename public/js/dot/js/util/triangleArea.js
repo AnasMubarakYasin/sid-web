@@ -1,0 +1,1 @@
+import dot from"../dot.js";import{triangleAreaSigned}from"./triangleAreaSigned.js";export function triangleArea(a,b,c){return Math.abs(triangleAreaSigned(a,b,c))}dot.register("triangleArea",triangleArea);

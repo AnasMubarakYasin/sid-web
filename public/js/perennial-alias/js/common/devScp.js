@@ -1,0 +1,1 @@
+import{buildLocal}from"./buildLocal.js";import{scp}from"./scp.js";export const devScp=async(localFile,remoteFile)=>{return scp(buildLocal.devUsername,buildLocal.devDeployServer,localFile,remoteFile)};

@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import dnaSolidString from"./dnaSolidString.js";export default new Shape(dnaSolidString).makeImmutable();

@@ -1,0 +1,1 @@
+import phetCore from"./phetCore.js";function collect(iterate){const result=[];iterate(ob=>{result.push(ob)});return result}phetCore.register("collect",collect);export default collect;

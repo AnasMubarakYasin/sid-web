@@ -1,0 +1,1 @@
+import dot from"../dot.js";import{distToSegmentSquared}from"./distToSegmentSquared.js";export function distToSegment(point,a,b){return Math.sqrt(distToSegmentSquared(point,a,b))}dot.register("distToSegment",distToSegment);

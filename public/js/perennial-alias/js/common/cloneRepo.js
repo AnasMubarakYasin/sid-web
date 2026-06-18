@@ -1,0 +1,1 @@
+const gitCloneDirectory=require("./git/gitCloneDirectory");module.exports=function cloneRepo(repo){return gitCloneDirectory(repo,"../")};

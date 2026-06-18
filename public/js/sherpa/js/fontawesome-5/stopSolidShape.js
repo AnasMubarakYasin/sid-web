@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import stopSolidString from"./stopSolidString.js";export default new Shape(stopSolidString).makeImmutable();

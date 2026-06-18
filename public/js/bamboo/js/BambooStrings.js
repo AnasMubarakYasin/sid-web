@@ -1,0 +1,1 @@
+import getStringModule from"../../chipper/js/browser/getStringModule.js";import bamboo from"./bamboo.js";const BambooStrings=getStringModule("BAMBOO");bamboo.register("BambooStrings",BambooStrings);export default BambooStrings;

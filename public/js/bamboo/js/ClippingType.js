@@ -1,0 +1,1 @@
+const ClippingTypeValues=["strict","lenient"];export{ClippingTypeValues};

@@ -1,0 +1,1 @@
+import Enumeration from"../../../phet-core/js/Enumeration.js";import EnumerationValue from"../../../phet-core/js/EnumerationValue.js";export default class AmmeterReadoutType extends EnumerationValue{static{this.MAGNITUDE=new AmmeterReadoutType}static{this.SIGNED=new AmmeterReadoutType}static{this.enumeration=new Enumeration(AmmeterReadoutType)}}

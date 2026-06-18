@@ -1,0 +1,1 @@
+import dot from"../dot.js";export function roundSymmetric(value){return(value<0?-1:1)*Math.round(Math.abs(value))}dot.register("roundSymmetric",roundSymmetric);

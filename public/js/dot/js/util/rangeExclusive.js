@@ -1,0 +1,1 @@
+import{rangeInclusive}from"./rangeInclusive.js";import dot from"../dot.js";export function rangeExclusive(a,b){return rangeInclusive(a+1,b-1)}dot.register("rangeExclusive",rangeExclusive);

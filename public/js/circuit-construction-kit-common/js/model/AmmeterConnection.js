@@ -1,0 +1,1 @@
+export default class AmmeterConnection{constructor(circuitElement,current=circuitElement.currentProperty.value){this.circuitElement=circuitElement;this.current=current}}

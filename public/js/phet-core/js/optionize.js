@@ -1,0 +1,1 @@
+import merge from"./merge.js";import phetCore from"./phetCore.js";const merge4=(a,b,c,d)=>merge(a,b,c,d);export default function optionize(){return merge4}export function optionize3(){return merge4}export function optionize4(){return merge4}export function combineOptions(target,...sources){return merge4(target,...sources)}phetCore.register("optionize",optionize);

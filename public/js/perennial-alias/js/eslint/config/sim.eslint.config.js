@@ -1,0 +1,1 @@
+import browserEslintConfig from"./browser.eslint.config.mjs";export default[...browserEslintConfig,{rules:{"phet/bad-sim-text":"error"}},{files:["**/*.html"],rules:{"phet/bad-sim-text":"off"}}];

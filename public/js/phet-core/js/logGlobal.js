@@ -1,0 +1,1 @@
+import getGlobal from"./getGlobal.js";import phetCore from"./phetCore.js";function logGlobal(globalString){phet.log&&phet.log(`${globalString}: ${JSON.stringify(getGlobal(globalString),null,2)}`)}phetCore.register("logGlobal",logGlobal);export default logGlobal;

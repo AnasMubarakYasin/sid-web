@@ -1,0 +1,5 @@
+/**
+ * @fileoverview Rule to check that a dispose function is present for objects that register observers and listeners.
+ * @author Jesse Greenberg (PhET Interactive Simulations)
+ * @copyright 2015 University of Colorado Boulder
+ */module.exports={create:function(context){const OBSERVER_REGISTRATIONS={LINK:"link",LAZY_LINK:"lazyLink",ON:"on",MULTILINK:"multilink",ADD_LISTENER:"addListener",ADD_EVENT_LISTENER:"addEventListener",ADD_INSTANCE:"addInstance"};return{ExpressionStatement:function(node){if(node.expression&&node.expression.callee&&node.expression.callee.property&&node.expression.callee.property.name){const calleeName=node.expression.callee.property.name;for(const key in OBSERVER_REGISTRATIONS){if(OBSERVER_REGISTRATIONS.hasOwnProperty(key)){if(calleeName===OBSERVER_REGISTRATIONS[key]){let disposeFound=false;const rootNode=context.getSourceCode().ast;if(rootNode&&rootNode.tokens){rootNode.tokens.forEach(token=>{if(token){if(token.type==="Identifier"&&token.value==="dispose"){disposeFound=true}}})}if(!disposeFound){context.report({node:node,loc:node.loc.start,message:"observer registration missing dispose function"})}}}}}}}}};module.exports.schema=[];

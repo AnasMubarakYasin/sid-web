@@ -1,0 +1,1 @@
+import winston from"winston";import{gitMutableExecute}from"./gitMutex.js";export const gitCheckoutDirectory=async(target,directory)=>{winston.info(`git checkout ${target} in ${directory}`);return gitMutableExecute(["checkout",target],directory)};

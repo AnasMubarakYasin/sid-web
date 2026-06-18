@@ -1,0 +1,1 @@
+import assert from"assert";export const assertIsValidDependencyName=dependency=>{assert(typeof dependency==="string"&&/^[a-z]+(-[a-z]+)*$/u.test(dependency),"dependency name should be composed of lowercase a-z characters, optionally with dashes used as separators")};

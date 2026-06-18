@@ -1,0 +1,1 @@
+import sceneryPhet from"./sceneryPhet.js";const SceneryPhetConstants={DEFAULT_BUTTON_RADIUS:20.8,PLAY_CONTROL_BUTTON_RADIUS:28};sceneryPhet.register("SceneryPhetConstants",SceneryPhetConstants);export default SceneryPhetConstants;

@@ -1,0 +1,1 @@
+import getStringModule from"../../chipper/js/browser/getStringModule.js";import tambo from"./tambo.js";const TamboStrings=getStringModule("TAMBO");tambo.register("TamboStrings",TamboStrings);export default TamboStrings;

@@ -1,0 +1,18 @@
+// Copyright 2020-2026, University of Colorado Boulder
+/**
+ * Sleeps for a certain number of milliseconds
+ *
+ * @author Jonathan Olson (PhET Interactive Simulations)
+ */ /**
+ * Sleeps for a certain number of milliseconds
+ * @public
+ *
+ * @param {number} milliseconds
+ * @returns {Promise}
+ */ module.exports = async function sleep(milliseconds) {
+    return new Promise((resolve, reject)=>{
+        setTimeout(resolve, milliseconds);
+    });
+};
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3BlcmVubmlhbC1hbGlhcy9qcy9jb21tb24vc2xlZXAuanMiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gQ29weXJpZ2h0IDIwMjAtMjAyNiwgVW5pdmVyc2l0eSBvZiBDb2xvcmFkbyBCb3VsZGVyXG5cbi8qKlxuICogU2xlZXBzIGZvciBhIGNlcnRhaW4gbnVtYmVyIG9mIG1pbGxpc2Vjb25kc1xuICpcbiAqIEBhdXRob3IgSm9uYXRoYW4gT2xzb24gKFBoRVQgSW50ZXJhY3RpdmUgU2ltdWxhdGlvbnMpXG4gKi9cblxuLyoqXG4gKiBTbGVlcHMgZm9yIGEgY2VydGFpbiBudW1iZXIgb2YgbWlsbGlzZWNvbmRzXG4gKiBAcHVibGljXG4gKlxuICogQHBhcmFtIHtudW1iZXJ9IG1pbGxpc2Vjb25kc1xuICogQHJldHVybnMge1Byb21pc2V9XG4gKi9cbm1vZHVsZS5leHBvcnRzID0gYXN5bmMgZnVuY3Rpb24gc2xlZXAoIG1pbGxpc2Vjb25kcyApIHtcbiAgcmV0dXJuIG5ldyBQcm9taXNlKCAoIHJlc29sdmUsIHJlamVjdCApID0+IHtcbiAgICBzZXRUaW1lb3V0KCByZXNvbHZlLCBtaWxsaXNlY29uZHMgKTtcbiAgfSApO1xufTsiXSwibmFtZXMiOlsibW9kdWxlIiwiZXhwb3J0cyIsInNsZWVwIiwibWlsbGlzZWNvbmRzIiwiUHJvbWlzZSIsInJlc29sdmUiLCJyZWplY3QiLCJzZXRUaW1lb3V0Il0sIm1hcHBpbmdzIjoiQUFBQSxzREFBc0Q7QUFFdEQ7Ozs7Q0FJQyxHQUVEOzs7Ozs7Q0FNQyxHQUNEQSxPQUFPQyxPQUFPLEdBQUcsZUFBZUMsTUFBT0MsWUFBWTtJQUNqRCxPQUFPLElBQUlDLFFBQVMsQ0FBRUMsU0FBU0M7UUFDN0JDLFdBQVlGLFNBQVNGO0lBQ3ZCO0FBQ0YifQ==

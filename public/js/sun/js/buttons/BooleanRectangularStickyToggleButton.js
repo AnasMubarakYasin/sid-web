@@ -1,0 +1,1 @@
+import RectangularStickyToggleButton from"./RectangularStickyToggleButton.js";export default class BooleanRectangularStickyToggleButton extends RectangularStickyToggleButton{constructor(booleanProperty,providedOptions){super(booleanProperty,false,true,providedOptions)}}

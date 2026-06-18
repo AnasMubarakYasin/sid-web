@@ -1,0 +1,1 @@
+export class Patch{constructor(name,message,shas=[]){this.name=name;this.message=message;this.shas=shas}serialize(){return{name:this.name,message:this.message,shas:this.shas}}static deserialize({name,message,shas}){return new Patch(name,message,shas)}}

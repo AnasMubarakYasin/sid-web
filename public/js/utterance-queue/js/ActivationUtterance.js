@@ -1,0 +1,1 @@
+import optionize from"../../phet-core/js/optionize.js";import Utterance from"./Utterance.js";export default class ActivationUtterance extends Utterance{constructor(providedOptions){const options=optionize()({alertDelay:500},providedOptions);assert&&assert(options.alertDelay>=500,"Utterance will likely be duplicated if activated with key press and hold");super(options)}}

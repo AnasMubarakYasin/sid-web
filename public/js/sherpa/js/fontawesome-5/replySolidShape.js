@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import replySolidString from"./replySolidString.js";export default new Shape(replySolidString).makeImmutable();

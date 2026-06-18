@@ -1,0 +1,1 @@
+import dot from"../dot.js";import{toFixed}from"./toFixed.js";export function toFixedNumber(value,decimalPlaces){return parseFloat(toFixed(value,decimalPlaces))}dot.register("toFixedNumber",toFixedNumber);

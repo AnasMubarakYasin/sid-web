@@ -1,0 +1,1 @@
+const toLessEscapedString=string=>{let result="";string.split(/(?:)/u).forEach(char=>{if(char==="\r"){result+="\\r"}else if(char==="\n"){result+="\\n"}else if(char==="\\"){result+="\\\\"}else if(char==="'"){result+="\\'"}else{result+=char}});return`'${result}'`};export default toLessEscapedString;

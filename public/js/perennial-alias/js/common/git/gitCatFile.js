@@ -1,0 +1,1 @@
+import{gitImmutableExecute}from"./gitMutex.js";export const gitCatFile=async(file,branchOrSha="HEAD")=>{return gitImmutableExecute(["cat-file","blob",`${branchOrSha}:${file}`],"..")};

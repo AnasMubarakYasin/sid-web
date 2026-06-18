@@ -1,0 +1,1 @@
+export const npmCommand=process.platform.startsWith("win")?"npm.cmd":"npm";

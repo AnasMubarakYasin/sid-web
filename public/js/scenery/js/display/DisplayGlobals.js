@@ -1,0 +1,1 @@
+import scenery from"../scenery.js";import Emitter from"../../../axon/js/Emitter.js";export default class DisplayGlobals{static{this.userGestureEmitter=new Emitter}static{this.inputListeners=[]}}scenery.register("DisplayGlobals",DisplayGlobals);

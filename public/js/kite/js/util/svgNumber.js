@@ -1,0 +1,1 @@
+import kite from"../kite.js";const svgNumber=n=>{return n.toFixed(20)};kite.register("svgNumber",svgNumber);export default svgNumber;

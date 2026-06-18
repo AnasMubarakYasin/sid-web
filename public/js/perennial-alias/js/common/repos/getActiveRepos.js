@@ -1,0 +1,1 @@
+import{getRepoList}from"./getRepoList.js";export const getActiveRepos=()=>getRepoList("active-repos");

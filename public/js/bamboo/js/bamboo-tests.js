@@ -1,0 +1,1 @@
+import"./ChartModelTests.js";import qunitStart from"../../chipper/js/browser/sim-tests/qunitStart.js";qunitStart();

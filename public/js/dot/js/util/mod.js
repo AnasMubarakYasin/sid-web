@@ -1,0 +1,1 @@
+import dot from"../dot.js";export function mod(a,b){if(a/b%1===0){return 0}else{return a%b}}dot.register("mod",mod);

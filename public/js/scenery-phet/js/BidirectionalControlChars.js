@@ -1,0 +1,1 @@
+import sceneryPhet from"./sceneryPhet.js";const BidirectionalControlChars={LRI:"⁦",RLI:"⁧",PDI:"⁩",LRE:"‪",RLE:"‫",PDF:"‬"};sceneryPhet.register("BidirectionalControlChars",BidirectionalControlChars);export default BidirectionalControlChars;

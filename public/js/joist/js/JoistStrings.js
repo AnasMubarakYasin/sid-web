@@ -1,0 +1,1 @@
+import getStringModule from"../../chipper/js/browser/getStringModule.js";import joist from"./joist.js";const JoistStrings=getStringModule("JOIST");joist.register("JoistStrings",JoistStrings);export default JoistStrings;

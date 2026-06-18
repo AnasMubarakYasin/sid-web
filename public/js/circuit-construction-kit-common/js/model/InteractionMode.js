@@ -1,0 +1,1 @@
+import Enumeration from"../../../phet-core/js/Enumeration.js";import EnumerationValue from"../../../phet-core/js/EnumerationValue.js";export default class InteractionMode extends EnumerationValue{static{this.EXPLORE=new InteractionMode}static{this.TEST=new InteractionMode}static{this.enumeration=new Enumeration(InteractionMode)}}

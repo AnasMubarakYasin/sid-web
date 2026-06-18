@@ -1,0 +1,1 @@
+import CoreModel from"./CoreModel.js";export default class DynamicCoreModel extends CoreModel{constructor(id,node0,node1,voltage,current){super(id,node0,node1);this.voltage=voltage;this.current=current}}

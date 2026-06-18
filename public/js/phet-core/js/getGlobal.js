@@ -1,0 +1,1 @@
+import affirm from"../../perennial-alias/js/browser-and-node/affirm.js";import phetCore from"./phetCore.js";import _ from"../../sherpa/js/lodash.js";const getGlobal=path=>{affirm(path.trim()===path,"path must be trimmed");const global=_.get(window,path);return global!==undefined?global:null};phetCore.register("getGlobal",getGlobal);export default getGlobal;

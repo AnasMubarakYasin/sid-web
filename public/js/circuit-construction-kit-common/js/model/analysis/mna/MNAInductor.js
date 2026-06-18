@@ -1,0 +1,1 @@
+import MNACircuitElement from"./MNACircuitElement.js";export default class MNAInductor extends MNACircuitElement{constructor(nodeId0,nodeId1,inductance,initialCurrent){super(nodeId0,nodeId1);this.inductance=inductance;this.initialCurrent=initialCurrent}}

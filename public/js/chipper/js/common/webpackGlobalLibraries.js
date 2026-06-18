@@ -1,0 +1,1 @@
+const webpackGlobalLibraries={peggy:"sherpa/lib/peggy-3.0.2.js",himalaya:"sherpa/lib/himalaya-1.1.0.js"};export default webpackGlobalLibraries;

@@ -1,0 +1,1 @@
+import qunitStart from"../../chipper/js/browser/sim-tests/qunitStart.js";import"./AnimationTests.js";qunitStart();

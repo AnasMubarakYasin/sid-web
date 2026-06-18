@@ -1,0 +1,1 @@
+import dns from"dns/promises";export const vpnCheck=async()=>{try{await dns.resolve("phet-server2.int.colorado.edu");return true}catch(err){return false}};

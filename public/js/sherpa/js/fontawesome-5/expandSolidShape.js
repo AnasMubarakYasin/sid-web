@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import expandSolidString from"./expandSolidString.js";export default new Shape(expandSolidString).makeImmutable();

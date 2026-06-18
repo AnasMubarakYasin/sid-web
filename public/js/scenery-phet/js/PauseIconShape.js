@@ -1,0 +1,1 @@
+import Shape from"../../kite/js/Shape.js";import sceneryPhet from"./sceneryPhet.js";export default class PauseIconShape extends Shape{constructor(width,height){super();const barWidth=width/3;this.rect(0,0,barWidth,height);this.rect(2*barWidth,0,barWidth,height)}}sceneryPhet.register("PauseIconShape",PauseIconShape);

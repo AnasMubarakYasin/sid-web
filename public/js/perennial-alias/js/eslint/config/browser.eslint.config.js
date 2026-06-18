@@ -1,0 +1,1 @@
+import globals from"globals";import rootEslintConfig from"./root.eslint.config.mjs";import{phetSimBrowserGlobalsObject}from"./util/phetSimBrowserGlobals.mjs";export default[...rootEslintConfig,{languageOptions:{globals:{...globals.browser,...phetSimBrowserGlobalsObject}}},{files:["**/*.jsx","**/*.tsx"],languageOptions:{globals:{React:"readonly",ReactDOM:"readonly"}}}];

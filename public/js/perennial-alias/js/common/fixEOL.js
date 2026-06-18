@@ -1,0 +1,1 @@
+import os from"os";export const fixEOL=string=>string.split("\r").join("").split("\n").join(os.EOL);

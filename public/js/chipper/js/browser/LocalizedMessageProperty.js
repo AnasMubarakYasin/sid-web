@@ -1,0 +1,1 @@
+import{DerivedProperty1}from"../../../axon/js/DerivedProperty.js";export default class LocalizedMessageProperty extends DerivedProperty1{constructor(bundleProperty,derivation){super([bundleProperty],derivation),this.bundleProperty=bundleProperty}}

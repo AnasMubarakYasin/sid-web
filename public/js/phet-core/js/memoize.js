@@ -1,0 +1,1 @@
+import phetCore from"./phetCore.js";function memoize(func){const map=new Map;return key=>{if(map.has(key)){return map.get(key)}else{const value=func(key);map.set(key,value);return value}}}phetCore.register("memoize",memoize);export default memoize;

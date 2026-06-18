@@ -1,0 +1,1 @@
+import Utterance from"../../../../utterance-queue/js/Utterance.js";import scenery from"../../scenery.js";let ReadingBlockUtterance=class ReadingBlockUtterance extends Utterance{constructor(focus,options){super(options);this.readingBlockFocus=focus}};scenery.register("ReadingBlockUtterance",ReadingBlockUtterance);export default ReadingBlockUtterance;

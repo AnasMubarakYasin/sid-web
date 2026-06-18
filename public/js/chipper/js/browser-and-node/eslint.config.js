@@ -1,0 +1,1 @@
+import browserAndNodeEslintConfig from"../../../perennial-alias/js/eslint/config/browser-and-node.eslint.config.mjs";export default[...browserAndNodeEslintConfig];

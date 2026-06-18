@@ -1,0 +1,1 @@
+import Sim from"../../../joist/js/Sim.js";export default class CCKCSim extends Sim{constructor(simNameProperty,allSimScreens,providedOptions){super(simNameProperty,allSimScreens,providedOptions)}}

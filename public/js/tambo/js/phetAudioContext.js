@@ -1,0 +1,1 @@
+let phetAudioContext;if(window.AudioContext){phetAudioContext=new window.AudioContext}else if(window.webkitAudioContext){phetAudioContext=new window.webkitAudioContext}else{phetAudioContext={};console.error("error: this browser does not support Web Audio")}export default phetAudioContext;

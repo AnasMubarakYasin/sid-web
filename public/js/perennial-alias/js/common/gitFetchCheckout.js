@@ -1,0 +1,27 @@
+// Copyright 2021-2026, University of Colorado Boulder
+/**
+ * git checkout, for SHAs only, but will fetch if the sha doesn't exist locally
+ *
+ * @author Jonathan Olson (PhET Interactive Simulations)
+ */ const gitCheckout = require('./gitCheckout');
+const gitDoesCommitExist = require('./gitDoesCommitExist');
+const gitFetch = require('./gitFetch');
+const assert = require('assert');
+/**
+ * Executes git checkout, but will fetch if the sha doesn't exist locally
+ * @public
+ *
+ * @param {string} repo - The repository name
+ * @param {string} sha - The SHA to check out
+ * @returns {Promise.<string>} - Stdout
+ * @rejects {ExecuteError}
+ */ module.exports = async function(repo, sha) {
+    assert(typeof repo === 'string');
+    assert(typeof sha === 'string');
+    if (!await gitDoesCommitExist(repo, sha)) {
+        await gitFetch(repo);
+    }
+    return gitCheckout(repo, sha);
+};
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3BlcmVubmlhbC1hbGlhcy9qcy9jb21tb24vZ2l0RmV0Y2hDaGVja291dC5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBDb3B5cmlnaHQgMjAyMS0yMDI2LCBVbml2ZXJzaXR5IG9mIENvbG9yYWRvIEJvdWxkZXJcblxuLyoqXG4gKiBnaXQgY2hlY2tvdXQsIGZvciBTSEFzIG9ubHksIGJ1dCB3aWxsIGZldGNoIGlmIHRoZSBzaGEgZG9lc24ndCBleGlzdCBsb2NhbGx5XG4gKlxuICogQGF1dGhvciBKb25hdGhhbiBPbHNvbiAoUGhFVCBJbnRlcmFjdGl2ZSBTaW11bGF0aW9ucylcbiAqL1xuXG5jb25zdCBnaXRDaGVja291dCA9IHJlcXVpcmUoICcuL2dpdENoZWNrb3V0JyApO1xuY29uc3QgZ2l0RG9lc0NvbW1pdEV4aXN0ID0gcmVxdWlyZSggJy4vZ2l0RG9lc0NvbW1pdEV4aXN0JyApO1xuY29uc3QgZ2l0RmV0Y2ggPSByZXF1aXJlKCAnLi9naXRGZXRjaCcgKTtcbmNvbnN0IGFzc2VydCA9IHJlcXVpcmUoICdhc3NlcnQnICk7XG5cbi8qKlxuICogRXhlY3V0ZXMgZ2l0IGNoZWNrb3V0LCBidXQgd2lsbCBmZXRjaCBpZiB0aGUgc2hhIGRvZXNuJ3QgZXhpc3QgbG9jYWxseVxuICogQHB1YmxpY1xuICpcbiAqIEBwYXJhbSB7c3RyaW5nfSByZXBvIC0gVGhlIHJlcG9zaXRvcnkgbmFtZVxuICogQHBhcmFtIHtzdHJpbmd9IHNoYSAtIFRoZSBTSEEgdG8gY2hlY2sgb3V0XG4gKiBAcmV0dXJucyB7UHJvbWlzZS48c3RyaW5nPn0gLSBTdGRvdXRcbiAqIEByZWplY3RzIHtFeGVjdXRlRXJyb3J9XG4gKi9cbm1vZHVsZS5leHBvcnRzID0gYXN5bmMgZnVuY3Rpb24oIHJlcG8sIHNoYSApIHtcbiAgYXNzZXJ0KCB0eXBlb2YgcmVwbyA9PT0gJ3N0cmluZycgKTtcbiAgYXNzZXJ0KCB0eXBlb2Ygc2hhID09PSAnc3RyaW5nJyApO1xuXG4gIGlmICggIWF3YWl0IGdpdERvZXNDb21taXRFeGlzdCggcmVwbywgc2hhICkgKSB7XG4gICAgYXdhaXQgZ2l0RmV0Y2goIHJlcG8gKTtcbiAgfVxuXG4gIHJldHVybiBnaXRDaGVja291dCggcmVwbywgc2hhICk7XG59OyJdLCJuYW1lcyI6WyJnaXRDaGVja291dCIsInJlcXVpcmUiLCJnaXREb2VzQ29tbWl0RXhpc3QiLCJnaXRGZXRjaCIsImFzc2VydCIsIm1vZHVsZSIsImV4cG9ydHMiLCJyZXBvIiwic2hhIl0sIm1hcHBpbmdzIjoiQUFBQSxzREFBc0Q7QUFFdEQ7Ozs7Q0FJQyxHQUVELE1BQU1BLGNBQWNDLFFBQVM7QUFDN0IsTUFBTUMscUJBQXFCRCxRQUFTO0FBQ3BDLE1BQU1FLFdBQVdGLFFBQVM7QUFDMUIsTUFBTUcsU0FBU0gsUUFBUztBQUV4Qjs7Ozs7Ozs7Q0FRQyxHQUNESSxPQUFPQyxPQUFPLEdBQUcsZUFBZ0JDLElBQUksRUFBRUMsR0FBRztJQUN4Q0osT0FBUSxPQUFPRyxTQUFTO0lBQ3hCSCxPQUFRLE9BQU9JLFFBQVE7SUFFdkIsSUFBSyxDQUFDLE1BQU1OLG1CQUFvQkssTUFBTUMsTUFBUTtRQUM1QyxNQUFNTCxTQUFVSTtJQUNsQjtJQUVBLE9BQU9QLFlBQWFPLE1BQU1DO0FBQzVCIn0=

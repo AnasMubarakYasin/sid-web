@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import infoCircleSolidString from"./infoCircleSolidString.js";export default new Shape(infoCircleSolidString).makeImmutable();

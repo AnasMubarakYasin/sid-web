@@ -1,0 +1,1 @@
+import scenery from"../../scenery.js";let ResponseGroup=class ResponseGroup{static{this.USER_INTERFACE="user-interface"}};scenery.register("ResponseGroup",ResponseGroup);export default ResponseGroup;

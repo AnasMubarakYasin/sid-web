@@ -1,0 +1,1 @@
+import{gitImmutableExecute}from"./gitMutex.js";export const getBranch=async(directory="..")=>{return gitImmutableExecute(["symbolic-ref","-q","HEAD"],directory).then(stdout=>stdout.trim().replace("refs/heads/",""))};

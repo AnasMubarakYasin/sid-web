@@ -1,0 +1,1 @@
+import{Checkout}from"./Checkout.js";export const isPublished=async sim=>{const packageObject=await (await Checkout.getMainCheckout()).getPackageJSON(sim);return!!packageObject?.phet?.published};

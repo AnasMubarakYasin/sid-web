@@ -1,0 +1,18 @@
+// Copyright 2017-2026, University of Colorado Boulder
+/**
+ * git pull with an assumption that your cwd is in the top of a repo, like perennial/ or chipper/.
+ *
+ * @author Jonathan Olson (PhET Interactive Simulations)
+ */ const gitPullDirectory = require('./gitPullDirectory');
+/**
+ * Executes git pull
+ * @public
+ *
+ * @param {string} repo - The repository name
+ * @returns {Promise.<string>} - Stdout
+ * @rejects {ExecuteError}
+ */ module.exports = async function gitPull(repo) {
+    await gitPullDirectory(`../${repo}`);
+};
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3BlcmVubmlhbC1hbGlhcy9qcy9jb21tb24vZ2l0UHVsbC5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBDb3B5cmlnaHQgMjAxNy0yMDI2LCBVbml2ZXJzaXR5IG9mIENvbG9yYWRvIEJvdWxkZXJcblxuLyoqXG4gKiBnaXQgcHVsbCB3aXRoIGFuIGFzc3VtcHRpb24gdGhhdCB5b3VyIGN3ZCBpcyBpbiB0aGUgdG9wIG9mIGEgcmVwbywgbGlrZSBwZXJlbm5pYWwvIG9yIGNoaXBwZXIvLlxuICpcbiAqIEBhdXRob3IgSm9uYXRoYW4gT2xzb24gKFBoRVQgSW50ZXJhY3RpdmUgU2ltdWxhdGlvbnMpXG4gKi9cblxuY29uc3QgZ2l0UHVsbERpcmVjdG9yeSA9IHJlcXVpcmUoICcuL2dpdFB1bGxEaXJlY3RvcnknICk7XG5cbi8qKlxuICogRXhlY3V0ZXMgZ2l0IHB1bGxcbiAqIEBwdWJsaWNcbiAqXG4gKiBAcGFyYW0ge3N0cmluZ30gcmVwbyAtIFRoZSByZXBvc2l0b3J5IG5hbWVcbiAqIEByZXR1cm5zIHtQcm9taXNlLjxzdHJpbmc+fSAtIFN0ZG91dFxuICogQHJlamVjdHMge0V4ZWN1dGVFcnJvcn1cbiAqL1xubW9kdWxlLmV4cG9ydHMgPSBhc3luYyBmdW5jdGlvbiBnaXRQdWxsKCByZXBvICkge1xuICBhd2FpdCBnaXRQdWxsRGlyZWN0b3J5KCBgLi4vJHtyZXBvfWAgKTtcbn07Il0sIm5hbWVzIjpbImdpdFB1bGxEaXJlY3RvcnkiLCJyZXF1aXJlIiwibW9kdWxlIiwiZXhwb3J0cyIsImdpdFB1bGwiLCJyZXBvIl0sIm1hcHBpbmdzIjoiQUFBQSxzREFBc0Q7QUFFdEQ7Ozs7Q0FJQyxHQUVELE1BQU1BLG1CQUFtQkMsUUFBUztBQUVsQzs7Ozs7OztDQU9DLEdBQ0RDLE9BQU9DLE9BQU8sR0FBRyxlQUFlQyxRQUFTQyxJQUFJO0lBQzNDLE1BQU1MLGlCQUFrQixDQUFDLEdBQUcsRUFBRUssTUFBTTtBQUN0QyJ9

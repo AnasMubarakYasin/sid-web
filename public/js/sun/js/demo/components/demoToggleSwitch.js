@@ -1,0 +1,1 @@
+import StringProperty from"../../../../axon/js/StringProperty.js";import ToggleSwitch from"../../ToggleSwitch.js";export default function demoToggleSwitch(layoutBounds){return new ToggleSwitch(new StringProperty("left"),"left","right",{center:layoutBounds.center})}

@@ -1,0 +1,1 @@
+import TinyProperty from"../../axon/js/TinyProperty.js";import tandemNamespace from"./tandemNamespace.js";export const writableIsSettingPhetioStateProperty=new TinyProperty(false);const isSettingPhetioStateProperty=writableIsSettingPhetioStateProperty;tandemNamespace.register("isSettingPhetioStateProperty",isSettingPhetioStateProperty);export default isSettingPhetioStateProperty;

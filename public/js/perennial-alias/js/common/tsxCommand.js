@@ -1,0 +1,1 @@
+import path from"path";const isWindows=process.platform.startsWith("win");const runnable=isWindows?"tsx.cmd":"tsx";export const tsxCommand=`${path.join(__dirname,`../../node_modules/.bin/${runnable}`)}`;

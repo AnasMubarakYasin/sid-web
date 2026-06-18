@@ -1,0 +1,1 @@
+import detectPrefix from"./detectPrefix.js";QUnit.module("detectPrefix");QUnit.test("detectPrefix",assert=>{const obj={main:false,mozProp:""};assert.equal(detectPrefix(obj,"main"),"main");assert.equal(detectPrefix(obj,"prop"),"mozProp");assert.equal(detectPrefix(obj,"nothing"),undefined)});

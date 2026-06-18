@@ -1,0 +1,1 @@
+import Text from"../../../scenery/js/nodes/Text.js";import Color from"../../../scenery/js/util/Color.js";export class ErrorMessage extends Text{constructor(circuit,providedOptions){super(circuit.errorMessageProperty,{fontSize:18,fontWeight:"bold",fill:Color.RED})}enableButton(){this.setEnabled(true)}}

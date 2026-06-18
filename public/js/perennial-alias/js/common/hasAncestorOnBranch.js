@@ -1,0 +1,33 @@
+// Copyright 2018-2026, University of Colorado Boulder
+/**
+ * Checks whether a sim branch's dependency has an ancestor commit in its tree.
+ *
+ * @author Jonathan Olson (PhET Interactive Simulations)
+ */ const getDependencies = require('./getDependencies');
+const gitCheckout = require('./gitCheckout');
+const gitIsAncestor = require('./gitIsAncestor');
+const winston = require('winston');
+/**
+ * Checks whether a sim branch's dependency has an ancestor commit in its tree.
+ * @public
+ *
+ * @param {string} sim
+ * @param {string} branch
+ * @param {string} repo
+ * @param {string} sha
+ * @returns {Promise.<boolean>} - Whether it is an ancestor or not
+ * @rejects {ExecuteError}
+ */ module.exports = async function(sim, branch, repo, sha) {
+    winston.info(`Checking whether ${repo} has commit ${sha} in its tree for the branch ${branch} of ${sim}`);
+    await gitCheckout(sim, branch);
+    const dependencies = await getDependencies(sim);
+    if (!dependencies[repo]) {
+        return false;
+    }
+    const repoSHA = dependencies[repo].sha;
+    const isAncestor = await gitIsAncestor(repo, sha, repoSHA);
+    await gitCheckout(sim, 'main');
+    return isAncestor;
+};
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3BlcmVubmlhbC1hbGlhcy9qcy9jb21tb24vaGFzQW5jZXN0b3JPbkJyYW5jaC5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBDb3B5cmlnaHQgMjAxOC0yMDI2LCBVbml2ZXJzaXR5IG9mIENvbG9yYWRvIEJvdWxkZXJcblxuLyoqXG4gKiBDaGVja3Mgd2hldGhlciBhIHNpbSBicmFuY2gncyBkZXBlbmRlbmN5IGhhcyBhbiBhbmNlc3RvciBjb21taXQgaW4gaXRzIHRyZWUuXG4gKlxuICogQGF1dGhvciBKb25hdGhhbiBPbHNvbiAoUGhFVCBJbnRlcmFjdGl2ZSBTaW11bGF0aW9ucylcbiAqL1xuXG5jb25zdCBnZXREZXBlbmRlbmNpZXMgPSByZXF1aXJlKCAnLi9nZXREZXBlbmRlbmNpZXMnICk7XG5jb25zdCBnaXRDaGVja291dCA9IHJlcXVpcmUoICcuL2dpdENoZWNrb3V0JyApO1xuY29uc3QgZ2l0SXNBbmNlc3RvciA9IHJlcXVpcmUoICcuL2dpdElzQW5jZXN0b3InICk7XG5jb25zdCB3aW5zdG9uID0gcmVxdWlyZSggJ3dpbnN0b24nICk7XG5cbi8qKlxuICogQ2hlY2tzIHdoZXRoZXIgYSBzaW0gYnJhbmNoJ3MgZGVwZW5kZW5jeSBoYXMgYW4gYW5jZXN0b3IgY29tbWl0IGluIGl0cyB0cmVlLlxuICogQHB1YmxpY1xuICpcbiAqIEBwYXJhbSB7c3RyaW5nfSBzaW1cbiAqIEBwYXJhbSB7c3RyaW5nfSBicmFuY2hcbiAqIEBwYXJhbSB7c3RyaW5nfSByZXBvXG4gKiBAcGFyYW0ge3N0cmluZ30gc2hhXG4gKiBAcmV0dXJucyB7UHJvbWlzZS48Ym9vbGVhbj59IC0gV2hldGhlciBpdCBpcyBhbiBhbmNlc3RvciBvciBub3RcbiAqIEByZWplY3RzIHtFeGVjdXRlRXJyb3J9XG4gKi9cbm1vZHVsZS5leHBvcnRzID0gYXN5bmMgZnVuY3Rpb24oIHNpbSwgYnJhbmNoLCByZXBvLCBzaGEgKSB7XG4gIHdpbnN0b24uaW5mbyggYENoZWNraW5nIHdoZXRoZXIgJHtyZXBvfSBoYXMgY29tbWl0ICR7c2hhfSBpbiBpdHMgdHJlZSBmb3IgdGhlIGJyYW5jaCAke2JyYW5jaH0gb2YgJHtzaW19YCApO1xuXG4gIGF3YWl0IGdpdENoZWNrb3V0KCBzaW0sIGJyYW5jaCApO1xuICBjb25zdCBkZXBlbmRlbmNpZXMgPSBhd2FpdCBnZXREZXBlbmRlbmNpZXMoIHNpbSApO1xuXG4gIGlmICggIWRlcGVuZGVuY2llc1sgcmVwbyBdICkge1xuICAgIHJldHVybiBmYWxzZTtcbiAgfVxuICBjb25zdCByZXBvU0hBID0gZGVwZW5kZW5jaWVzWyByZXBvIF0uc2hhO1xuXG4gIGNvbnN0IGlzQW5jZXN0b3IgPSBhd2FpdCBnaXRJc0FuY2VzdG9yKCByZXBvLCBzaGEsIHJlcG9TSEEgKTtcbiAgYXdhaXQgZ2l0Q2hlY2tvdXQoIHNpbSwgJ21haW4nICk7XG5cbiAgcmV0dXJuIGlzQW5jZXN0b3I7XG59OyJdLCJuYW1lcyI6WyJnZXREZXBlbmRlbmNpZXMiLCJyZXF1aXJlIiwiZ2l0Q2hlY2tvdXQiLCJnaXRJc0FuY2VzdG9yIiwid2luc3RvbiIsIm1vZHVsZSIsImV4cG9ydHMiLCJzaW0iLCJicmFuY2giLCJyZXBvIiwic2hhIiwiaW5mbyIsImRlcGVuZGVuY2llcyIsInJlcG9TSEEiLCJpc0FuY2VzdG9yIl0sIm1hcHBpbmdzIjoiQUFBQSxzREFBc0Q7QUFFdEQ7Ozs7Q0FJQyxHQUVELE1BQU1BLGtCQUFrQkMsUUFBUztBQUNqQyxNQUFNQyxjQUFjRCxRQUFTO0FBQzdCLE1BQU1FLGdCQUFnQkYsUUFBUztBQUMvQixNQUFNRyxVQUFVSCxRQUFTO0FBRXpCOzs7Ozs7Ozs7O0NBVUMsR0FDREksT0FBT0MsT0FBTyxHQUFHLGVBQWdCQyxHQUFHLEVBQUVDLE1BQU0sRUFBRUMsSUFBSSxFQUFFQyxHQUFHO0lBQ3JETixRQUFRTyxJQUFJLENBQUUsQ0FBQyxpQkFBaUIsRUFBRUYsS0FBSyxZQUFZLEVBQUVDLElBQUksNEJBQTRCLEVBQUVGLE9BQU8sSUFBSSxFQUFFRCxLQUFLO0lBRXpHLE1BQU1MLFlBQWFLLEtBQUtDO0lBQ3hCLE1BQU1JLGVBQWUsTUFBTVosZ0JBQWlCTztJQUU1QyxJQUFLLENBQUNLLFlBQVksQ0FBRUgsS0FBTSxFQUFHO1FBQzNCLE9BQU87SUFDVDtJQUNBLE1BQU1JLFVBQVVELFlBQVksQ0FBRUgsS0FBTSxDQUFDQyxHQUFHO0lBRXhDLE1BQU1JLGFBQWEsTUFBTVgsY0FBZU0sTUFBTUMsS0FBS0c7SUFDbkQsTUFBTVgsWUFBYUssS0FBSztJQUV4QixPQUFPTztBQUNUIn0=

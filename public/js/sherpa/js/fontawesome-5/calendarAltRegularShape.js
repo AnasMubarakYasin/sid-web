@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import calendarAltRegularString from"./calendarAltRegularString.js";export default new Shape(calendarAltRegularString).makeImmutable();

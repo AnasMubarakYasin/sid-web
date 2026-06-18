@@ -1,0 +1,1 @@
+import sceneryPhet from"../../sceneryPhet.js";export default class GrabDragUsageTracker{reset(){this.numberOfGrabs=0;this.numberOfKeyboardGrabs=0;this.shouldShowDragCue=true}constructor(){this.numberOfGrabs=0;this.numberOfKeyboardGrabs=0;this.shouldShowDragCue=true}}sceneryPhet.register("GrabDragUsageTracker",GrabDragUsageTracker);

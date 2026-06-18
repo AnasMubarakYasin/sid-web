@@ -1,0 +1,1 @@
+import{QueryStringMachine}from"../../../query-string-machine/js/QueryStringMachineModule.js";const NUMBER_OF_GAME_LEVELS=5;export{NUMBER_OF_GAME_LEVELS};const tamboQueryParameters=QueryStringMachine.getAll({});export default tamboQueryParameters;

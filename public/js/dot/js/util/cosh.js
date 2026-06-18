@@ -1,0 +1,1 @@
+import dot from"../dot.js";export function cosh(value){return(Math.exp(value)+Math.exp(-value))/2}dot.register("cosh",cosh);

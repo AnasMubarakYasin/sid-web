@@ -1,0 +1,18 @@
+// Copyright 2017-2026, University of Colorado Boulder
+/**
+ * npm update
+ *
+ * @author Jonathan Olson (PhET Interactive Simulations)
+ */ const npmUpdateDirectory = require('./npmUpdateDirectory');
+/**
+ * Executes an effective "npm install", ensuring that the node_modules versions match package.json (and the lock file if present).
+ * @public
+ *
+ * @param {string} repo - The repository name
+ * @param {{ clean?: boolean, minimal?: boolean }} [options]
+ * @returns {Promise}
+ */ module.exports = async function(repo, options) {
+    await npmUpdateDirectory(`../${repo}`, options);
+};
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3BlcmVubmlhbC1hbGlhcy9qcy9jb21tb24vbnBtVXBkYXRlLmpzIl0sInNvdXJjZXNDb250ZW50IjpbIi8vIENvcHlyaWdodCAyMDE3LTIwMjYsIFVuaXZlcnNpdHkgb2YgQ29sb3JhZG8gQm91bGRlclxuXG4vKipcbiAqIG5wbSB1cGRhdGVcbiAqXG4gKiBAYXV0aG9yIEpvbmF0aGFuIE9sc29uIChQaEVUIEludGVyYWN0aXZlIFNpbXVsYXRpb25zKVxuICovXG5cbmNvbnN0IG5wbVVwZGF0ZURpcmVjdG9yeSA9IHJlcXVpcmUoICcuL25wbVVwZGF0ZURpcmVjdG9yeScgKTtcblxuLyoqXG4gKiBFeGVjdXRlcyBhbiBlZmZlY3RpdmUgXCJucG0gaW5zdGFsbFwiLCBlbnN1cmluZyB0aGF0IHRoZSBub2RlX21vZHVsZXMgdmVyc2lvbnMgbWF0Y2ggcGFja2FnZS5qc29uIChhbmQgdGhlIGxvY2sgZmlsZSBpZiBwcmVzZW50KS5cbiAqIEBwdWJsaWNcbiAqXG4gKiBAcGFyYW0ge3N0cmluZ30gcmVwbyAtIFRoZSByZXBvc2l0b3J5IG5hbWVcbiAqIEBwYXJhbSB7eyBjbGVhbj86IGJvb2xlYW4sIG1pbmltYWw/OiBib29sZWFuIH19IFtvcHRpb25zXVxuICogQHJldHVybnMge1Byb21pc2V9XG4gKi9cbm1vZHVsZS5leHBvcnRzID0gYXN5bmMgZnVuY3Rpb24oIHJlcG8sIG9wdGlvbnMgKSB7XG4gIGF3YWl0IG5wbVVwZGF0ZURpcmVjdG9yeSggYC4uLyR7cmVwb31gLCBvcHRpb25zICk7XG59OyJdLCJuYW1lcyI6WyJucG1VcGRhdGVEaXJlY3RvcnkiLCJyZXF1aXJlIiwibW9kdWxlIiwiZXhwb3J0cyIsInJlcG8iLCJvcHRpb25zIl0sIm1hcHBpbmdzIjoiQUFBQSxzREFBc0Q7QUFFdEQ7Ozs7Q0FJQyxHQUVELE1BQU1BLHFCQUFxQkMsUUFBUztBQUVwQzs7Ozs7OztDQU9DLEdBQ0RDLE9BQU9DLE9BQU8sR0FBRyxlQUFnQkMsSUFBSSxFQUFFQyxPQUFPO0lBQzVDLE1BQU1MLG1CQUFvQixDQUFDLEdBQUcsRUFBRUksTUFBTSxFQUFFQztBQUMxQyJ9

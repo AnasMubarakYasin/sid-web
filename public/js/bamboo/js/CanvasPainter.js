@@ -1,0 +1,1 @@
+import optionize from"../../phet-core/js/optionize.js";let CanvasPainter=class CanvasPainter{constructor(providedOptions){const options=optionize()({visible:true},providedOptions);this.visible=options.visible;this.isDisposed=false}};export default CanvasPainter;

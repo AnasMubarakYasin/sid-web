@@ -1,0 +1,1 @@
+import dot from"../dot.js";export function toRadians(degrees){return Math.PI*degrees/180}dot.register("toRadians",toRadians);

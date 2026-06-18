@@ -1,0 +1,1 @@
+import fs from"fs";import winston from"winston";export const loadJSON=async file=>{return new Promise((resolve,reject)=>{winston.debug(`Loading JSON from ${file}`);fs.readFile(file,"utf8",(err,data)=>{if(err){winston.error(`Error occurred reading version from json at ${file}: ${err}`);reject(new Error(`${err}`))}else{resolve(JSON.parse(data))}})})};

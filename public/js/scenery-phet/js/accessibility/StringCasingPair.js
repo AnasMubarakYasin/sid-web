@@ -1,0 +1,1 @@
+import sceneryPhet from"../sceneryPhet.js";export default class StringCasingPair{constructor(lowercase,capitalized){this.lowercase=lowercase;this.capitalized=capitalized}}sceneryPhet.register("StringCasingPair",StringCasingPair);

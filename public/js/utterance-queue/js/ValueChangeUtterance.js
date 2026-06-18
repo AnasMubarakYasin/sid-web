@@ -1,0 +1,1 @@
+import optionize from"../../phet-core/js/optionize.js";import Utterance from"./Utterance.js";let ValueChangeUtterance=class ValueChangeUtterance extends Utterance{constructor(providedOptions){const options=optionize()({alertDelay:1e3},providedOptions);super(options)}};export default ValueChangeUtterance;

@@ -1,0 +1,1 @@
+import dot from"../dot.js";export function log10(val){return Math.log(val)/Math.LN10}dot.register("log10",log10);

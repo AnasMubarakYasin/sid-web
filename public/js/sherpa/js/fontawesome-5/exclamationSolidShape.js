@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import exclamationSolidString from"./exclamationSolidString.js";export default new Shape(exclamationSolidString).makeImmutable();

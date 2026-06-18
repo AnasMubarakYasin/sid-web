@@ -1,0 +1,1 @@
+import brand from"../../js/brand.js";import logo_png from"../images/logo_png.js";import logoOnWhite_png from"../images/logoOnWhite_png.js";const Brand={id:"adapted-from-phet",name:null,copyright:null,getLinks:function(){return[]},logoOnBlackBackground:logo_png,logoOnWhiteBackground:logoOnWhite_png};brand.register("Brand",Brand);export default Brand;

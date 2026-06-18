@@ -1,0 +1,1 @@
+import scenery from"../scenery.js";let globalId=1;export default class Paint{constructor(){this.id=`paint${globalId++}`;this.transformMatrix=null}setTransformMatrix(transformMatrix){if(this.transformMatrix!==transformMatrix){this.transformMatrix=transformMatrix}return this}toString(){return this.id}}Paint.prototype.isPaint=true;scenery.register("Paint",Paint);

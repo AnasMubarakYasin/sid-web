@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import eyeSlashSolidString from"./eyeSlashSolidString.js";export default new Shape(eyeSlashSolidString).makeImmutable();

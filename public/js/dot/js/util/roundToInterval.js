@@ -1,0 +1,1 @@
+import dot from"../dot.js";import{roundSymmetric}from"./roundSymmetric.js";import{toFixedNumber}from"./toFixedNumber.js";import{numberOfDecimalPlaces}from"./numberOfDecimalPlaces.js";export function roundToInterval(value,interval){return toFixedNumber(roundSymmetric(value/interval)*interval,numberOfDecimalPlaces(interval))}dot.register("roundToInterval",roundToInterval);

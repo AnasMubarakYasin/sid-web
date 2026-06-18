@@ -1,0 +1,1 @@
+import fs from"fs";import getRepo from"../../../../perennial-alias/js/grunt/tasks/util/getRepo.js";export const cleanPromise=(async()=>{const repo=getRepo();const buildDirectory=`../${repo}/build`;if(fs.existsSync(buildDirectory)){fs.rmSync(buildDirectory,{recursive:true,force:true})}fs.mkdirSync(buildDirectory,{recursive:true})})();

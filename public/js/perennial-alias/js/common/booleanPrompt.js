@@ -1,0 +1,1 @@
+import{prompt}from"./prompt.js";export const booleanPrompt=async(question,noninteractive)=>{if(noninteractive){return true}const answer=await prompt(`${question} [y/N]?`);return!/[Nn]/.test(answer)&&/[Yy]/.test(answer)};

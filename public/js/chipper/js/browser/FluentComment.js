@@ -1,0 +1,1 @@
+export default class FluentComment{constructor(data){this.comment=data.comment;this.associatedKey=data.associatedKey}toString(){return this.comment}}

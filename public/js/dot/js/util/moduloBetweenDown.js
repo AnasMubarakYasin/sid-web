@@ -1,0 +1,1 @@
+import dot from"../dot.js";export function moduloBetweenDown(value,min,max){assert&&assert(max>min,"max > min required for moduloBetween");const divisor=max-min;let partial=(value-min)%divisor;if(partial<0){partial+=divisor}return partial+min}dot.register("moduloBetweenDown",moduloBetweenDown);

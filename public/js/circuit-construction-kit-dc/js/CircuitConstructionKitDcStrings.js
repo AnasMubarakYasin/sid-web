@@ -1,0 +1,1 @@
+import getStringModule from"../../chipper/js/browser/getStringModule.js";import circuitConstructionKitDc from"./circuitConstructionKitDc.js";const CircuitConstructionKitDcStrings=getStringModule("CIRCUIT_CONSTRUCTION_KIT_DC");circuitConstructionKitDc.register("CircuitConstructionKitDcStrings",CircuitConstructionKitDcStrings);export default CircuitConstructionKitDcStrings;

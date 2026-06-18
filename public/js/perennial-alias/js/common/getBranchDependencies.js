@@ -1,0 +1,1 @@
+const getFileAtBranch=require("./getFileAtBranch");module.exports=async function(repo,branch){return JSON.parse(await getFileAtBranch(repo,branch,"dependencies.json"))};

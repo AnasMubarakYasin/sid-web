@@ -1,0 +1,1 @@
+import TinyProperty from"../../axon/js/TinyProperty.js";const isResettingAllProperty=new TinyProperty(false);export default isResettingAllProperty;

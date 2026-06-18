@@ -1,0 +1,1 @@
+import esbuild from"esbuild";export default async function bundle(file,esbuildOptions){esbuildOptions={...esbuildOptions,entryPoints:typeof file==="string"?[file]:file,bundle:true,format:"iife",sourcemap:"inline",write:false};return esbuild.build(esbuildOptions)}

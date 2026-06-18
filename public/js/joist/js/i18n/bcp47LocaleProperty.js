@@ -1,0 +1,1 @@
+import DerivedProperty from"../../../axon/js/DerivedProperty.js";import joist from"../joist.js";import localeProperty from"./localeProperty.js";const bcp47LocaleProperty=new DerivedProperty([localeProperty],locale=>{return phet.chipper.localeData[locale].bcp47});joist.register("bcp47LocaleProperty",bcp47LocaleProperty);export default bcp47LocaleProperty;

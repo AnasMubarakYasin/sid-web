@@ -1,0 +1,1 @@
+import Shape from"../../kite/js/Shape.js";import sceneryPhet from"./sceneryPhet.js";export default class PlayIconShape extends Shape{constructor(width,height){super();this.moveTo(0,0);this.lineTo(width,height/2);this.lineTo(0,height);this.close()}}sceneryPhet.register("PlayIconShape",PlayIconShape);

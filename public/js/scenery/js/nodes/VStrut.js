@@ -1,0 +1,1 @@
+import scenery from"../scenery.js";import Spacer from"../nodes/Spacer.js";export default class VStrut extends Spacer{constructor(height,options){super(0,height,options)}}scenery.register("VStrut",VStrut);

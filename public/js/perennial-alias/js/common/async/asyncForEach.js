@@ -1,0 +1,1 @@
+export const asyncForEach=async(list,f)=>{let index=0;for(const item of list){await f(item,index++)}};

@@ -1,0 +1,11 @@
+/**
+ * @fileoverview Rule that checks for missing return types on method definitions and function declarations for
+ * TypeScript files.
+ *
+ * We could not use the built-in rule explicit-function-return-type because it does not support a way to skip functions
+ * defined in a variable declaration. Functions defined like this typically have a local usage scope, and the team
+ * decided that we don't need them to have a return type.
+ *
+ * @author Jesse Greenberg (PhET Interactive Simulations)
+ * @copyright 2022 University of Colorado Boulder
+ */const{ESLintUtils}=require("@typescript-eslint/utils");const exemptMethods=["get","set","constructor"];const getReturnTypeString=(context,node)=>{const parserServices=ESLintUtils.getParserServices(context);const checker=parserServices.program.getTypeChecker();const tsNode=parserServices.esTreeNodeToTSNodeMap.get(node);const signature=checker.getSignatureFromDeclaration(tsNode);const returnType=checker.getReturnTypeOfSignature(signature);return checker.typeToString(returnType)};const insertReturnType=(functionBody,returnTypeString,fixer)=>{if(functionBody){const bodyStartLocation=functionBody.range[0];if(returnTypeString!=="any"&&!["Image","Range","Text","Node","Event"].includes(returnTypeString)&&!returnTypeString.includes("Property")){return fixer.insertTextBeforeRange([bodyStartLocation-1,bodyStartLocation],`: ${returnTypeString} `)}}return false};module.exports={meta:{type:"problem",fixable:"code"},create:context=>{return{FunctionDeclaration:node=>{if(!node.returnType){context.report({message:"Missing return type.",node:node,fix:fixer=>{const returnTypeString=getReturnTypeString(context,node);return insertReturnType(node.body,returnTypeString,fixer)}})}},MethodDefinition:node=>{if(!exemptMethods.includes(node.kind)&&node.value&&!node.value.returnType){context.report({message:"Missing return type.",node:node,fix:fixer=>{const returnTypeString=getReturnTypeString(context,node);return insertReturnType(node.value.body,returnTypeString,fixer)}})}}}}};

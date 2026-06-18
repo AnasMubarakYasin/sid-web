@@ -1,0 +1,1 @@
+import RichText from"../../nodes/RichText.js";import Text from"../../nodes/Text.js";export const findStringProperty=node=>{if(node instanceof Text||node instanceof RichText){return node.stringProperty}if(node.children){for(const child of node.children){const text=findStringProperty(child);if(text){return text}}}return null};

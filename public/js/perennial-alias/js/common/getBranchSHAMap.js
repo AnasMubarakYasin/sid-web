@@ -1,0 +1,1 @@
+import winston from"winston";import{gitImmutableExecute}from"./git/gitMutex.js";export const getBranchSHAMap=async()=>{winston.debug("retrieving branches");const map={};(await gitImmutableExecute(["ls-remote"],"..")).split("\n").forEach(line=>{const match=line.trim().match(/^(\S+)\s+refs\/heads\/(\S+)$/);if(match){map[match[2]]=match[1]}});return map};

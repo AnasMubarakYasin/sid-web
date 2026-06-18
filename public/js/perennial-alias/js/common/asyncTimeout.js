@@ -1,0 +1,23 @@
+// Copyright 2025, University of Colorado Boulder
+/**
+ * Returns a Promise that resolves either from the provided Promise, or from a timeout Promise that rejects after the
+ * provided time (in ms).
+ *
+ * @author Michael Kauzmann (PhET Interactive Simulations)
+ */ import sleep from './sleep.js';
+// When using "catch" around asyncTimeout, you can see if this is the error message and handle it differently than a
+// problem from the provided Promise.
+export const timeoutErrorMessage = 'TIMEOUT_ERROR';
+const asyncTimeout = async (timeout, promise)=>{
+    const timeoutPromise = (async ()=>{
+        await sleep(timeout);
+        throw new Error(timeoutErrorMessage);
+    })();
+    return Promise.race([
+        promise,
+        timeoutPromise
+    ]);
+};
+export default asyncTimeout;
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3BlcmVubmlhbC1hbGlhcy9qcy9jb21tb24vYXN5bmNUaW1lb3V0LnRzIl0sInNvdXJjZXNDb250ZW50IjpbIi8vIENvcHlyaWdodCAyMDI1LCBVbml2ZXJzaXR5IG9mIENvbG9yYWRvIEJvdWxkZXJcblxuLyoqXG4gKiBSZXR1cm5zIGEgUHJvbWlzZSB0aGF0IHJlc29sdmVzIGVpdGhlciBmcm9tIHRoZSBwcm92aWRlZCBQcm9taXNlLCBvciBmcm9tIGEgdGltZW91dCBQcm9taXNlIHRoYXQgcmVqZWN0cyBhZnRlciB0aGVcbiAqIHByb3ZpZGVkIHRpbWUgKGluIG1zKS5cbiAqXG4gKiBAYXV0aG9yIE1pY2hhZWwgS2F1em1hbm4gKFBoRVQgSW50ZXJhY3RpdmUgU2ltdWxhdGlvbnMpXG4gKi9cblxuaW1wb3J0IHNsZWVwIGZyb20gJy4vc2xlZXAuanMnO1xuXG4vLyBXaGVuIHVzaW5nIFwiY2F0Y2hcIiBhcm91bmQgYXN5bmNUaW1lb3V0LCB5b3UgY2FuIHNlZSBpZiB0aGlzIGlzIHRoZSBlcnJvciBtZXNzYWdlIGFuZCBoYW5kbGUgaXQgZGlmZmVyZW50bHkgdGhhbiBhXG4vLyBwcm9ibGVtIGZyb20gdGhlIHByb3ZpZGVkIFByb21pc2UuXG5leHBvcnQgY29uc3QgdGltZW91dEVycm9yTWVzc2FnZSA9ICdUSU1FT1VUX0VSUk9SJztcblxuY29uc3QgYXN5bmNUaW1lb3V0ID0gYXN5bmMgPFQ+KCB0aW1lb3V0OiBudW1iZXIsIHByb21pc2U6IFByb21pc2U8VD4gKTogUHJvbWlzZTxUPiA9PiB7XG5cbiAgY29uc3QgdGltZW91dFByb21pc2UgPSAoIGFzeW5jICgpID0+IHtcbiAgICBhd2FpdCBzbGVlcCggdGltZW91dCApO1xuICAgIHRocm93IG5ldyBFcnJvciggdGltZW91dEVycm9yTWVzc2FnZSApO1xuICB9ICkoKTtcblxuICByZXR1cm4gUHJvbWlzZS5yYWNlKCBbIHByb21pc2UsIHRpbWVvdXRQcm9taXNlIF0gKTtcbn07XG5cbmV4cG9ydCBkZWZhdWx0IGFzeW5jVGltZW91dDsiXSwibmFtZXMiOlsic2xlZXAiLCJ0aW1lb3V0RXJyb3JNZXNzYWdlIiwiYXN5bmNUaW1lb3V0IiwidGltZW91dCIsInByb21pc2UiLCJ0aW1lb3V0UHJvbWlzZSIsIkVycm9yIiwiUHJvbWlzZSIsInJhY2UiXSwibWFwcGluZ3MiOiJBQUFBLGlEQUFpRDtBQUVqRDs7Ozs7Q0FLQyxHQUVELE9BQU9BLFdBQVcsYUFBYTtBQUUvQixvSEFBb0g7QUFDcEgscUNBQXFDO0FBQ3JDLE9BQU8sTUFBTUMsc0JBQXNCLGdCQUFnQjtBQUVuRCxNQUFNQyxlQUFlLE9BQVdDLFNBQWlCQztJQUUvQyxNQUFNQyxpQkFBaUIsQUFBRSxDQUFBO1FBQ3ZCLE1BQU1MLE1BQU9HO1FBQ2IsTUFBTSxJQUFJRyxNQUFPTDtJQUNuQixDQUFBO0lBRUEsT0FBT00sUUFBUUMsSUFBSSxDQUFFO1FBQUVKO1FBQVNDO0tBQWdCO0FBQ2xEO0FBRUEsZUFBZUgsYUFBYSJ9

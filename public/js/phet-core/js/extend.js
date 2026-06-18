@@ -1,0 +1,1 @@
+import phetCore from"./phetCore.js";import _ from"../../sherpa/js/lodash.js";function extend(obj,...sources){_.each(sources,source=>{if(source){for(const prop in source){Object.defineProperty(obj,prop,Object.getOwnPropertyDescriptor(source,prop))}}});return obj}phetCore.register("extend",extend);export default extend;

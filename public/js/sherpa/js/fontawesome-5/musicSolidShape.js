@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import musicSolidString from"./musicSolidString.js";export default new Shape(musicSolidString).makeImmutable();

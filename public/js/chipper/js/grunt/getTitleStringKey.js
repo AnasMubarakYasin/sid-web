@@ -1,0 +1,1 @@
+import{readFileSync}from"fs";export default function getTitleStringKey(repo){const packageObject=JSON.parse(readFileSync(`../${repo}/package.json`,"utf8"));return`${packageObject.phet.requirejsNamespace}/${repo}.title`}

@@ -1,0 +1,1 @@
+export const npxCommand=process.platform.startsWith("win")?"npx.cmd":"npx";

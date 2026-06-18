@@ -1,0 +1,1 @@
+import{devSsh}from"./devSsh.js";export const devAccessAvailable=async()=>{try{await devSsh("ls");return true}catch(e){return false}};

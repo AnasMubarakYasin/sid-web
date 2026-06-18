@@ -1,0 +1,1 @@
+import simEslintConfig from"./sim.eslint.config.mjs";export default[...simEslintConfig,{rules:{"phet/bad-phet-library-text":"error"}}];

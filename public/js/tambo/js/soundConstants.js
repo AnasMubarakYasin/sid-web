@@ -1,0 +1,1 @@
+const soundConstants={DEFAULT_PARAM_CHANGE_TIME_CONSTANT:.015,DEFAULT_LINEAR_GAIN_CHANGE_TIME:.1,TWELFTH_ROOT_OF_TWO:Math.pow(2,1/12)};export default soundConstants;

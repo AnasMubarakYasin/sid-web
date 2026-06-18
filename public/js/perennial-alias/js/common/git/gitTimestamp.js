@@ -1,0 +1,1 @@
+import{gitImmutableExecute}from"./gitMutex.js";export const gitTimestamp=async target=>{return gitImmutableExecute(["show","-s","--format=%ad","--date=iso",target],"..").then(stdout=>{return Promise.resolve(new Date(stdout.trim()).getTime())})};

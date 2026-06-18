@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import volumeDownSolidString from"./volumeDownSolidString.js";export default new Shape(volumeDownSolidString).makeImmutable();

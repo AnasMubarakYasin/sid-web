@@ -1,0 +1,1 @@
+import axon from"./axon.js";import Timer from"./Timer.js";const animationFrameTimer=new Timer;axon.register("animationFrameTimer",animationFrameTimer);export default animationFrameTimer;

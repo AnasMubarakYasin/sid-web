@@ -1,0 +1,1 @@
+export const gruntCommand=process.platform.startsWith("win")?"grunt.cmd":"grunt";

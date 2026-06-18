@@ -1,0 +1,1 @@
+const fs=require("fs");const path=require("path");const perennialAliasRoot=path.resolve(__dirname,"..","..");const isTotality=!fs.existsSync(path.join(perennialAliasRoot,".git"));module.exports=isTotality;

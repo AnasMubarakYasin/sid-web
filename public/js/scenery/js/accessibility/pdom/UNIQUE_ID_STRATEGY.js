@@ -1,0 +1,1 @@
+import PDOMUniqueIdStrategy from"./PDOMUniqueIdStrategy.js";const UNIQUE_ID_STRATEGY=PDOMUniqueIdStrategy.TRAIL_ID;export default UNIQUE_ID_STRATEGY;

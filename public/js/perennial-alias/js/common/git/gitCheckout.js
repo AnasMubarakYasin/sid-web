@@ -1,0 +1,1 @@
+import{gitCheckoutDirectory}from"./gitCheckoutDirectory.js";export const gitCheckout=async target=>{return gitCheckoutDirectory(target,"..")};

@@ -1,0 +1,1 @@
+import tandemNamespace from"./tandemNamespace.js";let CouldNotYetDeserializeError=class CouldNotYetDeserializeError extends Error{constructor(){super("CouldNotYetDeserializeError")}};tandemNamespace.register("CouldNotYetDeserializeError",CouldNotYetDeserializeError);export default CouldNotYetDeserializeError;

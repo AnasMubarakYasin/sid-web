@@ -1,0 +1,1 @@
+export const richTextContentToString=(content,isLTR)=>{const unescapedContent=he.decode(content);return isLTR===undefined?unescapedContent:`${isLTR?"‪":"‫"}${unescapedContent}\u202c`};

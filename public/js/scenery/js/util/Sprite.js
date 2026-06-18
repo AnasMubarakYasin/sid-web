@@ -1,0 +1,1 @@
+import Property from"../../../axon/js/Property.js";import scenery from"../scenery.js";export default class Sprite{constructor(spriteImage){this.imageProperty=new Property(spriteImage)}getShape(){return this.imageProperty.value.getShape()}containsPoint(point){return this.imageProperty.value.containsPoint(point)}}scenery.register("Sprite",Sprite);

@@ -1,0 +1,1 @@
+import _ from"lodash";async function callbackOnWorkers(items,callback,providedOptions){const options=_.assignIn({workers:8},providedOptions);const worker=async()=>{while(true){if(items.length===0){break}const item=items.shift();await callback(item)}};return Promise.allSettled(_.times(options.workers,()=>worker()))}export default callbackOnWorkers;

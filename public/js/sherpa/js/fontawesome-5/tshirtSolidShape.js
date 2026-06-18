@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import tshirtSolidString from"./tshirtSolidString.js";export default new Shape(tshirtSolidString).makeImmutable();

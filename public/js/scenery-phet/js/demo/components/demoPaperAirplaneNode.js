@@ -1,0 +1,1 @@
+import PaperAirplaneNode from"../../PaperAirplaneNode.js";export default function demoPaperAirplaneNode(layoutBounds){return new PaperAirplaneNode({center:layoutBounds.center,scale:5})}

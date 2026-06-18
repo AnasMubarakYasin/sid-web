@@ -1,0 +1,1 @@
+import ToggleNode from"./ToggleNode.js";export default class BooleanToggleNode extends ToggleNode{constructor(booleanProperty,trueNode,falseNode,providedOptions){super(booleanProperty,[{value:true,createNode:()=>trueNode},{value:false,createNode:()=>falseNode}],providedOptions)}}

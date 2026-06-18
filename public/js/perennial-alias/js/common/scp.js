@@ -1,0 +1,1 @@
+import execute from"./execute.js";import winston from"winston";export const scp=async(username,host,localFile,remoteFile)=>{winston.info(`transferring ${localFile} remotely to ${remoteFile} on ${host} from ${await execute("pwd",[],".")}`);return execute("scp",["-r",localFile,`${username}@${host}:${remoteFile}`],".")};

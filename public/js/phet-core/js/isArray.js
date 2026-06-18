@@ -1,0 +1,1 @@
+import phetCore from"./phetCore.js";function isArray(array){return Object.prototype.toString.call(array)==="[object Array]"}phetCore.register("isArray",isArray);export default isArray;

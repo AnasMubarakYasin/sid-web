@@ -1,0 +1,1 @@
+import phetCore from"./phetCore.js";const PhysicalConstants={GRAVITATIONAL_CONSTANT:66743e-15,GRAVITY_ON_EARTH:9.81};phetCore.register("PhysicalConstants",PhysicalConstants);export default PhysicalConstants;

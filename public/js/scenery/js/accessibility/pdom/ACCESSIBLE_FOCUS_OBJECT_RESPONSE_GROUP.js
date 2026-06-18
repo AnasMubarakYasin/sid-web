@@ -1,0 +1,1 @@
+export const ACCESSIBLE_FOCUS_OBJECT_RESPONSE_GROUP="accessibleFocusObjectResponse";

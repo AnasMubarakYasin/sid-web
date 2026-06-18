@@ -1,0 +1,1 @@
+import getRepo from"../../../../perennial-alias/js/grunt/tasks/util/getRepo.js";import _reportMedia from"../reportMedia.js";const repo=getRepo();export const reportMediaPromise=(async()=>{await _reportMedia(repo)})();

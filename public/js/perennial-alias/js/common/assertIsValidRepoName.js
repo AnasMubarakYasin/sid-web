@@ -1,0 +1,16 @@
+// Copyright 2021-2026, University of Colorado Boulder
+/**
+ * Fails with an assertion if the string is not a valid repo name. See https://github.com/phetsims/chipper/issues/1034.
+ *
+ * @author Jonathan Olson (PhET Interactive Simulations)
+ */ const assert = require('assert');
+/**
+ * Fails with an assertion if the string is not a valid repo name. See https://github.com/phetsims/chipper/issues/1034.
+ *
+ * @param {string} repo
+ */ const assertIsValidRepoName = (repo)=>{
+    assert(typeof repo === 'string' && /^[a-z]+(-[a-z]+)*$/u.test(repo), 'repo name should be composed of lowercase a-z characters, optionally with dashes used as separators');
+};
+module.exports = assertIsValidRepoName;
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3BlcmVubmlhbC1hbGlhcy9qcy9jb21tb24vYXNzZXJ0SXNWYWxpZFJlcG9OYW1lLmpzIl0sInNvdXJjZXNDb250ZW50IjpbIi8vIENvcHlyaWdodCAyMDIxLTIwMjYsIFVuaXZlcnNpdHkgb2YgQ29sb3JhZG8gQm91bGRlclxuXG4vKipcbiAqIEZhaWxzIHdpdGggYW4gYXNzZXJ0aW9uIGlmIHRoZSBzdHJpbmcgaXMgbm90IGEgdmFsaWQgcmVwbyBuYW1lLiBTZWUgaHR0cHM6Ly9naXRodWIuY29tL3BoZXRzaW1zL2NoaXBwZXIvaXNzdWVzLzEwMzQuXG4gKlxuICogQGF1dGhvciBKb25hdGhhbiBPbHNvbiAoUGhFVCBJbnRlcmFjdGl2ZSBTaW11bGF0aW9ucylcbiAqL1xuXG5jb25zdCBhc3NlcnQgPSByZXF1aXJlKCAnYXNzZXJ0JyApO1xuXG4vKipcbiAqIEZhaWxzIHdpdGggYW4gYXNzZXJ0aW9uIGlmIHRoZSBzdHJpbmcgaXMgbm90IGEgdmFsaWQgcmVwbyBuYW1lLiBTZWUgaHR0cHM6Ly9naXRodWIuY29tL3BoZXRzaW1zL2NoaXBwZXIvaXNzdWVzLzEwMzQuXG4gKlxuICogQHBhcmFtIHtzdHJpbmd9IHJlcG9cbiAqL1xuY29uc3QgYXNzZXJ0SXNWYWxpZFJlcG9OYW1lID0gcmVwbyA9PiB7XG4gIGFzc2VydCggdHlwZW9mIHJlcG8gPT09ICdzdHJpbmcnICYmIC9eW2Etel0rKC1bYS16XSspKiQvdS50ZXN0KCByZXBvICksICdyZXBvIG5hbWUgc2hvdWxkIGJlIGNvbXBvc2VkIG9mIGxvd2VyY2FzZSBhLXogY2hhcmFjdGVycywgb3B0aW9uYWxseSB3aXRoIGRhc2hlcyB1c2VkIGFzIHNlcGFyYXRvcnMnICk7XG59O1xuXG5tb2R1bGUuZXhwb3J0cyA9IGFzc2VydElzVmFsaWRSZXBvTmFtZTsiXSwibmFtZXMiOlsiYXNzZXJ0IiwicmVxdWlyZSIsImFzc2VydElzVmFsaWRSZXBvTmFtZSIsInJlcG8iLCJ0ZXN0IiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUEsc0RBQXNEO0FBRXREOzs7O0NBSUMsR0FFRCxNQUFNQSxTQUFTQyxRQUFTO0FBRXhCOzs7O0NBSUMsR0FDRCxNQUFNQyx3QkFBd0JDLENBQUFBO0lBQzVCSCxPQUFRLE9BQU9HLFNBQVMsWUFBWSxzQkFBc0JDLElBQUksQ0FBRUQsT0FBUTtBQUMxRTtBQUVBRSxPQUFPQyxPQUFPLEdBQUdKIn0=

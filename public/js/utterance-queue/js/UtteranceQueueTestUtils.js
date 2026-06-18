@@ -1,0 +1,1 @@
+import stepTimer from"../../axon/js/stepTimer.js";const TIMING_BUFFER=300;let UtteranceQueueTestUtils=class UtteranceQueueTestUtils{static timeout(ms){return new Promise(resolve=>setTimeout(resolve,ms))}static async beforeEachTimingWorkarounds(){await UtteranceQueueTestUtils.timeout(TIMING_BUFFER*3);stepTimer.emit(TIMING_BUFFER*3)}};export default UtteranceQueueTestUtils;

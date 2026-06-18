@@ -1,0 +1,32 @@
+import "./simulation-conf";
+
+// import "../public/js/chipper/js/browser/load-unbuilt-strings.js";
+// import "../public/js/joist/js/splash.js";
+// import "../public/js/sherpa/lib/lodash-4.17.4.js";
+// import "../public/js/sherpa/lib/FileSaver-b8054a2.js";
+// import "../public/js/sherpa/lib/linebreak-1.1.0.js";
+// import "../public/js/sherpa/lib/flatqueue-1.2.1.js";
+// import "../public/js/sherpa/lib/paper-js-0.12.17.js";
+// import "../public/js/sherpa/lib/he-1.1.1.js";
+// import "../public/js/assert/js/assert.js";
+// import "../public/js/query-string-machine/js/QueryStringMachine.js";
+// import "../public/js/chipper/js/browser/initialize-globals.js";
+// import "../public/js/sherpa/lib/seedrandom-2.4.2.js";
+// import "../public/js/sherpa/lib/base64-js-1.2.0.js";
+// import "../public/js/sherpa/lib/TextEncoderLite-3c9f6f0.js";
+
+// import("../public/js/chipper/js/browser/load-unbuilt-strings.js");
+// import("../public/js/joist/js/splash.js");
+// import("../public/js/sherpa/lib/lodash-4.17.4.js");
+// import("../public/js/sherpa/lib/FileSaver-b8054a2.js");
+// import("../public/js/sherpa/lib/linebreak-1.1.0.js");
+// import("../public/js/sherpa/lib/flatqueue-1.2.1.js");
+// import("../public/js/sherpa/lib/paper-js-0.12.17.js");
+// import("../public/paper-full.js");
+// import("../public/js/sherpa/lib/he-1.1.1.js");
+// import("../public/js/assert/js/assert.js");
+// import("../public/js/query-string-machine/js/QueryStringMachine.js");
+// import("../public/js/chipper/js/browser/initialize-globals.js");
+// import("../public/js/sherpa/lib/seedrandom-2.4.2.js");
+// import("../public/js/sherpa/lib/base64-js-1.2.0.js");
+// import("../public/js/sherpa/lib/TextEncoderLite-3c9f6f0.js");

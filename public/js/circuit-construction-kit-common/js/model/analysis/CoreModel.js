@@ -1,0 +1,1 @@
+export default class CoreModel{constructor(id,node0,node1){this.id=id;this.node0=node0;this.node1=node1}}

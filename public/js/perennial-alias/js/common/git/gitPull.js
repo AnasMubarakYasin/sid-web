@@ -1,0 +1,1 @@
+import{gitPullDirectory}from"./gitPullDirectory.js";export const gitPull=async()=>gitPullDirectory("..");

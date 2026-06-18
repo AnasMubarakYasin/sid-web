@@ -1,0 +1,1 @@
+import scenery from"../scenery.js";export const scratchCanvas=document.createElement("canvas");scenery.register("scratchCanvas",scratchCanvas);export const scratchContext=scratchCanvas.getContext("2d");scenery.register("scratchContext",scratchContext);

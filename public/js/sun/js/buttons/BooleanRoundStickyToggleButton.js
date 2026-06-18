@@ -1,0 +1,1 @@
+import RoundStickyToggleButton from"./RoundStickyToggleButton.js";export default class BooleanRoundStickyToggleButton extends RoundStickyToggleButton{constructor(booleanProperty,providedOptions){super(booleanProperty,false,true,providedOptions)}}

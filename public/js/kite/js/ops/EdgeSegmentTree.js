@@ -1,0 +1,1 @@
+import SegmentTree from"./SegmentTree.js";import kite from"../kite.js";export default class EdgeSegmentTree extends SegmentTree{getMinX(edge,epsilon){return edge.segment.bounds.left-epsilon}getMaxX(edge,epsilon){return edge.segment.bounds.right+epsilon}}kite.register("EdgeSegmentTree",EdgeSegmentTree);

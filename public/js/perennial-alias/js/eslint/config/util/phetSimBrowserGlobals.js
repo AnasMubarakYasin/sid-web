@@ -1,0 +1,1 @@
+export const phetSimBrowserGlobalsObject={event:"off",phet:"readonly",phetio:"readonly",assert:"readonly",assertSlow:"readonly",QueryStringMachine:"readonly",Fluent:"readonly",_:"readonly",$:"readonly"};const phetSimBrowserGlobals={languageOptions:{globals:phetSimBrowserGlobalsObject}};export default phetSimBrowserGlobals;

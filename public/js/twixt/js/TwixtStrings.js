@@ -1,0 +1,1 @@
+import getStringModule from"../../chipper/js/browser/getStringModule.js";import twixt from"./twixt.js";const TwixtStrings=getStringModule("TWIXT");twixt.register("TwixtStrings",TwixtStrings);export default TwixtStrings;

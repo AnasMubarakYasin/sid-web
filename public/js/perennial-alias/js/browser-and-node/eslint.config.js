@@ -1,0 +1,1 @@
+import browserAndNodeEslintConfig from"../eslint/config/browser-and-node.eslint.config.mjs";export default[...browserAndNodeEslintConfig,{rules:{}}];

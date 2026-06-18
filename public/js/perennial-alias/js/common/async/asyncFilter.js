@@ -1,0 +1,1 @@
+export const asyncFilter=async(list,f)=>{const items=[];for(const item of list){if(await f(item)){items.push(item)}}return items};

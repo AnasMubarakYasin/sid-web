@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import mapMarkerAltSolidString from"./mapMarkerAltSolidString.js";export default new Shape(mapMarkerAltSolidString).makeImmutable();

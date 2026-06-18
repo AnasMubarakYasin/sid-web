@@ -1,0 +1,1 @@
+import{gitMutableExecute}from"./gitMutex.js";export const gitCreateWorktree=async(worktreeDirectory,branchOrSha,options)=>{const detach=options?.detach??false;return gitMutableExecute(["worktree","add",...detach?["--detach"]:[],worktreeDirectory,branchOrSha],".")};

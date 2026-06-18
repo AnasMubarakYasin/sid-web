@@ -1,0 +1,1 @@
+import MoveDraggableItemsKeyboardHelpSection from"../../keyboard/help/MoveDraggableItemsKeyboardHelpSection.js";export default function demoMoveDraggableItemsKeyboardHelpSection(layoutBounds){const section=new MoveDraggableItemsKeyboardHelpSection;section.center=layoutBounds.center;return section}

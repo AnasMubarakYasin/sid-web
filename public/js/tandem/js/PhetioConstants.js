@@ -1,0 +1,1 @@
+import tandemNamespace from"./tandemNamespace.js";const PhetioConstants={IO_TYPE_SUFFIX:"IO"};tandemNamespace.register("PhetioConstants",PhetioConstants);export default PhetioConstants;

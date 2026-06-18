@@ -1,0 +1,1 @@
+const protectGithubBranches=require("../common/protectGithubBranches");const args=process.argv.slice(2);const repo=args[0];if(!repo){console.error("Repo name must be provided as first command line argument.")}else{(async()=>{await protectGithubBranches.clearBranchProtections([repo])})()}

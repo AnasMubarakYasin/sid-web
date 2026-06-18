@@ -1,0 +1,1 @@
+import Enumeration from"../../../phet-core/js/Enumeration.js";import EnumerationValue from"../../../phet-core/js/EnumerationValue.js";export default class CurrentSense extends EnumerationValue{static{this.FORWARD=new CurrentSense}static{this.BACKWARD=new CurrentSense}static{this.UNSPECIFIED=new CurrentSense}static{this.enumeration=new Enumeration(CurrentSense)}}

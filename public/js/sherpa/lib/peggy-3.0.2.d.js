@@ -1,0 +1,1 @@
+export var GrammarError;(function(parser){var SyntaxError})(parser||(parser={}));export var parser;

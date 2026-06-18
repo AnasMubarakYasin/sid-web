@@ -1,0 +1,1 @@
+import{browserPageLoad}from"./browserPageLoad.js";import puppeteer from"puppeteer";export const puppeteerLoad=async(url,options)=>{return browserPageLoad(puppeteer,url,options)};

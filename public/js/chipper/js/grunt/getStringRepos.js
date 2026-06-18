@@ -1,0 +1,1 @@
+import fs from"fs";import getPhetLibs from"./getPhetLibs.js";export default(async repo=>{return getPhetLibs(repo).filter(stringRepo=>{return fs.existsSync(`../${stringRepo}/${stringRepo}-strings_en.json`)}).map(stringRepo=>{return{repo:stringRepo,requirejsNamespace:JSON.parse(fs.readFileSync(`../${stringRepo}/package.json`,"utf-8")).phet.requirejsNamespace}})});

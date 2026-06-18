@@ -1,0 +1,1 @@
+import getStringModule from"../../chipper/js/browser/getStringModule.js";import sun from"./sun.js";const SunStrings=getStringModule("SUN");sun.register("SunStrings",SunStrings);export default SunStrings;

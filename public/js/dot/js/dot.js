@@ -1,0 +1,1 @@
+import Namespace from"../../phet-core/js/Namespace.js";const dot=new Namespace("dot");export default dot;

@@ -1,0 +1,1 @@
+export function isInteractiveHighlighting(something){return typeof something==="object"&&something._isInteractiveHighlighting}

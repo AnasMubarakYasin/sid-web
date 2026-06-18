@@ -1,0 +1,1 @@
+import Shape from"../../kite/js/Shape.js";import sceneryPhet from"./sceneryPhet.js";export default class StopIconShape extends Shape{constructor(width){super();this.rect(0,0,width,width)}}sceneryPhet.register("StopIconShape",StopIconShape);

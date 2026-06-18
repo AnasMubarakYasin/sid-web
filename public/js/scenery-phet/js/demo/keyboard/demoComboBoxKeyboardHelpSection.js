@@ -1,0 +1,1 @@
+import ComboBoxKeyboardHelpSection from"../../keyboard/help/ComboBoxKeyboardHelpSection.js";export default function demoComboBoxKeyboardHelpSection(layoutBounds,providedOptions){return new ComboBoxKeyboardHelpSection({center:layoutBounds.center})}

@@ -1,0 +1,1 @@
+import Namespace from"../../phet-core/js/Namespace.js";const kite=new Namespace("kite");export default kite;

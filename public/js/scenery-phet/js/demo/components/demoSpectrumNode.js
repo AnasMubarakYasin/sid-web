@@ -1,0 +1,1 @@
+import SpectrumNode from"../../SpectrumNode.js";export default function demoSpectrumNode(layoutBounds){return new SpectrumNode({center:layoutBounds.center})}

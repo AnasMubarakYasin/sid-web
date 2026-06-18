@@ -1,0 +1,1 @@
+import{gitImmutableExecute}from"./gitMutex.js";export const gitRevParse=async query=>{return gitImmutableExecute(["rev-parse",query],"..").then(stdout=>{const sha=stdout.trim();if(sha.length===0){return Promise.reject(new Error("No matching SHA"))}else if(sha.length>40){return Promise.reject(new Error("Potentially multiple SHAs returned"))}else{return Promise.resolve(sha)}})};

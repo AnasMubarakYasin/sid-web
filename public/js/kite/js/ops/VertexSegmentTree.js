@@ -1,0 +1,1 @@
+import kite from"../kite.js";import SegmentTree from"./SegmentTree.js";export default class VertexSegmentTree extends SegmentTree{getMinX(vertex,epsilon){return vertex.point.x-epsilon}getMaxX(vertex,epsilon){return vertex.point.x+epsilon}}kite.register("VertexSegmentTree",VertexSegmentTree);

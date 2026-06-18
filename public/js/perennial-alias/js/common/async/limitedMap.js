@@ -1,0 +1,1 @@
+import pLimit from"p-limit";export const limitedMap=async(list,f,concurrentLimit)=>{const limit=pLimit(concurrentLimit);return Promise.all(list.map(item=>limit(async()=>f(item))))};

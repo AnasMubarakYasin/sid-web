@@ -1,0 +1,1 @@
+import axon from"./axon.js";import DynamicProperty from"./DynamicProperty.js";import TinyProperty from"./TinyProperty.js";export default class MappedProperty extends DynamicProperty{constructor(property,providedOptions){super(new TinyProperty(property),providedOptions)}}axon.register("MappedProperty",MappedProperty);

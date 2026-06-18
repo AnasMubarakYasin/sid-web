@@ -1,0 +1,16 @@
+// Copyright 2017-2026, University of Colorado Boulder
+/**
+ * Returns a list of simulation repositories actively handled by tooling for PhET
+ *
+ * @author Jonathan Olson (PhET Interactive Simulations)
+ */ const getRepoList = require('./getRepoList');
+/**
+ * Returns a list of simulation repositories actively handled by tooling for PhET
+ * @public
+ *
+ * @returns {Array.<string>}
+ */ module.exports = function() {
+    return getRepoList('active-sims');
+};
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3BlcmVubmlhbC1hbGlhcy9qcy9jb21tb24vZ2V0QWN0aXZlU2ltcy5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBDb3B5cmlnaHQgMjAxNy0yMDI2LCBVbml2ZXJzaXR5IG9mIENvbG9yYWRvIEJvdWxkZXJcblxuLyoqXG4gKiBSZXR1cm5zIGEgbGlzdCBvZiBzaW11bGF0aW9uIHJlcG9zaXRvcmllcyBhY3RpdmVseSBoYW5kbGVkIGJ5IHRvb2xpbmcgZm9yIFBoRVRcbiAqXG4gKiBAYXV0aG9yIEpvbmF0aGFuIE9sc29uIChQaEVUIEludGVyYWN0aXZlIFNpbXVsYXRpb25zKVxuICovXG5cbmNvbnN0IGdldFJlcG9MaXN0ID0gcmVxdWlyZSggJy4vZ2V0UmVwb0xpc3QnICk7XG5cbi8qKlxuICogUmV0dXJucyBhIGxpc3Qgb2Ygc2ltdWxhdGlvbiByZXBvc2l0b3JpZXMgYWN0aXZlbHkgaGFuZGxlZCBieSB0b29saW5nIGZvciBQaEVUXG4gKiBAcHVibGljXG4gKlxuICogQHJldHVybnMge0FycmF5LjxzdHJpbmc+fVxuICovXG5tb2R1bGUuZXhwb3J0cyA9IGZ1bmN0aW9uKCkge1xuICByZXR1cm4gZ2V0UmVwb0xpc3QoICdhY3RpdmUtc2ltcycgKTtcbn07Il0sIm5hbWVzIjpbImdldFJlcG9MaXN0IiwicmVxdWlyZSIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBLHNEQUFzRDtBQUV0RDs7OztDQUlDLEdBRUQsTUFBTUEsY0FBY0MsUUFBUztBQUU3Qjs7Ozs7Q0FLQyxHQUNEQyxPQUFPQyxPQUFPLEdBQUc7SUFDZixPQUFPSCxZQUFhO0FBQ3RCIn0=

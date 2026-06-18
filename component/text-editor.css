@@ -1,0 +1,36 @@
+:root .reactjs-tiptap-editor,
+:root .reactjs-tiptap-editor *,
+:root .reactjs-tiptap-editor-theme,
+:root .reactjs-tiptap-editor-theme *,
+:root div[data-richtext-portal],
+:root div[data-richtext-portal] * {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+.reactjs-tiptap-editor .ProseMirror.ProseMirror.ProseMirror {
+  padding: 1.25rem 4rem;
+}
+.reactjs-tiptap-editor .text-list .ProseMirror.ProseMirror.ProseMirror {
+  padding: 1rem 1rem;
+}
+@media (width < 37.5rem /* 600px */) {
+  .reactjs-tiptap-editor .ProseMirror.ProseMirror.ProseMirror {
+    padding: 0.5rem;
+  }
+  .reactjs-tiptap-editor .text-list .ProseMirror.ProseMirror.ProseMirror {
+    padding: 0.5rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root .reactjs-tiptap-editor,
+  :root .reactjs-tiptap-editor *,
+  :root .reactjs-tiptap-editor-theme,
+  :root .reactjs-tiptap-editor-theme *,
+  :root div[data-richtext-portal],
+  :root div[data-richtext-portal] * {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}

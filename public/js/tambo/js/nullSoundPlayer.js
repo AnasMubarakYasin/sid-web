@@ -1,0 +1,1 @@
+let NullSoundPlayer=class NullSoundPlayer{play(){}stop(){}};const nullSoundPlayer=new NullSoundPlayer;export default nullSoundPlayer;

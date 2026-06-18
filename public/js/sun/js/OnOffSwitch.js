@@ -1,0 +1,1 @@
+import optionize from"../../phet-core/js/optionize.js";import ToggleSwitch from"./ToggleSwitch.js";export default class OnOffSwitch extends ToggleSwitch{constructor(property,providedOptions){const options=optionize()({trackFillLeft:"white",trackFillRight:"rgb( 0, 200, 0 )"},providedOptions);super(property,false,true,options)}}

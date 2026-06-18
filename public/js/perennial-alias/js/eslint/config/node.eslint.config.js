@@ -1,0 +1,1 @@
+import rootEslintConfig from"./root.eslint.config.mjs";import getNodeConfiguration from"./util/getNodeConfiguration.mjs";export default[...rootEslintConfig,...getNodeConfiguration()];

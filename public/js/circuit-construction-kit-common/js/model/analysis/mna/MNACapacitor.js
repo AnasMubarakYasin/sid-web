@@ -1,0 +1,1 @@
+import MNACircuitElement from"./MNACircuitElement.js";export default class MNACapacitor extends MNACircuitElement{constructor(nodeId0,nodeId1,capacitance,initialVoltage){super(nodeId0,nodeId1);this.capacitance=capacitance;this.initialVoltage=initialVoltage}}

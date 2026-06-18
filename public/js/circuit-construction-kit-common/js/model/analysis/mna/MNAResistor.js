@@ -1,0 +1,1 @@
+import MNACircuitElement from"./MNACircuitElement.js";export default class MNAResistor extends MNACircuitElement{constructor(nodeId0,nodeId1,resistance){super(nodeId0,nodeId1);this.resistance=resistance}}

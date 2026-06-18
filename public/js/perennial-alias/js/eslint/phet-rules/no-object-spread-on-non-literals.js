@@ -1,0 +1,1 @@
+module.exports={meta:{type:"problem"},create:context=>{return{SpreadElement(node){if(node.parent.type==="ObjectExpression"&&node.argument.type!=="ObjectExpression"){context.report({node:node,message:"Prevent spread operator on non-literals because it does not do excess property detection"})}}}}};

@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import exchangeAltSolidString from"./exchangeAltSolidString.js";export default new Shape(exchangeAltSolidString).makeImmutable();

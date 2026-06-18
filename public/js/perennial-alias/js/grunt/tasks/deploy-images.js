@@ -1,0 +1,1 @@
+import deployImages from"../deployImages.js";import getOption from"./util/getOption.js";(async()=>{console.log(getOption("simulation"));const simulation=getOption("simulation")||null;await deployImages({simulation:simulation})})();

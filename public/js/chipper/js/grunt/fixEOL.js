@@ -1,0 +1,1 @@
+import os from"os";export default(string=>string.split("\r").join("").split("\n").join(os.EOL));

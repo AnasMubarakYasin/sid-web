@@ -1,0 +1,1 @@
+import execute from"./execute.js";import{gruntCommand}from"./gruntCommand.js";import winston from"winston";export const transpileAll=async()=>{winston.info("running transpileAll");return execute(gruntCommand,["transpile","--all","--silent"],"../chipper")};

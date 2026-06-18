@@ -1,0 +1,2 @@
+import winston from"winston";import{gitMutableExecute}from"./gitMutex.js";export const gitCommit=message=>{winston.info(`git commit with message:
+${message}`);return gitMutableExecute(["commit","--no-verify","-m",message],"..")};

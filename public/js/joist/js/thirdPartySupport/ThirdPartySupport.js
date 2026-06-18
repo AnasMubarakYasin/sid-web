@@ -1,0 +1,1 @@
+import joist from"../joist.js";import LegendsOfLearningSupport from"./LegendsOfLearningSupport.js";const ThirdPartySupport={legendsOfLearning:LegendsOfLearningSupport};if(assert){Object.freeze(ThirdPartySupport)}joist.register("ThirdPartySupport",ThirdPartySupport);export default ThirdPartySupport;

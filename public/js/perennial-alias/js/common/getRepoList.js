@@ -1,0 +1,19 @@
+// Copyright 2020-2026, University of Colorado Boulder
+/**
+ * Returns a list of repositories based on data in perennial/data.
+ *
+ * @author Jonathan Olson (PhET Interactive Simulations)
+ */ const fs = require('fs');
+/**
+ * Returns a list of repositories based on data in perennial/data.
+ * @public
+ *
+ * @param {string} name - The name of the list
+ * @returns {Array.<string>}
+ */ module.exports = function(name) {
+    const contents = fs.readFileSync(`${__dirname}/../../data/${name}`, 'utf8').trim();
+    // Trim will remove any spaces and carriage returns if they are present.
+    return contents.split('\n').map((sim)=>sim.trim());
+};
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3BlcmVubmlhbC1hbGlhcy9qcy9jb21tb24vZ2V0UmVwb0xpc3QuanMiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gQ29weXJpZ2h0IDIwMjAtMjAyNiwgVW5pdmVyc2l0eSBvZiBDb2xvcmFkbyBCb3VsZGVyXG5cbi8qKlxuICogUmV0dXJucyBhIGxpc3Qgb2YgcmVwb3NpdG9yaWVzIGJhc2VkIG9uIGRhdGEgaW4gcGVyZW5uaWFsL2RhdGEuXG4gKlxuICogQGF1dGhvciBKb25hdGhhbiBPbHNvbiAoUGhFVCBJbnRlcmFjdGl2ZSBTaW11bGF0aW9ucylcbiAqL1xuXG5jb25zdCBmcyA9IHJlcXVpcmUoICdmcycgKTtcblxuLyoqXG4gKiBSZXR1cm5zIGEgbGlzdCBvZiByZXBvc2l0b3JpZXMgYmFzZWQgb24gZGF0YSBpbiBwZXJlbm5pYWwvZGF0YS5cbiAqIEBwdWJsaWNcbiAqXG4gKiBAcGFyYW0ge3N0cmluZ30gbmFtZSAtIFRoZSBuYW1lIG9mIHRoZSBsaXN0XG4gKiBAcmV0dXJucyB7QXJyYXkuPHN0cmluZz59XG4gKi9cbm1vZHVsZS5leHBvcnRzID0gZnVuY3Rpb24oIG5hbWUgKSB7XG4gIGNvbnN0IGNvbnRlbnRzID0gZnMucmVhZEZpbGVTeW5jKCBgJHtfX2Rpcm5hbWV9Ly4uLy4uL2RhdGEvJHtuYW1lfWAsICd1dGY4JyApLnRyaW0oKTtcblxuICAvLyBUcmltIHdpbGwgcmVtb3ZlIGFueSBzcGFjZXMgYW5kIGNhcnJpYWdlIHJldHVybnMgaWYgdGhleSBhcmUgcHJlc2VudC5cbiAgcmV0dXJuIGNvbnRlbnRzLnNwbGl0KCAnXFxuJyApLm1hcCggc2ltID0+IHNpbS50cmltKCkgKTtcbn07Il0sIm5hbWVzIjpbImZzIiwicmVxdWlyZSIsIm1vZHVsZSIsImV4cG9ydHMiLCJuYW1lIiwiY29udGVudHMiLCJyZWFkRmlsZVN5bmMiLCJfX2Rpcm5hbWUiLCJ0cmltIiwic3BsaXQiLCJtYXAiLCJzaW0iXSwibWFwcGluZ3MiOiJBQUFBLHNEQUFzRDtBQUV0RDs7OztDQUlDLEdBRUQsTUFBTUEsS0FBS0MsUUFBUztBQUVwQjs7Ozs7O0NBTUMsR0FDREMsT0FBT0MsT0FBTyxHQUFHLFNBQVVDLElBQUk7SUFDN0IsTUFBTUMsV0FBV0wsR0FBR00sWUFBWSxDQUFFLEdBQUdDLFVBQVUsWUFBWSxFQUFFSCxNQUFNLEVBQUUsUUFBU0ksSUFBSTtJQUVsRix3RUFBd0U7SUFDeEUsT0FBT0gsU0FBU0ksS0FBSyxDQUFFLE1BQU9DLEdBQUcsQ0FBRUMsQ0FBQUEsTUFBT0EsSUFBSUgsSUFBSTtBQUNwRCJ9

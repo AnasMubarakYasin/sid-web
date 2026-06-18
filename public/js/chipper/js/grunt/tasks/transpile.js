@@ -1,0 +1,1 @@
+import getRepo from"../../../../perennial-alias/js/grunt/tasks/util/getRepo.js";import{combineOptions}from"../../../../phet-core/js/optionize.js";import transpile,{getTranspileCLIOptions}from"../../common/transpile.js";import getPhetLibs from"../getPhetLibs.js";transpile(combineOptions({repos:getPhetLibs(getRepo())},getTranspileCLIOptions()));

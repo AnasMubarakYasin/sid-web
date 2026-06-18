@@ -1,0 +1,1 @@
+import dot from"../dot.js";import{roundSymmetric}from"./roundSymmetric.js";import{gcd}from"./gcd.js";export function lcm(a,b){return roundSymmetric(Math.abs(a*b)/gcd(a,b))}dot.register("lcm",lcm);

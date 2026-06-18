@@ -1,0 +1,1 @@
+import Node from"../../../../scenery/js/nodes/Node.js";import HandleNode from"../../HandleNode.js";export default function demoHandleNode(layoutBounds){const handleNode=new HandleNode({scale:4});return new Node({children:[handleNode],center:layoutBounds.center})}

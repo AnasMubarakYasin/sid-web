@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import commentSolidString from"./commentSolidString.js";export default new Shape(commentSolidString).makeImmutable();

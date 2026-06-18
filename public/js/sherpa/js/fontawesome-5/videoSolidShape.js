@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import videoSolidString from"./videoSolidString.js";export default new Shape(videoSolidString).makeImmutable();

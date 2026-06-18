@@ -1,0 +1,1 @@
+import ncp from"ncp";import winston from"winston";export const copyDirectory=(pathToCopy,location,options)=>{winston.info(`copying ${pathToCopy} into ${location}`);return new Promise((resolve,reject)=>{ncp.ncp(pathToCopy,location,options,err=>{if(err){reject(new Error(`copyDirectory error: ${err}`))}else{resolve()}})})};

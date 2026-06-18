@@ -1,0 +1,1 @@
+import dot from"../dot.js";export function solveLinearRootsReal(a,b){if(a===0){if(b===0){return null}else{return[]}}else{return[-b/a]}}dot.register("solveLinearRootsReal",solveLinearRootsReal);

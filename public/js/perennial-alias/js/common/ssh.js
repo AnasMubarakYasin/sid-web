@@ -1,0 +1,1 @@
+import execute from"./execute.js";import winston from"winston";export const ssh=async(username,host,cmd)=>{winston.info(`running ${cmd} remotely on ${host}`);return execute("ssh",[`${username}@${host}`,cmd],".")};

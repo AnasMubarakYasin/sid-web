@@ -1,0 +1,1 @@
+import affirm from"../../perennial-alias/js/browser-and-node/affirm.js";import phetCore from"./phetCore.js";function required(entry){affirm(entry!==undefined,"Required field is undefined.");return entry}phetCore.register("required",required);export default required;

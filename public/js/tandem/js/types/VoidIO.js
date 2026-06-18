@@ -1,0 +1,1 @@
+import tandemNamespace from"../tandemNamespace.js";import IOType from"./IOType.js";const VoidIO=new IOType("VoidIO",{isValidValue:()=>true,documentation:"Type for which there is no instance, usually to mark functions without a return value",toStateObject:()=>undefined});tandemNamespace.register("VoidIO",VoidIO);export default VoidIO;

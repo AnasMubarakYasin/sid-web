@@ -1,0 +1,1 @@
+import Property from"../../../../axon/js/Property.js";import WavelengthNumberControl from"../../WavelengthNumberControl.js";export default function demoWavelengthNumberControl(layoutBounds){const wavelengthProperty=new Property(500);return new WavelengthNumberControl(wavelengthProperty,{center:layoutBounds.center})}

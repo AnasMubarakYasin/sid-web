@@ -1,0 +1,1 @@
+import{QueryStringMachine}from"./QueryStringMachineModule.js";self.QueryStringMachine=QueryStringMachine;

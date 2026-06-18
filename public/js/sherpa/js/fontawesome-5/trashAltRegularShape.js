@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import trashAltRegularString from"./trashAltRegularString.js";export default new Shape(trashAltRegularString).makeImmutable();

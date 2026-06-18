@@ -1,0 +1,1 @@
+import CircuitConstructionKitModel from"../../../../circuit-construction-kit-common/js/model/CircuitConstructionKitModel.js";let IntroModel=class IntroModel extends CircuitConstructionKitModel{constructor(tandem){super(false,false,tandem,{showNoncontactAmmeters:true})}};export default IntroModel;

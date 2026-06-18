@@ -1,0 +1,1 @@
+import assert from"assert";import buildDecaf from"../decaf/buildDecaf.js";import getOption from"./util/getOption.js";(async()=>{const project=getOption("project");assert(project,"Requires specifying a repository with --project={{PROJECT}}");await buildDecaf(project)})();

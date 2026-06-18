@@ -1,0 +1,1 @@
+import Node from"../../../nodes/Node.js";import scenery from"../../../scenery.js";import Voicing from"../Voicing.js";let VoicingNode=class VoicingNode extends Voicing(Node){constructor(providedOptions){super(providedOptions)}};scenery.register("VoicingNode",VoicingNode);export default VoicingNode;

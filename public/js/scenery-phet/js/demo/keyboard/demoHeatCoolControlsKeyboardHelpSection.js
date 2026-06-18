@@ -1,0 +1,1 @@
+import HeatCoolControlsKeyboardHelpSection from"../../keyboard/help/HeatCoolControlsKeyboardHelpSection.js";export default function demoHeatCoolControlsKeyboardHelpSection(layoutBounds){const section=new HeatCoolControlsKeyboardHelpSection;section.center=layoutBounds.center;return section}

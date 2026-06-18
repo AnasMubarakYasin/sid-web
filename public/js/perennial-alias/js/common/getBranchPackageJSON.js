@@ -1,0 +1,1 @@
+import{getFileAtBranch}from"./getFileAtBranch.js";export const getBranchPackageJSON=async(dependency,branch)=>{return JSON.parse(await getFileAtBranch(branch,`${dependency}/package.json`))};

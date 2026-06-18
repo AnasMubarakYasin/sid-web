@@ -1,0 +1,1 @@
+import CircuitConstructionKitModel from"../../../../circuit-construction-kit-common/js/model/CircuitConstructionKitModel.js";let LabModel=class LabModel extends CircuitConstructionKitModel{constructor(tandem,snapshot,providedOptions){super(false,true,tandem,snapshot,providedOptions)}};export default LabModel;

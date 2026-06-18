@@ -1,0 +1,1 @@
+const localizedStrings=[];export default localizedStrings;

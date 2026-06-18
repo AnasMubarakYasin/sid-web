@@ -1,0 +1,1 @@
+import phetCore from"./phetCore.js";function dimensionMap(dimension,array,map){const indices=[];function recur(dim,arr){return arr.map((element,index)=>{indices.push(index);const result=dim===1?map(element,...indices):recur(dim-1,element);indices.pop();return result})}return recur(dimension,array)}phetCore.register("dimensionMap",dimensionMap);export default dimensionMap;

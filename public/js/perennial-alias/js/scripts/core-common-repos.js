@@ -1,0 +1,1 @@
+const coreCommonRepos=["axon","brand","chipper","dot","joist","kite","perennial","phet-core","scenery","scenery-phet","sherpa","sun","tambo","tandem","twixt"];export default coreCommonRepos;

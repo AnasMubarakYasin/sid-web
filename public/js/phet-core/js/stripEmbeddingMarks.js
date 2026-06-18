@@ -1,0 +1,1 @@
+import phetCore from"./phetCore.js";function stripEmbeddingMarks(string){return string.replace(/\u202a|\u202b|\u202c/g,"")}phetCore.register("stripEmbeddingMarks",stripEmbeddingMarks);export default stripEmbeddingMarks;

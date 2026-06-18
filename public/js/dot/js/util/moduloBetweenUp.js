@@ -1,0 +1,1 @@
+import{moduloBetweenDown}from"./moduloBetweenDown.js";import dot from"../dot.js";export function moduloBetweenUp(value,min,max){return-moduloBetweenDown(-value,-max,-min)}dot.register("moduloBetweenUp",moduloBetweenUp);

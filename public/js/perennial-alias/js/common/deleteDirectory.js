@@ -1,0 +1,1 @@
+import execute from"./execute.js";import winston from"winston";export const deleteDirectory=async path=>{winston.info(`Deleting directory ${path}`);await execute("rm",["-Rf",path],"../")};

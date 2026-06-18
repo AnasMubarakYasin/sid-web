@@ -1,0 +1,1 @@
+const ChipperConstants={FALLBACK_LOCALE:"en",MEDIA_TYPES:["sounds","images","mipmaps"],START_THIRD_PARTY_LICENSE_ENTRIES:"### START THIRD PARTY LICENSE ENTRIES ###",END_THIRD_PARTY_LICENSE_ENTRIES:"### END THIRD PARTY LICENSE ENTRIES ###",A11Y_VIEW_HTML_SUFFIX:"_a11y_view.html",BRANDS:["phet","phet-io","adapted-from-phet"],BUILD_DIR:"build"};export default ChipperConstants;

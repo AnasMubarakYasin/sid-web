@@ -1,0 +1,1 @@
+import Range from"../../dot/js/Range.js";import ValueChangeSoundPlayer from"../../tambo/js/sound-generators/ValueChangeSoundPlayer.js";const SliderDefaultSoundGenerator=new ValueChangeSoundPlayer(new Range(0,1));export default SliderDefaultSoundGenerator;

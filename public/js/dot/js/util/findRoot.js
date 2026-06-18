@@ -1,0 +1,1 @@
+import dot from"../dot.js";export function findRoot(minX,maxX,tolerance,valueFunction,derivativeFunction){let x=(minX+maxX)/2;let y;let dy;while(Math.abs(y=valueFunction(x))>tolerance){dy=derivativeFunction(x);if(y<0){minX=x}else{maxX=x}x-=y/dy;if(x<=minX||x>=maxX){x=(minX+maxX)/2;if(x===minX||x===maxX){break}}}return x}dot.register("findRoot",findRoot);

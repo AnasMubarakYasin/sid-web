@@ -1,0 +1,1 @@
+import dot from"../dot.js";export function cubeRoot(x){return x>=0?Math.pow(x,1/3):-Math.pow(-x,1/3)}dot.register("cubeRoot",cubeRoot);

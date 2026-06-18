@@ -1,0 +1,1 @@
+import execute from"./execute.js";import{gruntCommand}from"./gruntCommand.js";import winston from"winston";export const lintProject=async runnable=>{winston.info(`linting ${runnable}`);return execute(gruntCommand,["lint-project",`--repo=${runnable}`],"../chipper")};

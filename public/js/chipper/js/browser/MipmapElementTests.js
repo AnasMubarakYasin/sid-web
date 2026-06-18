@@ -1,0 +1,1 @@
+import MipmapElement from"./MipmapElement.js";QUnit.module("MipmapElement");QUnit.test("mipmap",assert=>{(()=>new MipmapElement(10,10,"",false))();assert.ok(true,"mipmap created")});

@@ -1,0 +1,1 @@
+const getBadTextTester=require("./getBadTextTester");module.exports={create:function(context){const forbiddenTextObjects=["../perennial/js/"];return{Program:getBadTextTester("bad-chipper-text",forbiddenTextObjects,context)}}};module.exports.schema=[];

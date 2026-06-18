@@ -1,0 +1,1 @@
+export const getMSPointerType=event=>{if(event.pointerType===window.MSPointerEvent.MSPOINTER_TYPE_TOUCH){return"touch"}else if(event.pointerType===window.MSPointerEvent.MSPOINTER_TYPE_PEN){return"pen"}else if(event.pointerType===window.MSPointerEvent.MSPOINTER_TYPE_MOUSE){return"mouse"}else{return event.pointerType}};

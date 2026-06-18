@@ -1,0 +1,21 @@
+// Copyright 2020-2026, University of Colorado Boulder
+/**
+ * Asynchronously checks whether a repo is not up-to-date with origin/main
+ *
+ * @author Jonathan Olson (PhET Interactive Simulations)
+ */ const getRemoteBranchSHAs = require('./getRemoteBranchSHAs');
+const gitRevParse = require('./gitRevParse');
+/**
+ * Asynchronously checks whether a repo is not up-to-date with origin/main
+ * @public
+ *
+ * @param {string} repo - The repository name
+ * @returns {Promise.<boolean>}
+ * @rejects {ExecuteError}
+ */ module.exports = async function(repo) {
+    const currentSHA = await gitRevParse(repo, 'main');
+    const remoteSHA = (await getRemoteBranchSHAs(repo)).main;
+    return currentSHA !== remoteSHA;
+};
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL3BlcmVubmlhbC1hbGlhcy9qcy9jb21tb24vaXNTdGFsZS5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBDb3B5cmlnaHQgMjAyMC0yMDI2LCBVbml2ZXJzaXR5IG9mIENvbG9yYWRvIEJvdWxkZXJcblxuLyoqXG4gKiBBc3luY2hyb25vdXNseSBjaGVja3Mgd2hldGhlciBhIHJlcG8gaXMgbm90IHVwLXRvLWRhdGUgd2l0aCBvcmlnaW4vbWFpblxuICpcbiAqIEBhdXRob3IgSm9uYXRoYW4gT2xzb24gKFBoRVQgSW50ZXJhY3RpdmUgU2ltdWxhdGlvbnMpXG4gKi9cblxuY29uc3QgZ2V0UmVtb3RlQnJhbmNoU0hBcyA9IHJlcXVpcmUoICcuL2dldFJlbW90ZUJyYW5jaFNIQXMnICk7XG5jb25zdCBnaXRSZXZQYXJzZSA9IHJlcXVpcmUoICcuL2dpdFJldlBhcnNlJyApO1xuXG4vKipcbiAqIEFzeW5jaHJvbm91c2x5IGNoZWNrcyB3aGV0aGVyIGEgcmVwbyBpcyBub3QgdXAtdG8tZGF0ZSB3aXRoIG9yaWdpbi9tYWluXG4gKiBAcHVibGljXG4gKlxuICogQHBhcmFtIHtzdHJpbmd9IHJlcG8gLSBUaGUgcmVwb3NpdG9yeSBuYW1lXG4gKiBAcmV0dXJucyB7UHJvbWlzZS48Ym9vbGVhbj59XG4gKiBAcmVqZWN0cyB7RXhlY3V0ZUVycm9yfVxuICovXG5tb2R1bGUuZXhwb3J0cyA9IGFzeW5jIGZ1bmN0aW9uKCByZXBvICkge1xuICBjb25zdCBjdXJyZW50U0hBID0gYXdhaXQgZ2l0UmV2UGFyc2UoIHJlcG8sICdtYWluJyApO1xuICBjb25zdCByZW1vdGVTSEEgPSAoIGF3YWl0IGdldFJlbW90ZUJyYW5jaFNIQXMoIHJlcG8gKSApLm1haW47XG5cbiAgcmV0dXJuIGN1cnJlbnRTSEEgIT09IHJlbW90ZVNIQTtcbn07Il0sIm5hbWVzIjpbImdldFJlbW90ZUJyYW5jaFNIQXMiLCJyZXF1aXJlIiwiZ2l0UmV2UGFyc2UiLCJtb2R1bGUiLCJleHBvcnRzIiwicmVwbyIsImN1cnJlbnRTSEEiLCJyZW1vdGVTSEEiLCJtYWluIl0sIm1hcHBpbmdzIjoiQUFBQSxzREFBc0Q7QUFFdEQ7Ozs7Q0FJQyxHQUVELE1BQU1BLHNCQUFzQkMsUUFBUztBQUNyQyxNQUFNQyxjQUFjRCxRQUFTO0FBRTdCOzs7Ozs7O0NBT0MsR0FDREUsT0FBT0MsT0FBTyxHQUFHLGVBQWdCQyxJQUFJO0lBQ25DLE1BQU1DLGFBQWEsTUFBTUosWUFBYUcsTUFBTTtJQUM1QyxNQUFNRSxZQUFZLEFBQUUsQ0FBQSxNQUFNUCxvQkFBcUJLLEtBQUssRUFBSUcsSUFBSTtJQUU1RCxPQUFPRixlQUFlQztBQUN4QiJ9

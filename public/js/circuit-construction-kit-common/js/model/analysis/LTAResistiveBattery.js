@@ -1,0 +1,1 @@
+import CoreModel from"./CoreModel.js";let LTAResistiveBattery=class LTAResistiveBattery extends CoreModel{constructor(id,node0,node1,voltage,resistance){super(id,node0,node1);this.voltage=voltage;this.resistance=resistance}};export default LTAResistiveBattery;

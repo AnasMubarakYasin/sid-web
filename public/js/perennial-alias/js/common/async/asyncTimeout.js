@@ -1,0 +1,1 @@
+import{sleep}from"./sleep.js";export const timeoutErrorMessage="TIMEOUT_ERROR";export const asyncTimeout=async(timeout,promise)=>{const timeoutPromise=(async()=>{await sleep(timeout);throw new Error(timeoutErrorMessage)})();return Promise.race([promise,timeoutPromise])};

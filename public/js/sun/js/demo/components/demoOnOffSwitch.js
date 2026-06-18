@@ -1,0 +1,1 @@
+import BooleanProperty from"../../../../axon/js/BooleanProperty.js";import OnOffSwitch from"../../OnOffSwitch.js";export default function demoOnOffSwitch(layoutBounds){return new OnOffSwitch(new BooleanProperty(true),{center:layoutBounds.center})}

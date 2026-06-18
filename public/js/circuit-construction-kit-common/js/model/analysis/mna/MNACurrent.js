@@ -1,0 +1,1 @@
+import MNACircuitElement from"./MNACircuitElement.js";export default class MNACurrent extends MNACircuitElement{constructor(nodeId0,nodeId1,current){super(nodeId0,nodeId1);this.current=current}toString(){return super.toString()+`, current: ${this.current}`}}

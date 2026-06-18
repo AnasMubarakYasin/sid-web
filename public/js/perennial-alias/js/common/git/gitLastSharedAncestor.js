@@ -1,0 +1,1 @@
+import{gitImmutableExecute}from"./gitMutex.js";export const gitLastSharedAncestor=async(targetA,targetB)=>{return gitImmutableExecute(["merge-base",targetA,targetB],"..").then(stdout=>{return Promise.resolve(stdout.trim())})};

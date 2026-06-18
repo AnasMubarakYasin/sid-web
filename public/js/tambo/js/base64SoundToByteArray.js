@@ -1,0 +1,1 @@
+const base64SoundToByteArray=(audioContext,base64Sound)=>{const soundData=base64Sound.replace(new RegExp("^.*,"),"");const byteChars=atob(soundData);const byteArray=new Uint8Array(byteChars.length);for(let j=0;j<byteArray.length;j++){byteArray[j]=byteChars.charCodeAt(j)}return byteArray};export default base64SoundToByteArray;

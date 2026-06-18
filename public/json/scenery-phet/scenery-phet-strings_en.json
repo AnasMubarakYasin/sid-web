@@ -1,0 +1,1844 @@
+{
+  "scenery-phet": {
+    "title": {
+      "value": "scenery-phet demo"
+    }
+  },
+  "screen": {
+    "buttons": {
+      "value": "Buttons"
+    },
+    "components": {
+      "value": "Components"
+    },
+    "dialogs": {
+      "value": "Dialogs"
+    },
+    "keyboard": {
+      "value": "Keyboard"
+    },
+    "sliders": {
+      "value": "Sliders"
+    },
+    "spinners": {
+      "value": "Spinners"
+    }
+  },
+  "WavelengthSlider": {
+    "pattern_0wavelength_1units": {
+      "value": "{0} {1}"
+    }
+  },
+  "frequencyUnitsPattern": {
+    "value": "{{frequency}} THz"
+  },
+  "stopwatchValueUnitsPattern": {
+    "value": "{{value}} {{units}}"
+  },
+  "units_nm": {
+    "value": "nm"
+  },
+  "shortCircuit": {
+    "value": "Short circuit!"
+  },
+  "heat": {
+    "value": "Heat"
+  },
+  "cool": {
+    "value": "Cool"
+  },
+  "key": {
+    "tab": {
+      "value": "Tab"
+    },
+    "shift": {
+      "value": "Shift"
+    },
+    "alt": {
+      "value": "Alt"
+    },
+    "option": {
+      "value": "Option"
+    },
+    "capsLock": {
+      "value": "Caps Lock"
+    },
+    "enter": {
+      "value": "Enter"
+    },
+    "return": {
+      "value": "Return"
+    },
+    "backspace": {
+      "value": "Backspace"
+    },
+    "delete": {
+      "value": "Delete"
+    },
+    "space": {
+      "value": "Space"
+    },
+    "esc": {
+      "value": "Esc"
+    },
+    "fn": {
+      "value": "Fn"
+    },
+    "pageUp": {
+      "value": "Pg Up"
+    },
+    "pageDown": {
+      "value": "Pg Dn"
+    },
+    "home": {
+      "value": "Home"
+    },
+    "end": {
+      "value": "End"
+    },
+    "a": {
+      "value": "A"
+    },
+    "b": {
+      "value": "B"
+    },
+    "c": {
+      "value": "C"
+    },
+    "d": {
+      "value": "D"
+    },
+    "e": {
+      "value": "E"
+    },
+    "f": {
+      "value": "F"
+    },
+    "g": {
+      "value": "G"
+    },
+    "h": {
+      "value": "H"
+    },
+    "i": {
+      "value": "I"
+    },
+    "j": {
+      "value": "J"
+    },
+    "k": {
+      "value": "K"
+    },
+    "l": {
+      "value": "L"
+    },
+    "m": {
+      "value": "M"
+    },
+    "n": {
+      "value": "N"
+    },
+    "o": {
+      "value": "O"
+    },
+    "p": {
+      "value": "P"
+    },
+    "q": {
+      "value": "Q"
+    },
+    "r": {
+      "value": "R"
+    },
+    "s": {
+      "value": "S"
+    },
+    "t": {
+      "value": "T"
+    },
+    "u": {
+      "value": "U"
+    },
+    "v": {
+      "value": "V"
+    },
+    "w": {
+      "value": "W"
+    },
+    "x": {
+      "value": "X"
+    },
+    "y": {
+      "value": "Y"
+    },
+    "z": {
+      "value": "Z"
+    },
+    "zero": {
+      "value": "0"
+    },
+    "one": {
+      "value": "1"
+    },
+    "two": {
+      "value": "2"
+    },
+    "three": {
+      "value": "3"
+    },
+    "four": {
+      "value": "4"
+    },
+    "five": {
+      "value": "5"
+    },
+    "six": {
+      "value": "6"
+    },
+    "seven": {
+      "value": "7"
+    },
+    "eight": {
+      "value": "8"
+    },
+    "nine": {
+      "value": "9"
+    },
+    "toGrabOrRelease": {
+      "value": "to <b>Grab</b> or <b>Release</b>"
+    }
+  },
+  "webglWarning": {
+    "title": {
+      "value": "Running with low graphics quality"
+    },
+    "body": {
+      "value": "WebGL is not enabled or not available. Click to learn more."
+    },
+    "contextLossFailure": {
+      "value": "Sorry, a graphics error has occurred."
+    },
+    "contextLossReload": {
+      "value": "Reload"
+    },
+    "ie11StencilBody": {
+      "value": "Update Internet Explorer by installing recommended Windows Update patches."
+    }
+  },
+  "keyboardHelpDialog": {
+    "sliderControls": {
+      "value": "Slider Controls"
+    },
+    "adjustSlider": {
+      "value": "Adjust slider"
+    },
+    "spinnerControls": {
+      "value": "Spinner Controls"
+    },
+    "adjustInSmallerSteps": {
+      "value": "Adjust in smaller steps"
+    },
+    "adjustInLargerSteps": {
+      "value": "Adjust in larger steps"
+    },
+    "jumpToMinimum": {
+      "value": "Jump to minimum"
+    },
+    "jumpToMaximum": {
+      "value": "Jump to maximum"
+    },
+    "adjust": {
+      "value": "Adjust"
+    },
+    "slider": {
+      "value": "slider"
+    },
+    "spinner": {
+      "value": "spinner"
+    },
+    "heatCoolControls": {
+      "value": "Heat/Cool Controls"
+    },
+    "maximumHeat": {
+      "value": "Maximum heat"
+    },
+    "maximumCool": {
+      "value": "Maximum cool"
+    },
+    "heatCoolOff": {
+      "value": "Off"
+    },
+    "verbSliderPattern": {
+      "value": "{{verb}} {{slider}}"
+    },
+    "verbInSmallerStepsPattern": {
+      "value": "{{verb}} in smaller steps"
+    },
+    "verbInLargerStepsPattern": {
+      "value": "{{verb}} in larger steps"
+    },
+    "minimum": {
+      "value": "minimum"
+    },
+    "maximum": {
+      "value": "maximum"
+    },
+    "jumpToMinimumPattern": {
+      "value": "Jump to {{minimum}}"
+    },
+    "jumpToMaximumPattern": {
+      "value": "Jump to {{maximum}}"
+    },
+    "generalNavigation": {
+      "value": "General Navigation"
+    },
+    "basicActions": {
+      "value": "Basic Actions"
+    },
+    "moveToNextItem": {
+      "value": "Move to next item"
+    },
+    "moveToPreviousItem": {
+      "value": "Move to previous item"
+    },
+    "moveToNextItemOrGroup": {
+      "value": "Move to next item or group"
+    },
+    "moveToPreviousItemOrGroup": {
+      "value": "Move to previous item or group"
+    },
+    "pressButtons": {
+      "value": "Press buttons"
+    },
+    "moveBetweenItemsInAGroup": {
+      "value": "Move between items in a group"
+    },
+    "setValuesInKeypad": {
+      "value": "Set values within keypad"
+    },
+    "resetAll": {
+      "value": "Reset All"
+    },
+    "exitADialog": {
+      "value": "Exit a dialog"
+    },
+    "toggleCheckboxes": {
+      "value": "Toggle checkboxes"
+    },
+    "or": {
+      "value": "or"
+    },
+    "hyphen": {
+      "value": "-"
+    },
+    "grabOrReleaseHeadingPattern": {
+      "value": "Grab or Release {{thing}}"
+    },
+    "grabOrReleaseLabelPattern": {
+      "value": "Grab or release {{thing}}"
+    },
+    "comboBox": {
+      "chooseAThingPattern": {
+        "value": "Choose a {{thingTitle}}"
+      },
+      "headingString": {
+        "value": "Change Choice"
+      },
+      "popUpListPattern": {
+        "value": "1. Show {{thingPlural}}"
+      },
+      "moveThroughPattern": {
+        "value": "2. Move through {{thingPlural}}"
+      },
+      "chooseNewPattern": {
+        "value": "3. Change {{thingSingular}}"
+      },
+      "closeWithoutChanging": {
+        "value": "4. Close without changing"
+      },
+      "options": {
+        "value": "choices"
+      },
+      "option": {
+        "value": "choice"
+      }
+    },
+    "moveDraggableItems": {
+      "value": "Move Draggable Items"
+    },
+    "move": {
+      "value": "Move"
+    },
+    "moveSlower": {
+      "value": "Move slower"
+    },
+    "faucetControls": {
+      "faucetControls": {
+        "value": "Faucet Controls"
+      },
+      "adjustFaucetFlow": {
+        "value": "Adjust faucet flow"
+      },
+      "adjustInSmallerSteps": {
+        "value": "Adjust in smaller steps"
+      },
+      "adjustInLargerSteps": {
+        "value": "Adjust in larger steps"
+      },
+      "closeFaucet": {
+        "value": "Close faucet"
+      },
+      "openFaucetFully": {
+        "value": "Open faucet fully"
+      },
+      "openFaucetBriefly": {
+        "value": "Open faucet briefly"
+      }
+    },
+    "timingControls": {
+      "timingControls": {
+        "value": "Time Controls"
+      },
+      "pauseOrPlayAction": {
+        "value": "Pause or play action"
+      }
+    }
+  },
+  "speed": {
+    "normal": {
+      "value": "Normal"
+    },
+    "slow": {
+      "value": "Slow"
+    },
+    "fast": {
+      "value": "Fast"
+    }
+  },
+  "symbol": {
+    "ohms": {
+      "value": "Ω"
+    },
+    "resistivity": {
+      "value": "ρ"
+    }
+  },
+  "comboBoxDisplay": {
+    "valueUnits": {
+      "value": "{{value}} {{units}}"
+    }
+  },
+  "wavelengthNMValuePattern": {
+    "value": "{0} nm"
+  },
+  "measuringTapeReadoutPattern": {
+    "value": "{{distance}} {{units}}"
+  },
+  "wavelength": {
+    "value": "Wavelength"
+  },
+  "rulerCapitalized": {
+    "value": "Ruler"
+  },
+  "ruler": {
+    "value": "Ruler"
+  },
+  "zero": {
+    "value": "zero"
+  },
+  "one": {
+    "value": "one"
+  },
+  "two": {
+    "value": "two"
+  },
+  "three": {
+    "value": "three"
+  },
+  "four": {
+    "value": "four"
+  },
+  "five": {
+    "value": "five"
+  },
+  "six": {
+    "value": "six"
+  },
+  "seven": {
+    "value": "seven"
+  },
+  "eight": {
+    "value": "eight"
+  },
+  "nine": {
+    "value": "nine"
+  },
+  "ten": {
+    "value": "ten"
+  },
+  "offScaleIndicator": {
+    "pointsOffScale": {
+      "value": "Points<br>off scale!"
+    }
+  },
+  "ResetAllButton": {
+    "name": {
+      "value": "Reset All",
+      "deprecated": true,
+      "_comment": "See https://github.com/phetsims/chipper/issues/1446"
+    }
+  },
+  "SoundToggleButton": {
+    "name": {
+      "value": "Toggle Sound",
+      "deprecated": true,
+      "_comment": "See https://github.com/phetsims/chipper/issues/1446"
+    }
+  },
+  "scientificNotation": {
+    "value": "{{value}} × {{base}}<sup>{{exponent}}</sup>"
+  },
+  "units": {
+    "centimeters": {
+      "symbol": {
+        "value": "cm"
+      },
+      "symbolPattern": {
+        "value": "{{value}} cm"
+      }
+    },
+    "centimetersSquared": {
+      "symbol": {
+        "value": "cm<sup>2</sup>"
+      },
+      "symbolPattern": {
+        "value": "{{value}} cm<sup>2</sup>"
+      }
+    },
+    "hertz": {
+      "symbol": {
+        "value": "Hz"
+      },
+      "symbolPattern": {
+        "value": "{{value}} Hz"
+      }
+    },
+    "percent": {
+      "symbol": {
+        "value": "%"
+      },
+      "symbolPattern": {
+        "value": "{{value}}%"
+      }
+    },
+    "seconds": {
+      "symbol": {
+        "value": "s"
+      },
+      "symbolPattern": {
+        "value": "{{value}} s"
+      }
+    },
+    "milliseconds": {
+      "symbol": {
+        "value": "ms"
+      },
+      "symbolPattern": {
+        "value": "{{value}} ms"
+      }
+    },
+    "microseconds": {
+      "symbol": {
+        "value": "μs"
+      },
+      "symbolPattern": {
+        "value": "{{value}} μs"
+      }
+    },
+    "femtoseconds": {
+      "symbol": {
+        "value": "fs"
+      },
+      "symbolPattern": {
+        "value": "{{value}} fs"
+      }
+    },
+    "amperes": {
+      "symbol": {
+        "value": "A"
+      },
+      "symbolPattern": {
+        "value": "{{value}} A"
+      }
+    },
+    "volts": {
+      "symbol": {
+        "value": "V"
+      },
+      "symbolPattern": {
+        "value": "{{value}} V"
+      }
+    },
+    "newtons": {
+      "symbol": {
+        "value": "N"
+      },
+      "symbolPattern": {
+        "value": "{{value}} N"
+      }
+    },
+    "watts": {
+      "symbol": {
+        "value": "W"
+      },
+      "symbolPattern": {
+        "value": "{{value}} W"
+      }
+    },
+    "joules": {
+      "symbol": {
+        "value": "J"
+      },
+      "symbolPattern": {
+        "value": "{{value}} J"
+      }
+    },
+    "kelvin": {
+      "symbol": {
+        "value": "K"
+      },
+      "symbolPattern": {
+        "value": "{{value}} K"
+      }
+    },
+    "degrees": {
+      "symbol": {
+        "value": "°"
+      },
+      "symbolPattern": {
+        "value": "{{value}} °"
+      }
+    },
+    "degreesCelsius": {
+      "symbol": {
+        "value": "°C"
+      },
+      "symbolPattern": {
+        "value": "{{value}} °C"
+      }
+    },
+    "degreesFahrenheit": {
+      "symbol": {
+        "value": "°F"
+      },
+      "symbolPattern": {
+        "value": "{{value}} °F"
+      }
+    },
+    "liters": {
+      "symbol": {
+        "value": "L"
+      },
+      "symbolPattern": {
+        "value": "{{value}} L"
+      }
+    },
+    "litersPerSecond": {
+      "symbol": {
+        "value": "L/s"
+      },
+      "symbolPattern": {
+        "value": "{{value}} L/s"
+      }
+    },
+    "meters": {
+      "symbol": {
+        "value": "m"
+      },
+      "symbolPattern": {
+        "value": "{{value}} m"
+      }
+    },
+    "metersPerSecond": {
+      "symbol": {
+        "value": "m/s"
+      },
+      "symbolPattern": {
+        "value": "{{value}} m/s"
+      }
+    },
+    "metersPerSecondSquared": {
+      "symbol": {
+        "value": "m/s<sup>2</sup>"
+      },
+      "symbolPattern": {
+        "value": "{{value}} m/s<sup>2</sup>"
+      }
+    },
+    "metersPerSecondPerSecond": {
+      "symbol": {
+        "value": "m/s/s"
+      },
+      "symbolPattern": {
+        "value": "{{value}} m/s/s"
+      }
+    },
+    "grams": {
+      "symbol": {
+        "value": "g"
+      },
+      "symbolPattern": {
+        "value": "{{value}} g"
+      }
+    },
+    "kilograms": {
+      "symbol": {
+        "value": "kg"
+      },
+      "symbolPattern": {
+        "value": "{{value}} kg"
+      }
+    },
+    "kilogramsPerLiter": {
+      "symbol": {
+        "value": "kg/L"
+      },
+      "symbolPattern": {
+        "value": "{{value}} kg/L"
+      }
+    },
+    "kilogramsPerCubicMeter": {
+      "symbol": {
+        "value": "kg/m<sup>3</sup>"
+      },
+      "symbolPattern": {
+        "value": "{{value}} kg/m<sup>3</sup>"
+      }
+    },
+    "kilopascals": {
+      "symbol": {
+        "value": "kPa"
+      },
+      "symbolPattern": {
+        "value": "{{value}} kPa"
+      }
+    },
+    "nanometers": {
+      "symbol": {
+        "value": "nm"
+      },
+      "symbolPattern": {
+        "value": "{{value}} nm"
+      }
+    },
+    "nanometersPerPicosecond": {
+      "symbol": {
+        "value": "nm/ps"
+      },
+      "symbolPattern": {
+        "value": "{{value}} nm/ps"
+      }
+    },
+    "kilometersPerSecond": {
+      "symbol": {
+        "value": "km/s"
+      },
+      "symbolPattern": {
+        "value": "{{value}} km/s"
+      }
+    },
+    "picometers": {
+      "symbol": {
+        "value": "pm"
+      },
+      "symbolPattern": {
+        "value": "{{value}} pm"
+      }
+    },
+    "picometersPerSecond": {
+      "symbol": {
+        "value": "pm/s"
+      },
+      "symbolPattern": {
+        "value": "{{value}} pm/s"
+      }
+    },
+    "picometersPerSecondSquared": {
+      "symbol": {
+        "value": "pm/s<sup>2</sup>"
+      },
+      "symbolPattern": {
+        "value": "{{value}} pm/s<sup>2</sup>"
+      }
+    },
+    "nanoseconds": {
+      "symbol": {
+        "value": "ns"
+      },
+      "symbolPattern": {
+        "value": "{{value}} ns"
+      }
+    },
+    "picoseconds": {
+      "symbol": {
+        "value": "ps"
+      },
+      "symbolPattern": {
+        "value": "{{value}} ps"
+      }
+    },
+    "molarAbsorptivity": {
+      "symbol": {
+        "value": "1/(cm*M)"
+      },
+      "symbolPattern": {
+        "value": "{{value}} 1/(cm*M)"
+      }
+    },
+    "ohms": {
+      "symbol": {
+        "value": "Ω"
+      },
+      "symbolPattern": {
+        "value": "{{value}} Ω"
+      }
+    },
+    "ohmCentimeters": {
+      "symbol": {
+        "value": "Ω·cm"
+      },
+      "symbolPattern": {
+        "value": "{{value}} Ω·cm"
+      }
+    },
+    "millivolts": {
+      "symbol": {
+        "value": "mV"
+      },
+      "symbolPattern": {
+        "value": "{{value}} mV"
+      }
+    },
+    "milliamperes": {
+      "symbol": {
+        "value": "mA"
+      },
+      "symbolPattern": {
+        "value": "{{value}} mA"
+      }
+    },
+    "farads": {
+      "symbol": {
+        "value": "F"
+      },
+      "symbolPattern": {
+        "value": "{{value}} F"
+      }
+    },
+    "webers": {
+      "symbol": {
+        "value": "Wb"
+      },
+      "symbolPattern": {
+        "value": "{{value}} Wb"
+      }
+    },
+    "gauss": {
+      "symbol": {
+        "value": "G"
+      },
+      "symbolPattern": {
+        "value": "{{value}} G"
+      }
+    },
+    "pascalSeconds": {
+      "symbol": {
+        "value": "Pa·s"
+      },
+      "symbolPattern": {
+        "value": "{{value}} Pa·s"
+      }
+    },
+    "newtonsPerMeter": {
+      "symbol": {
+        "value": "N/m"
+      },
+      "symbolPattern": {
+        "value": "{{value}} N/m"
+      }
+    },
+    "newtonSecondsPerMeter": {
+      "symbol": {
+        "value": "N·s/m"
+      },
+      "symbolPattern": {
+        "value": "{{value}} N·s/m"
+      }
+    },
+    "moles": {
+      "symbol": {
+        "value": "mol"
+      },
+      "symbolPattern": {
+        "value": "{{value}} mol"
+      }
+    },
+    "molesPerSecond": {
+      "symbol": {
+        "value": "mol/s"
+      },
+      "symbolPattern": {
+        "value": "{{value}} mol/s"
+      }
+    },
+    "molar": {
+      "symbol": {
+        "value": "M"
+      },
+      "symbolPattern": {
+        "value": "{{value}} M"
+      }
+    },
+    "molesPerLiter": {
+      "symbol": {
+        "value": "mol/L"
+      },
+      "symbolPattern": {
+        "value": "{{value}} mol/L"
+      }
+    },
+    "radians": {
+      "symbol": {
+        "value": "radians"
+      },
+      "symbolPattern": {
+        "value": "{{value}} radians"
+      }
+    },
+    "radiansPerSecond": {
+      "symbol": {
+        "value": "radians/s"
+      },
+      "symbolPattern": {
+        "value": "{{value}} radians/s"
+      }
+    },
+    "radiansPerSecondSquared": {
+      "symbol": {
+        "value": "radians/s<sup>2</sup>"
+      },
+      "symbolPattern": {
+        "value": "{{value}} radians/s<sup>2</sup>"
+      }
+    },
+    "years": {
+      "symbol": {
+        "value": "years"
+      },
+      "symbolPattern": {
+        "value": "{{value}} years"
+      }
+    },
+    "astronomicalUnits": {
+      "symbol": {
+        "value": "AU"
+      },
+      "symbolPattern": {
+        "value": "{{value}} AU"
+      }
+    },
+    "astronomicalUnitsSquared": {
+      "symbol": {
+        "value": "AU<sup>2</sup>"
+      },
+      "symbolPattern": {
+        "value": "{{value}} AU<sup>2</sup>"
+      }
+    },
+    "viewCoordinatesPerSecond": {
+      "symbol": {
+        "value": "view-coordinates/s"
+      },
+      "symbolPattern": {
+        "value": "{{value}} view-coordinates/s"
+      }
+    },
+    "atomicMassUnits": {
+      "symbol": {
+        "value": "AMU"
+      },
+      "symbolPattern": {
+        "value": "{{value}} AMU"
+      }
+    },
+    "coulombs": {
+      "symbol": {
+        "value": "C"
+      },
+      "symbolPattern": {
+        "value": "{{value}} C"
+      }
+    },
+    "cubicMeters": {
+      "symbol": {
+        "value": "m<sup>3</sup>"
+      },
+      "symbolPattern": {
+        "value": "{{value}} m<sup>3</sup>"
+      }
+    },
+    "cubicPicometers": {
+      "symbol": {
+        "value": "pm<sup>3</sup>"
+      },
+      "symbolPattern": {
+        "value": "{{value}} pm<sup>3</sup>"
+      }
+    },
+    "electronVolt": {
+      "symbol": {
+        "value": "eV"
+      },
+      "symbolPattern": {
+        "value": "{{value}} eV"
+      }
+    },
+    "millimeters": {
+      "symbol": {
+        "value": "mm"
+      },
+      "symbolPattern": {
+        "value": "{{value}} mm"
+      }
+    },
+    "micrometers": {
+      "symbol": {
+        "value": "μm"
+      },
+      "symbolPattern": {
+        "value": "{{value}} μm"
+      }
+    },
+    "particlesPerPicosecond": {
+      "symbol": {
+        "value": "particles/ps"
+      },
+      "symbolPattern": {
+        "value": "{{value}} particles/ps"
+      }
+    },
+    "revolutionsPerMinute": {
+      "symbol": {
+        "value": "rpm"
+      },
+      "symbolPattern": {
+        "value": "{{value}} rpm"
+      }
+    },
+    "atmospheres": {
+      "symbol": {
+        "value": "atm"
+      },
+      "symbolPattern": {
+        "value": "{{value}} atm"
+      }
+    },
+    "kilogramMetersPerSecond": {
+      "symbol": {
+        "value": "kg·m/s"
+      },
+      "symbolPattern": {
+        "value": "{{value}} kg·m/s"
+      }
+    },
+    "picometersPerPicosecond": {
+      "symbol": {
+        "value": "pm/ps"
+      },
+      "symbolPattern": {
+        "value": "{{value}} pm/ps"
+      }
+    }
+  },
+  "a11y": {
+    "simSection": {
+      "screenSummary": {
+        "multiScreenIntro": {
+          "value": "The {{screen}} changes as you play with it. It has a Play Area and a Control Area."
+        },
+        "singleScreenIntroPattern": {
+          "value": "{{sim}} is an interactive sim. It changes as you play with it. It has a Play Area and a Control Area."
+        },
+        "keyboardShortcutsHint": {
+          "value": "This screen has custom interactions. If needed, check out keyboard shortcuts under Sim Resources."
+        }
+      },
+      "playArea": {
+        "value": "Play Area"
+      },
+      "controlArea": {
+        "value": "Control Area"
+      }
+    },
+    "resetAll": {
+      "accessibleName": {
+        "value": "Reset All"
+      },
+      "accessibleContextResponse": {
+        "value": "Everything reset."
+      }
+    },
+    "soundToggle": {
+      "label": {
+        "value": "Mute Sound"
+      },
+      "alert": {
+        "simSoundOn": {
+          "value": "Sim sound on."
+        },
+        "simSoundOff": {
+          "value": "Sim sound off."
+        }
+      }
+    },
+    "keyboardHelpDialog": {
+      "general": {
+        "setValuesInKeypadDescription": {
+          "value": "Set values within keypad using number keys 0-9."
+        }
+      },
+      "comboBox": {
+        "popUpListPattern": {
+          "value": "Show {{thingPlural}}"
+        },
+        "moveThroughPattern": {
+          "value": "Move through {{thingPlural}}"
+        },
+        "chooseNewPattern": {
+          "value": "Change {{thingSingular}}"
+        },
+        "closeWithoutChanging": {
+          "value": "Close without changing"
+        }
+      }
+    },
+    "keyboard": {
+      "helpPatterns": {
+        "actionStatement": {
+          "value": "{ $action }."
+        },
+        "actionWithKeys": {
+          "value": "{ $action } with { $keys }."
+        },
+        "modifiersPlusKeys": {
+          "value": "{ $modifiers } plus { $keys }"
+        },
+        "singleKey": {
+          "value": "{ $keyLabel } key"
+        },
+        "multipleKeys": {
+          "value": "{ $keyLabels } keys"
+        },
+        "twoItemList": {
+          "value": "{ $first } or { $second }"
+        },
+        "serialList": {
+          "value": "{ $items }, or { $last }"
+        },
+        "listSeparatorPattern": {
+          "value": "{ $first }, { $second }"
+        },
+        "modifierSeparatorPattern": {
+          "value": "{ $first } plus { $second }"
+        }
+      },
+      "key": {
+        "leftArrow": {
+          "value": "Left Arrow"
+        },
+        "rightArrow": {
+          "value": "Right Arrow"
+        },
+        "upArrow": {
+          "value": "Up Arrow"
+        },
+        "downArrow": {
+          "value": "Down Arrow"
+        },
+        "pageUp": {
+          "value": "Page Up"
+        },
+        "pageDown": {
+          "value": "Page Down"
+        },
+        "escape": {
+          "value": "Escape"
+        },
+        "control": {
+          "value": "Control"
+        }
+      }
+    },
+    "keySets": {
+      "arrowOrWASD": {
+        "value": "Arrow keys or W, A, S, or D letter keys"
+      },
+      "arrow": {
+        "value": "Arrow keys"
+      },
+      "leftRightOrUpDownArrows": {
+        "value": "Left and Right Arrow keys or Up and Down Arrow keys"
+      },
+      "leftRightArrows": {
+        "value": "Left and Right Arrow keys"
+      },
+      "leftOrRightArrows": {
+        "value": "Left or Right Arrow keys"
+      },
+      "upDownArrows": {
+        "value": "Up and Down Arrow keys"
+      },
+      "upOrDownArrows": {
+        "value": "Up or Down Arrow keys"
+      },
+      "wasd": {
+        "value": "W, A, S, or D letter keys"
+      },
+      "ad": {
+        "value": "A and D letter keys"
+      },
+      "ws": {
+        "value": "W and S letter keys"
+      },
+      "leftRightOrAD": {
+        "value": "Left and Right Arrow keys or A and D letter keys"
+      },
+      "upDownOrWS": {
+        "value": "Up and Down Arrow keys or W and S letter keys"
+      }
+    },
+    "eraserButton": {
+      "accessibleName": {
+        "value": "Erase"
+      }
+    },
+    "timerToggleButton": {
+      "accessibleNameOn": {
+        "value": "Timer On"
+      },
+      "accessibleNameOff": {
+        "value": "Timer Off"
+      }
+    },
+    "playControlButton": {
+      "play": {
+        "value": "Play"
+      },
+      "pause": {
+        "value": "Pause"
+      },
+      "stop": {
+        "value": "Stop"
+      }
+    },
+    "playPauseButton": {
+      "playingAccessibleContextResponse": {
+        "value": "Sim playing."
+      },
+      "pausedAccessibleContextResponse": {
+        "value": "Sim paused."
+      }
+    },
+    "stepBackwardButton": {
+      "accessibleName": {
+        "value": "Step Backward"
+      },
+      "accessibleContextResponse": {
+        "value": "Stepping backward."
+      }
+    },
+    "stepForwardButton": {
+      "accessibleName": {
+        "value": "Step Forward"
+      },
+      "accessibleContextResponse": {
+        "value": "Stepping forward."
+      }
+    },
+    "stepButton": {
+      "playingDescription": {
+        "value": "Pause sim to step forward little by little."
+      },
+      "pausedDescription": {
+        "value": "Play sim to resume chosen speed."
+      }
+    },
+    "timeControlNode": {
+      "simSpeedDescription": {
+        "value": "For closer observations Play sim on slower speed."
+      },
+      "accessibleHeading": {
+        "value": "Time Controls"
+      },
+      "simSpeeds": {
+        "value": "Sim Speeds"
+      }
+    },
+    "playPauseStepButtonGroup": {
+      "playingHelpText": {
+        "value": "Pause sim to step through little by little."
+      },
+      "pausedHelpText": {
+        "value": "Step through little by little."
+      }
+    },
+    "restartButton": {
+      "accessibleName": {
+        "value": "Restart"
+      }
+    },
+    "movementAlerter": {
+      "down": {
+        "value": "down"
+      },
+      "left": {
+        "value": "left"
+      },
+      "right": {
+        "value": "right"
+      },
+      "up": {
+        "value": "up"
+      },
+      "upAndToTheRight": {
+        "value": "up and to the right"
+      },
+      "upAndToTheLeft": {
+        "value": "up and to the left"
+      },
+      "downAndToTheRight": {
+        "value": "down and to the right"
+      },
+      "downAndToTheLeft": {
+        "value": "down and to the left"
+      },
+      "leftBorderAlert": {
+        "value": "At left edge"
+      },
+      "rightBorderAlert": {
+        "value": "At right edge"
+      },
+      "topBorderAlert": {
+        "value": "At top"
+      },
+      "bottomBorderAlert": {
+        "value": "At bottom"
+      }
+    },
+    "grabDrag": {
+      "grabPattern": {
+        "value": "Grab {{objectToGrab}}"
+      },
+      "movable": {
+        "value": "movable"
+      },
+      "button": {
+        "value": "button"
+      },
+      "defaultObjectToGrab": {
+        "value": "Object"
+      },
+      "released": {
+        "value": "Released."
+      },
+      "grabbed": {
+        "value": "Grabbed."
+      },
+      "gestureHelpTextPattern": {
+        "value": "Double tap and hold to drag {{objectToGrab}}. Lift finger to release."
+      },
+      "spaceToGrabOrRelease": {
+        "value": "Space to Grab or Release."
+      }
+    },
+    "groupSort": {
+      "sortable": {
+        "value": "sortable"
+      },
+      "navigable": {
+        "value": "navigable"
+      },
+      "grabbedAccessibleObjectResponse": {
+        "value": "Grabbed."
+      },
+      "releasedAccessibleObjectResponse": {
+        "value": "Released."
+      }
+    },
+    "listItemPunctuation": {
+      "semicolonPattern": {
+        "value": "{{content}};"
+      },
+      "commaPattern": {
+        "value": "{{content}},"
+      },
+      "periodPattern": {
+        "value": "{{content}}."
+      }
+    },
+    "voicing": {
+      "simSection": {
+        "screenSummary": {
+          "singleScreenIntroPattern": {
+            "value": "{{sim}} is an interactive sim. It changes as you play with it."
+          }
+        }
+      },
+      "grabDragHintPattern": {
+        "value": "Tap, hold, and drag to {{manipulation}}."
+      },
+      "grabbedAlert": {
+        "value": "Grabbed."
+      },
+      "draggableAlert": {
+        "value": "Draggable"
+      }
+    },
+    "close": {
+      "value": "Close"
+    },
+    "zoomIn": {
+      "value": "Zoom In"
+    },
+    "zoomOut": {
+      "value": "Zoom Out"
+    },
+    "measuringTape": {
+      "value": "Measuring Tape"
+    },
+    "measuringTapeTip": {
+      "value": "Measuring Tape Tip"
+    },
+    "info": {
+      "value": "Info"
+    },
+    "offScaleIndicator": {
+      "pointsOffScaleUp": {
+        "value": "Points off scale up!"
+      },
+      "pointsOffScaleDown": {
+        "value": "Points off scale down!"
+      },
+      "pointsOffScaleLeft": {
+        "value": "Points off scale to the left!"
+      },
+      "pointsOffScaleRight": {
+        "value": "Points off scale to the right!"
+      }
+    },
+    "stopwatch": {
+      "accessibleName": {
+        "value": "Stopwatch"
+      },
+      "accessibleHelpText": {
+        "value": "Measure elapsed time."
+      },
+      "units": {
+        "seconds": {
+          "seconds": {
+            "value": "seconds"
+          },
+          "pattern": {
+            "value": "{ $seconds } seconds"
+          }
+        },
+        "minutesAndSeconds": {
+          "pattern": {
+            "value": "{ $minutes ->\n  [one] { $minutes } minute\n  *[other] { $minutes } minutes\n} and { $seconds } seconds"
+          }
+        },
+        "valueUnits": {
+          "pattern": {
+            "value": "{ $value } { $units }"
+          }
+        }
+      },
+      "resetButton": {
+        "accessibleName": {
+          "value": "Reset Stopwatch"
+        },
+        "accessibleContextResponse": {
+          "value": "Stopwatch reset."
+        }
+      },
+      "playButton": {
+        "accessibleName": {
+          "value": "Start Stopwatch"
+        }
+      },
+      "pauseButton": {
+        "accessibleName": {
+          "value": "Pause Stopwatch"
+        }
+      }
+    },
+    "negativeNumber": {
+      "value": "negative { $value }"
+    },
+    "scientificNotation": {
+      "value": "{ $value } times ${ $base } to the { $exponent } power"
+    },
+    "units": {
+      "centimeters": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } centimeter\n  *[other] { $value } centimeters\n}"
+        }
+      },
+      "centimetersSquared": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } square centimeter\n  *[other] { $value } square centimeters\n}"
+        }
+      },
+      "hertz": {
+        "pattern": {
+          "value": "{ $value } hertz"
+        }
+      },
+      "percent": {
+        "pattern": {
+          "value": "{ $value } percent"
+        }
+      },
+      "seconds": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } second\n  *[other] { $value } seconds\n}"
+        }
+      },
+      "milliseconds": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } millisecond\n  *[other] { $value } milliseconds\n}"
+        }
+      },
+      "microseconds": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } microsecond\n  *[other] { $value } microseconds\n}"
+        }
+      },
+      "femtoseconds": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } femtosecond\n  *[other] { $value } femtoseconds\n}"
+        }
+      },
+      "kilopascals": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } kilopascal\n  *[other] { $value } kilopascals\n}"
+        }
+      },
+      "amperes": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } ampere\n  *[other] { $value } amperes\n}"
+        }
+      },
+      "volts": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } volt\n  *[other] { $value } volts\n}"
+        }
+      },
+      "newtons": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } newton\n  *[other] { $value } newtons\n}"
+        }
+      },
+      "watts": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } watt\n  *[other] { $value } watts\n}"
+        }
+      },
+      "joules": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } joule\n  *[other] { $value } joules\n}"
+        }
+      },
+      "kelvin": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } kelvin\n  *[other] { $value } kelvins\n}"
+        }
+      },
+      "degrees": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } degree\n  *[other] { $value } degrees\n}"
+        }
+      },
+      "degreesCelsius": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } degree Celsius\n  *[other] { $value } degrees Celsius\n}"
+        }
+      },
+      "degreesFahrenheit": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } degree Fahrenheit\n  *[other] { $value } degrees Fahrenheit\n}"
+        }
+      },
+      "liters": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } liter\n  *[other] { $value } liters\n}"
+        }
+      },
+      "litersPerSecond": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } liter per second\n  *[other] { $value } liters per second\n}"
+        }
+      },
+      "meters": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } meter\n  *[other] { $value } meters\n}"
+        }
+      },
+      "metersPerSecond": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } meter per second\n  *[other] { $value } meters per second\n}"
+        }
+      },
+      "metersPerSecondSquared": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } meter per second squared\n  *[other] { $value } meters per second squared\n}"
+        }
+      },
+      "metersPerSecondPerSecond": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } meter per second per second\n  *[other] { $value } meters per second per second\n}"
+        }
+      },
+      "grams": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } gram\n  *[other] { $value } grams\n}"
+        }
+      },
+      "kilograms": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } kilogram\n  *[other] { $value } kilograms\n}"
+        }
+      },
+      "kilogramsPerLiter": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } kilogram per liter\n  *[other] { $value } kilograms per liter\n}"
+        }
+      },
+      "kilogramsPerCubicMeter": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } kilogram per cubic meter\n  *[other] { $value } kilograms per cubic meter\n}"
+        }
+      },
+      "nanometers": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } nanometer\n  *[other] { $value } nanometers\n}"
+        }
+      },
+      "nanometersPerPicosecond": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } nanometer per picosecond\n  *[other] { $value } nanometers per picosecond\n}"
+        }
+      },
+      "kilometersPerSecond": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } kilometer per second\n  *[other] { $value } kilometers per second\n}"
+        }
+      },
+      "picometers": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } picometer\n  *[other] { $value } picometers\n}"
+        }
+      },
+      "picometersPerSecond": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } picometer per second\n  *[other] { $value } picometers per second\n}"
+        }
+      },
+      "picometersPerSecondSquared": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } picometer per second squared\n  *[other] { $value } picometers per second squared\n}"
+        }
+      },
+      "nanoseconds": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } nanosecond\n  *[other] { $value } nanoseconds\n}"
+        }
+      },
+      "picoseconds": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } picosecond\n  *[other] { $value } picoseconds\n}"
+        }
+      },
+      "molarAbsorptivity": {
+        "pattern": {
+          "value": "{ $value } per centimeter per molar"
+        }
+      },
+      "ohms": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } ohm\n  *[other] { $value } ohms\n}"
+        }
+      },
+      "ohmCentimeters": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } ohm-centimeter\n  *[other] { $value } ohm-centimeters\n}"
+        }
+      },
+      "millivolts": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } millivolt\n  *[other] { $value } millivolts\n}"
+        }
+      },
+      "milliamperes": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } milliampere\n  *[other] { $value } milliamperes\n}"
+        }
+      },
+      "farads": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } farad\n  *[other] { $value } farads\n}"
+        }
+      },
+      "webers": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } weber\n  *[other] { $value } webers\n}"
+        }
+      },
+      "gauss": {
+        "pattern": {
+          "value": "{ $value } gauss"
+        }
+      },
+      "pascalSeconds": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } pascal second\n  *[other] { $value } pascal seconds\n}"
+        }
+      },
+      "newtonsPerMeter": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } newton per meter\n  *[other] { $value } newtons per meter\n}"
+        }
+      },
+      "newtonSecondsPerMeter": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } newton-second per meter\n  *[other] { $value } newton-seconds per meter\n}"
+        }
+      },
+      "moles": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } mole\n  *[other] { $value } moles\n}"
+        }
+      },
+      "molesPerSecond": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } mole per second\n  *[other] { $value } moles per second\n}"
+        }
+      },
+      "molar": {
+        "pattern": {
+          "value": "{ $value } molar"
+        }
+      },
+      "molesPerLiter": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } mole per liter\n  *[other] { $value } moles per liter\n}"
+        }
+      },
+      "radians": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } radian\n  *[other] { $value } radians\n}"
+        }
+      },
+      "radiansPerSecond": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } radian per second\n  *[other] { $value } radians per second\n}"
+        }
+      },
+      "radiansPerSecondSquared": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } radian per second squared\n  *[other] { $value } radians per second squared\n}"
+        }
+      },
+      "years": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } year\n  *[other] { $value } years\n}"
+        }
+      },
+      "astronomicalUnits": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } astronomical unit\n  *[other] { $value } astronomical units\n}"
+        }
+      },
+      "astronomicalUnitsSquared": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } square astronomical unit\n  *[other] { $value } square astronomical units\n}"
+        }
+      },
+      "viewCoordinatesPerSecond": {
+        "pattern": {
+          "value": "{ $value } view-coordinates per second"
+        }
+      },
+      "atomicMassUnits": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } atomic mass unit\n  *[other] { $value } atomic mass units\n}"
+        }
+      },
+      "coulombs": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } coulomb\n  *[other] { $value } coulombs\n}"
+        }
+      },
+      "cubicMeters": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } cubic meter\n  *[other] { $value } cubic meters\n}"
+        }
+      },
+      "cubicPicometers": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } cubic picometer\n  *[other] { $value } cubic picometers\n}"
+        }
+      },
+      "electronVolt": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } electron volt\n  *[other] { $value } electron volts\n}"
+        }
+      },
+      "millimeters": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } millimeter\n  *[other] { $value } millimeters\n}"
+        }
+      },
+      "micrometers": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } micrometer\n  *[other] { $value } micrometers\n}"
+        }
+      },
+      "particlesPerPicosecond": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } particle per picosecond\n  *[other] { $value } particles per picosecond\n}"
+        }
+      },
+      "revolutionsPerMinute": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } revolution per minute\n  *[other] { $value } revolutions per minute\n}"
+        }
+      },
+      "atmospheres": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } atmosphere\n  *[other] { $value } atmospheres\n}"
+        }
+      },
+      "kilogramMetersPerSecond": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } kilogram-meter per second\n  *[other] { $value } kilogram-meters per second\n}"
+        }
+      },
+      "picometersPerPicosecond": {
+        "pattern": {
+          "value": "{ $value ->\n  [one] { $value } picometer per picosecond\n  *[other] { $value } picometers per picosecond\n}"
+        }
+      }
+    }
+  }
+}

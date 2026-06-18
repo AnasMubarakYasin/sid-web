@@ -1,0 +1,1 @@
+import{getOption}from"../../../../perennial-alias/js/grunt/tasks/util/getOption.js";import getRepo from"../../../../perennial-alias/js/grunt/tasks/util/getRepo.js";import _modulify from"../modulify/modulify.js";export const modulifyPromise=(async()=>{const repo=getRepo();const targets=getOption("targets");await _modulify(repo,targets?targets.split(","):null)})();

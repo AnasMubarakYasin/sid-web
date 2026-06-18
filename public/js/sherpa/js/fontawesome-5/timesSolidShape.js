@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import timesSolidString from"./timesSolidString.js";export default new Shape(timesSolidString).makeImmutable();

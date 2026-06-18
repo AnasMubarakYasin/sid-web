@@ -1,0 +1,1 @@
+import scenery from"../scenery.js";const xlinkns="http://www.w3.org/1999/xlink";scenery.register("xlinkns",xlinkns);export default xlinkns;

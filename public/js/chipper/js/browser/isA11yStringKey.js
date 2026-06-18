@@ -1,0 +1,1 @@
+export default function isA11yStringKey(key){return key.includes("/a11y.")}

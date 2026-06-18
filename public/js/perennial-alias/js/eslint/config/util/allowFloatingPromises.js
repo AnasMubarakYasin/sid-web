@@ -1,0 +1,1 @@
+export default[{rules:{"@typescript-eslint/no-floating-promises":"off"}}];

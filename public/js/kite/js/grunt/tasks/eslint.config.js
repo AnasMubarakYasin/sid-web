@@ -1,0 +1,1 @@
+import allowFloatingPromises from"../../../../perennial-alias/js/eslint/config/util/allowFloatingPromises.mjs";import eslintConfig from"../eslint.config.mjs";export default[...eslintConfig,...allowFloatingPromises];

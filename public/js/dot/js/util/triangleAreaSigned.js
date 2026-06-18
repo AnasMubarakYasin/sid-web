@@ -1,0 +1,1 @@
+import dot from"../dot.js";export function triangleAreaSigned(a,b,c){return a.x*(b.y-c.y)+b.x*(c.y-a.y)+c.x*(a.y-b.y)}dot.register("triangleAreaSigned",triangleAreaSigned);

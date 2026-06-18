@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import sunSolidString from"./sunSolidString.js";export default new Shape(sunSolidString).makeImmutable();

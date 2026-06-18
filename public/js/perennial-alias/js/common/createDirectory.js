@@ -1,0 +1,1 @@
+import fs from"fs";import winston from"winston";export const createDirectory=async path=>{if(!fs.existsSync(path)){winston.info(`Creating directory ${path}`);await fs.promises.mkdir(path,{recursive:true})}};

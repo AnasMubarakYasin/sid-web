@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import checkSolidString from"./checkSolidString.js";export default new Shape(checkSolidString).makeImmutable();

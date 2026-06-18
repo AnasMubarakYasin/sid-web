@@ -1,0 +1,1 @@
+import Tandem from"../../tandem/js/Tandem.js";export function getGroupItemNodes(array,tandem){return array.map(item=>{assert&&assert(!("node"in item),"Use createNode instead of node");return item.createNode(tandem&&item.tandemName?tandem.createTandem(item.tandemName):Tandem.OPTIONAL)})}

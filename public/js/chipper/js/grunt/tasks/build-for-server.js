@@ -1,0 +1,1 @@
+(async()=>{await (await import("./build.js")).buildPromise})();

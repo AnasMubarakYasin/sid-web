@@ -1,0 +1,1 @@
+const assertNoAdditionalChildren=function(node){if(assert){node.insertChild=function(index,node,isComposite){assert&&assert(false,"Attempt to insert child into Leaf");return node}}};export default assertNoAdditionalChildren;

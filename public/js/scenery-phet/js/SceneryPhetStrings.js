@@ -1,0 +1,1 @@
+import getStringModule from"../../chipper/js/browser/getStringModule.js";import sceneryPhet from"./sceneryPhet.js";const SceneryPhetStrings=getStringModule("SCENERY_PHET");sceneryPhet.register("SceneryPhetStrings",SceneryPhetStrings);export default SceneryPhetStrings;

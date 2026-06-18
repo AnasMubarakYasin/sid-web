@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import levelDownAltSolidString from"./levelDownAltSolidString.js";export default new Shape(levelDownAltSolidString).makeImmutable();

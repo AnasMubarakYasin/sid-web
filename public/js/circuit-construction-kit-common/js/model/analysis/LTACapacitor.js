@@ -1,0 +1,1 @@
+import DynamicCoreModel from"./DynamicCoreModel.js";export default class LTACapacitor extends DynamicCoreModel{constructor(id,node0,node1,voltage,current,capacitance){super(id,node0,node1,voltage,current);this.capacitance=capacitance;this.capacitorVoltageNode1=null}}

@@ -1,0 +1,1 @@
+import optionize from"../../phet-core/js/optionize.js";import AquaRadioButtonGroup from"./AquaRadioButtonGroup.js";export default class HorizontalAquaRadioButtonGroup extends AquaRadioButtonGroup{constructor(property,items,options){super(property,items,optionize()({orientation:"horizontal"},options))}}

@@ -1,0 +1,1 @@
+import affirm from"../../perennial-alias/js/browser-and-node/affirm.js";import phetCore from"./phetCore.js";function cleanArray(arr){affirm(!arr||Array.isArray(arr),"cleanArray either takes an Array");if(arr){while(arr.length){arr.pop()}return arr}else{return[]}}phetCore.register("cleanArray",cleanArray);export default cleanArray;

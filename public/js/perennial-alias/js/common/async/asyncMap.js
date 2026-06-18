@@ -1,0 +1,1 @@
+const asyncMap=async(list,f)=>{const items=[];let index=0;for(const item of list){items.push(await f(item,index++))}return items};module.exports=asyncMap;

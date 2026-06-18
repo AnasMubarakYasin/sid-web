@@ -1,0 +1,1 @@
+export const unitToString=unit=>{if(typeof unit==="string"){return unit}else{return unit.name}};export const unitToStringOrNull=unit=>{return unit===null?null:unitToString(unit)};

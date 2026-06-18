@@ -1,0 +1,1 @@
+import getRepo from"../../../../perennial-alias/js/grunt/tasks/util/getRepo.js";import generateREADME from"../generateREADME.js";const repo=getRepo();(async()=>{await generateREADME(repo,false)})();

@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import snowflakeSolidString from"./snowflakeSolidString.js";export default new Shape(snowflakeSolidString).makeImmutable();

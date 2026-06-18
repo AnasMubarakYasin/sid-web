@@ -1,0 +1,1 @@
+import{buildLocal}from"./buildLocal.js";import{ssh}from"./ssh.js";export const devSsh=cmd=>{return ssh(buildLocal.devUsername,buildLocal.devDeployServer,cmd)};

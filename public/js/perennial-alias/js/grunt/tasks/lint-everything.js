@@ -1,0 +1,1 @@
+import getLintCLIOptions,{getLintEverythingRepos}from"../../eslint/getLintCLIOptions.js";import lint from"../../eslint/lint.js";(async()=>{const lintSuccess=await lint(getLintEverythingRepos(),getLintCLIOptions());if(!lintSuccess){console.log("Lint failed");process.exit(1)}})();

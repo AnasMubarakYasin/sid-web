@@ -1,0 +1,1 @@
+import dot from"../dot.js";import{triangleArea}from"./triangleArea.js";export function arePointsCollinear(a,b,c,epsilon=0){return triangleArea(a,b,c)<=epsilon}dot.register("arePointsCollinear",arePointsCollinear);

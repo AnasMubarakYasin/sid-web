@@ -1,0 +1,1 @@
+import tandemNamespace from"../tandemNamespace.js";import IOType from"./IOType.js";const GetSetButtonsIO=new IOType("GetSetButtonsIO",{isValidValue:value=>true});tandemNamespace.register("GetSetButtonsIO",GetSetButtonsIO);export default GetSetButtonsIO;

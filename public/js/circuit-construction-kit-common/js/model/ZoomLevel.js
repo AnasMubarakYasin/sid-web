@@ -1,0 +1,1 @@
+import Enumeration from"../../../phet-core/js/Enumeration.js";import EnumerationValue from"../../../phet-core/js/EnumerationValue.js";export default class ZoomLevel extends EnumerationValue{static{this.NORMAL=new ZoomLevel}static{this.ZOOMED_OUT=new ZoomLevel}static{this.enumeration=new Enumeration(ZoomLevel)}}

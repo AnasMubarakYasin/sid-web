@@ -1,0 +1,1 @@
+import ReadingBlock from"../../../accessibility/voicing/ReadingBlock.js";import Node from"../../../nodes/Node.js";import scenery from"../../../scenery.js";let ReadingBlockNode=class ReadingBlockNode extends ReadingBlock(Node){constructor(providedOptions){super(providedOptions)}};scenery.register("ReadingBlockNode",ReadingBlockNode);export default ReadingBlockNode;

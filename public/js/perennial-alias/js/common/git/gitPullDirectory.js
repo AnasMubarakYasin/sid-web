@@ -1,0 +1,1 @@
+import winston from"winston";import{gitMutableExecute}from"./gitMutex.js";export const gitPullDirectory=async directory=>{winston.info(`git pull in ${directory}`);return gitMutableExecute(["pull"],directory)};

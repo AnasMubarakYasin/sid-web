@@ -1,0 +1,1 @@
+import fs from"fs";import getRepo from"../../../../perennial-alias/js/grunt/tasks/util/getRepo.js";import generateDevelopmentStrings from"../generateDevelopmentStrings.js";const repo=getRepo();(async()=>{if(fs.existsSync(`../${repo}/${repo}-strings_en.json`)){await generateDevelopmentStrings(repo)}})();

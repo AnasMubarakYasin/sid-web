@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import timesCircleSolidString from"./timesCircleSolidString.js";export default new Shape(timesCircleSolidString).makeImmutable();

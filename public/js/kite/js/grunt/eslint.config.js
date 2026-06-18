@@ -1,0 +1,1 @@
+import nodeEslintConfig from"../../../perennial-alias/js/eslint/config/node.eslint.config.mjs";import{mutateForNestedConfig}from"../../../perennial-alias/js/eslint/config/root.eslint.config.mjs";export default[...mutateForNestedConfig(nodeEslintConfig)];

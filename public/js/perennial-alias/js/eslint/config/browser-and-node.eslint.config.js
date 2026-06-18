@@ -1,0 +1,1 @@
+import rootEslintConfig from"./root.eslint.config.mjs";export default[...rootEslintConfig,{languageOptions:{globals:{console:"readonly"}},rules:{"phet/bad-phet-library-text":"error","phet/bad-sim-text":"error"}}];

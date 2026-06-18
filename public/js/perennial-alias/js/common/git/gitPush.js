@@ -1,0 +1,1 @@
+import winston from"winston";import{gitMutableExecute}from"./gitMutex.js";export const gitPush=async(remoteBranch="main")=>{winston.info(`git push to ${remoteBranch}`);return gitMutableExecute(["push","-u","origin",remoteBranch],"..")};

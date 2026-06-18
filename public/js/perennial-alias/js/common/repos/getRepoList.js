@@ -1,0 +1,1 @@
+import fs from"fs";export const getRepoList=name=>{const contents=fs.readFileSync(`${__dirname}/../../../data/${name}`,"utf8").trim();return contents.split("\n").map(sim=>sim.trim())};

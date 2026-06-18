@@ -1,0 +1,21 @@
+import{execSync}from"child_process";import path from"path";import{Node,Project}from"ts-morph";const TOTALITY_ROOT=path.resolve(__dirname,"..","..","..");async function removeInferrableTypes(repoPath){const project=new Project({tsConfigFilePath:`${repoPath}/tsconfig.json`});const sourceFiles=project.getSourceFiles(`${repoPath}/js/**/*.ts`);console.log(`Found ${sourceFiles.length} source file(s) under ${repoPath}/js/**/*.ts`);console.log("Baseline type-check...");if(!isBuildSuccessful(repoPath)){console.error("ERROR: Baseline `grunt type-check` failed in "+repoPath+". Fix existing type errors before running this script.");process.exit(1)}console.log("Baseline OK.");let totalCandidates=0;let totalRemoved=0;let totalReverted=0;for(const sourceFile of sourceFiles){const callbackFns=[];sourceFile.forEachDescendant(node=>{if(Node.isArrowFunction(node)||Node.isFunctionExpression(node)){const parent=node.getParent();if(parent&&(Node.isCallExpression(parent)||Node.isNewExpression(parent))&&parent.getArguments().includes(node)){callbackFns.push(node)}}});const candidates=[];for(const fn of callbackFns){for(const param of fn.getParameters()){const typeNode=param.getTypeNode();if(typeNode&&typeNode.getText()!=="any"){candidates.push({kind:"param",param:param,originalText:typeNode.getText()})}}const returnTypeNode=fn.getReturnTypeNode();if(returnTypeNode&&returnTypeNode.getText()!=="any"){candidates.push({kind:"return",fn:fn,originalText:returnTypeNode.getText()})}}console.log(`# ${sourceFile.getFilePath()} — ${callbackFns.length} callback fn(s), ${candidates.length} candidate(s)`);if(candidates.length===0){continue}totalCandidates+=candidates.length;for(const candidate of candidates){const label=candidate.kind==="param"?`param '${candidate.param.getName()}: ${candidate.originalText}'`:`return type ': ${candidate.originalText}'`;console.log(`  - Trying to remove ${label}`);if(candidate.kind==="param"){candidate.param.removeType()}else{candidate.fn.removeReturnType()}await sourceFile.save();if(isBuildSuccessful(repoPath)){console.log("    Removed.");totalRemoved++}else{if(candidate.kind==="param"){candidate.param.setType(candidate.originalText)}else{candidate.fn.setReturnType(candidate.originalText)}await sourceFile.save();console.log("    Reverted (type-check failed).");totalReverted++}}}console.log(`
+Summary: ${totalCandidates} candidate(s), ${totalRemoved} removed, ${totalReverted} reverted.`)}if(process.argv.includes("--help")){console.log(`
+\x1b[1mUsage (run from the totality monorepo root):\x1b[0m
+  \x1b[36mbash perennial-alias/bin/sage run perennial-alias/js/scripts/removeInferrableTypes.ts <repo-directory>\x1b[0m
+
+\x1b[1mParameters:\x1b[0m
+  \x1b[33m<repo-directory>\x1b[0m - The repo directory name (relative to the totality root) whose
+                       TypeScript files should be processed. Must contain a 'tsconfig.json'.
+
+\x1b[1mOptions:\x1b[0m
+  \x1b[32m--help\x1b[0m                  - Displays this help message and exits.
+
+\x1b[1mExample:\x1b[0m
+  \x1b[36mbash perennial-alias/bin/sage run perennial-alias/js/scripts/removeInferrableTypes.ts quantum-wave-interference\x1b[0m
+
+\x1b[1mNote:\x1b[0m
+- Only callback parameters/return types (arrow / function expressions passed as CallExpression
+  arguments) are considered. Standalone functions and class methods are not touched.
+- Annotations of type 'any' are skipped because removing them would change inference.
+- The script edits files in place. Run with a clean working copy so you can review the diff.
+  `);process.exit(0)}if(process.argv.length<3){console.error("Error: Please provide the path to the repository directory. Check --help for instructions.");process.exit(1)}const repoPath=process.argv[2];function isBuildSuccessful(repoPath){try{execSync(`${TOTALITY_ROOT}/bin/grunt type-check --repo=${repoPath}`,{cwd:TOTALITY_ROOT,stdio:"pipe",encoding:"utf-8"});return true}catch(error){return false}}removeInferrableTypes(repoPath).then(()=>console.log("Finished processing files.")).catch(error=>{console.error("An error occurred:",error);process.exit(1)});

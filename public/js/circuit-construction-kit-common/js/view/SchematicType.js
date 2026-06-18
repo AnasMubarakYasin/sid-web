@@ -1,0 +1,1 @@
+import Enumeration from"../../../phet-core/js/Enumeration.js";import EnumerationValue from"../../../phet-core/js/EnumerationValue.js";export default class SchematicType extends EnumerationValue{static{this.IEC=new SchematicType}static{this.IEEE=new SchematicType}static{this.BRITISH=new SchematicType}static{this.enumeration=new Enumeration(SchematicType)}}

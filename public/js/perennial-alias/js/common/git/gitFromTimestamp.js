@@ -1,0 +1,1 @@
+import{gitImmutableExecute}from"./gitMutex.js";export const gitFromTimestamp=async(branch,timestamp)=>{return gitImmutableExecute(["rev-list","-1",`--before="${timestamp}"`,branch],"..").then(stdout=>{const sha=stdout.trim();if(sha.length===0){return Promise.reject(new Error("No matching SHA for timestamp"))}else{return Promise.resolve(sha)}})};

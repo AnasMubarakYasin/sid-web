@@ -1,0 +1,1 @@
+const AccessibleInteractiveOptions={tagName:"div",focusable:true,ariaRole:"application",accessibleNameBehavior:(node,options,accessibleName)=>{options.ariaLabel=accessibleName;options.innerContent=accessibleName;return options}};export default AccessibleInteractiveOptions;

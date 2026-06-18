@@ -1,0 +1,1 @@
+import dot from"../dot.js";export function equalsEpsilon(a,b,epsilon){return Math.abs(a-b)<=epsilon}dot.register("equalsEpsilon",equalsEpsilon);

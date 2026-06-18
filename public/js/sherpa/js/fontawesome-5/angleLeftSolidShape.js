@@ -1,0 +1,1 @@
+import Shape from"../../../kite/js/Shape.js";import angleLeftSolidString from"./angleLeftSolidString.js";export default new Shape(angleLeftSolidString).makeImmutable();

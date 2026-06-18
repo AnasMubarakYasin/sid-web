@@ -1,0 +1,1 @@
+import ReadOnlyProperty from"./ReadOnlyProperty.js";import TinyProperty from"./TinyProperty.js";export function isTReadOnlyProperty(something){return something instanceof ReadOnlyProperty||something instanceof TinyProperty}

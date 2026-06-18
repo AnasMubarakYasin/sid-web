@@ -1,0 +1,1 @@
+import winston from"winston";import{gitImmutableExecute}from"./gitMutex.js";export const gitIsClean=async(file,directory="..")=>{winston.debug("git status check");const gitArgs=["status","--porcelain"];if(file){gitArgs.push(file)}return gitImmutableExecute(gitArgs,directory).then(stdout=>Promise.resolve(stdout.length===0))};

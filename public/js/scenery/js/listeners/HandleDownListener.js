@@ -1,0 +1,1 @@
+import scenery from"../scenery.js";let HandleDownlistener=class HandleDownlistener{down(event){event.handle()}};scenery.register("HandleDownlistener",HandleDownlistener);export default HandleDownlistener;

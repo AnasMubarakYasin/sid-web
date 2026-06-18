@@ -1,0 +1,1 @@
+import{browserPageLoad}from"./browserPageLoad.js";import playwright from"playwright";import _ from"lodash";export const playwrightLoad=async(url,options)=>{const mergedOptions=_.merge({testingBrowserCreator:playwright.firefox},options);return browserPageLoad(mergedOptions.testingBrowserCreator,url,mergedOptions)};

@@ -1,0 +1,1 @@
+import Bounds2 from"./Bounds2.js";import dot from"./dot.js";export default class Rectangle extends Bounds2{constructor(x,y,width,height){super(x,y,x+width,y+height)}}dot.register("Rectangle",Rectangle);

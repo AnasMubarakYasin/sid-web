@@ -1,0 +1,1 @@
+import tandemNamespace from"./tandemNamespace.js";let IOTypeCache=class IOTypeCache extends Map{static{this.caches=[]}constructor(entries){super(entries);IOTypeCache.caches.push(this)}static clearAll(){IOTypeCache.caches.forEach(cache=>cache.clear())}};tandemNamespace.register("IOTypeCache",IOTypeCache);export default IOTypeCache;

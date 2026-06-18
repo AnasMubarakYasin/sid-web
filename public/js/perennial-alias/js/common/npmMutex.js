@@ -1,0 +1,1 @@
+import{Mutex}from"async-mutex";export const npmMutex=new Mutex;export const npmExclusive=async callback=>{return npmMutex.runExclusive(callback)};

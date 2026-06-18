@@ -1,0 +1,1 @@
+import Node from"../../../../scenery/js/nodes/Node.js";export function isReadingBlock(something){return something instanceof Node&&something._isReadingBlock}

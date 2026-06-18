@@ -1,0 +1,1 @@
+import scenery from"../../scenery.js";export default class LayoutLine{initializeLayoutLine(){this.min=0;this.max=Number.POSITIVE_INFINITY;this.minOrigin=Number.POSITIVE_INFINITY;this.maxOrigin=Number.NEGATIVE_INFINITY;this.size=0;this.position=0}hasOrigin(){return isFinite(this.minOrigin)&&isFinite(this.maxOrigin)}}scenery.register("LayoutLine",LayoutLine);

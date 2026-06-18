@@ -1,0 +1,1 @@
+import sceneryPhet from"../../sceneryPhet.js";import SceneryPhetFluent from"../../SceneryPhetFluent.js";import PDOMSectionNode from"../PDOMSectionNode.js";export default class PlayAreaNode extends PDOMSectionNode{constructor(providedOptions){super(SceneryPhetFluent.a11y.simSection.playAreaStringProperty,providedOptions)}}sceneryPhet.register("PlayAreaNode",PlayAreaNode);

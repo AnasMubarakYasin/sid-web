@@ -1,0 +1,1 @@
+import dot from"../dot.js";export function rangeInclusive(a,b){if(b<a){return[]}const result=new Array(b-a+1);for(let i=a;i<=b;i++){result[i-a]=i}return result}dot.register("rangeInclusive",rangeInclusive);

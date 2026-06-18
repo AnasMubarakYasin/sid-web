@@ -1,0 +1,1 @@
+import isArray from"./isArray.js";QUnit.module("isArray");QUnit.test("isArray",assert=>{assert.ok(isArray([1,2,3]));assert.ok(isArray([]));assert.ok(!isArray(0));assert.ok(!isArray({}));assert.ok(!isArray(()=>{}))});

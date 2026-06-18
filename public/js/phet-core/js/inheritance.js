@@ -1,0 +1,1 @@
+import phetCore from"./phetCore.js";function inheritance(type){const types=[type];let proto=type.prototype;while(proto&&(proto=Object.getPrototypeOf(proto))){if(proto.constructor){types.push(proto.constructor)}}return types}phetCore.register("inheritance",inheritance);export default inheritance;

@@ -1,0 +1,1 @@
+import Namespace from"./Namespace.js";const phetCore=new Namespace("phetCore");phetCore.register("Namespace",Namespace);export default phetCore;

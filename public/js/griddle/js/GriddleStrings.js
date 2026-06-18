@@ -1,0 +1,1 @@
+import getStringModule from"../../chipper/js/browser/getStringModule.js";import griddle from"./griddle.js";const GriddleStrings=getStringModule("GRIDDLE");griddle.register("GriddleStrings",GriddleStrings);export default GriddleStrings;

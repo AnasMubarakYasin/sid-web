@@ -1,0 +1,1 @@
+import dot from"./dot.js";import Random from"./Random.js";const dotRandom=new Random({seed:_.hasIn(window,"phet.chipper.queryParameters.randomSeed")?window.phet.chipper.queryParameters.randomSeed:null});dot.register("dotRandom",dotRandom);export default dotRandom;

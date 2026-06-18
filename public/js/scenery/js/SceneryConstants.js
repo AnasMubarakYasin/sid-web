@@ -1,0 +1,1 @@
+import scenery from"./scenery.js";const SceneryConstants={DISABLED_OPACITY:.45,DEFAULT_COLOR_PROFILE:"default",PROJECTOR_COLOR_PROFILE:"projector"};scenery.register("SceneryConstants",SceneryConstants);export default SceneryConstants;

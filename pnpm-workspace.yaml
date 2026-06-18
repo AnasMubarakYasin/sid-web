@@ -1,0 +1,8 @@
+allowBuilds:
+  core-js: true
+  sharp: true
+  unrs-resolver: true
+blockExoticSubdeps: false
+overrides:
+  'sliced': "latest"
+  'uuid': "latest"

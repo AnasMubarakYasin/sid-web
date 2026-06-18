@@ -1,0 +1,1 @@
+import Text from"../../../../scenery/js/nodes/Text.js";import BracketNode from"../../BracketNode.js";import PhetFont from"../../PhetFont.js";export default function demoBracketNode(layoutBounds){return new BracketNode({orientation:"left",bracketTipPosition:.75,labelNode:new Text("bracket",{font:new PhetFont(20)}),spacing:10,center:layoutBounds.center})}

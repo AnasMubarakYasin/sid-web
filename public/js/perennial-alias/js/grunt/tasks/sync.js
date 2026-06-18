@@ -1,0 +1,38 @@
+// Copyright 2021-2026, University of Colorado Boulder
+/**
+ * Generally a "one-stop shop" for all things needed to update the PhET Codebase. See js/common/sync for detailed doc.
+ *
+ * usage:
+ * grunt sync
+ * ## or
+ * cd perennial/
+ * sage run js/grunt/tasks/sync.ts
+ *
+ * Common use cases:
+ * Pull all repos:
+ *      grunt sync --status=false --npmUpdate=false --checkoutMain=false
+ * Print status for all repos:
+ *      grunt sync --npmUpdate=false --pull=false --logAll
+ * Running on windows:
+ *      grunt sync --slowPull
+ *
+ * NOTE: This will CHANGE THE CURRENT WORKING DIRECTORY temporarily while this is running
+ *
+ * @author Jonathan Olson (PhET Interactive Simulations)
+ * @author Michael Kauzmann (PhET Interactive Simulations)
+ */ import path from 'path';
+import winston from 'winston';
+import dirname from '../../common/dirname.js';
+import { getSyncCLIOptions, sync } from '../../common/sync.js';
+winston.default.transports.console.level = 'error';
+(async ()=>{
+    const previousCWD = process.cwd();
+    // @ts-expect-error - until we have "type": "module" in our package.json
+    const scriptDirectory = dirname(import.meta.url);
+    process.chdir(path.join(scriptDirectory, '../../..'));
+    const success = await sync(getSyncCLIOptions());
+    process.chdir(previousCWD);
+    process.exitCode = success ? 0 : 1;
+})();
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uL3BlcmVubmlhbC1hbGlhcy9qcy9ncnVudC90YXNrcy9zeW5jLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIi8vIENvcHlyaWdodCAyMDIxLTIwMjYsIFVuaXZlcnNpdHkgb2YgQ29sb3JhZG8gQm91bGRlclxuXG4vKipcbiAqIEdlbmVyYWxseSBhIFwib25lLXN0b3Agc2hvcFwiIGZvciBhbGwgdGhpbmdzIG5lZWRlZCB0byB1cGRhdGUgdGhlIFBoRVQgQ29kZWJhc2UuIFNlZSBqcy9jb21tb24vc3luYyBmb3IgZGV0YWlsZWQgZG9jLlxuICpcbiAqIHVzYWdlOlxuICogZ3J1bnQgc3luY1xuICogIyMgb3JcbiAqIGNkIHBlcmVubmlhbC9cbiAqIHNhZ2UgcnVuIGpzL2dydW50L3Rhc2tzL3N5bmMudHNcbiAqXG4gKiBDb21tb24gdXNlIGNhc2VzOlxuICogUHVsbCBhbGwgcmVwb3M6XG4gKiAgICAgIGdydW50IHN5bmMgLS1zdGF0dXM9ZmFsc2UgLS1ucG1VcGRhdGU9ZmFsc2UgLS1jaGVja291dE1haW49ZmFsc2VcbiAqIFByaW50IHN0YXR1cyBmb3IgYWxsIHJlcG9zOlxuICogICAgICBncnVudCBzeW5jIC0tbnBtVXBkYXRlPWZhbHNlIC0tcHVsbD1mYWxzZSAtLWxvZ0FsbFxuICogUnVubmluZyBvbiB3aW5kb3dzOlxuICogICAgICBncnVudCBzeW5jIC0tc2xvd1B1bGxcbiAqXG4gKiBOT1RFOiBUaGlzIHdpbGwgQ0hBTkdFIFRIRSBDVVJSRU5UIFdPUktJTkcgRElSRUNUT1JZIHRlbXBvcmFyaWx5IHdoaWxlIHRoaXMgaXMgcnVubmluZ1xuICpcbiAqIEBhdXRob3IgSm9uYXRoYW4gT2xzb24gKFBoRVQgSW50ZXJhY3RpdmUgU2ltdWxhdGlvbnMpXG4gKiBAYXV0aG9yIE1pY2hhZWwgS2F1em1hbm4gKFBoRVQgSW50ZXJhY3RpdmUgU2ltdWxhdGlvbnMpXG4gKi9cblxuaW1wb3J0IHBhdGggZnJvbSAncGF0aCc7XG5pbXBvcnQgd2luc3RvbiBmcm9tICd3aW5zdG9uJztcbmltcG9ydCBkaXJuYW1lIGZyb20gJy4uLy4uL2NvbW1vbi9kaXJuYW1lLmpzJztcbmltcG9ydCB7IGdldFN5bmNDTElPcHRpb25zLCBzeW5jIH0gZnJvbSAnLi4vLi4vY29tbW9uL3N5bmMuanMnO1xuXG53aW5zdG9uLmRlZmF1bHQudHJhbnNwb3J0cy5jb25zb2xlLmxldmVsID0gJ2Vycm9yJztcblxuKCBhc3luYyAoKSA9PiB7XG4gIGNvbnN0IHByZXZpb3VzQ1dEID0gcHJvY2Vzcy5jd2QoKTtcblxuICAvLyBAdHMtZXhwZWN0LWVycm9yIC0gdW50aWwgd2UgaGF2ZSBcInR5cGVcIjogXCJtb2R1bGVcIiBpbiBvdXIgcGFja2FnZS5qc29uXG4gIGNvbnN0IHNjcmlwdERpcmVjdG9yeSA9IGRpcm5hbWUoIGltcG9ydC5tZXRhLnVybCApO1xuICBwcm9jZXNzLmNoZGlyKCBwYXRoLmpvaW4oIHNjcmlwdERpcmVjdG9yeSwgJy4uLy4uLy4uJyApICk7XG5cbiAgY29uc3Qgc3VjY2VzcyA9IGF3YWl0IHN5bmMoIGdldFN5bmNDTElPcHRpb25zKCkgKTtcblxuICBwcm9jZXNzLmNoZGlyKCBwcmV2aW91c0NXRCApO1xuXG4gIHByb2Nlc3MuZXhpdENvZGUgPSBzdWNjZXNzID8gMCA6IDE7XG59ICkoKTsiXSwibmFtZXMiOlsicGF0aCIsIndpbnN0b24iLCJkaXJuYW1lIiwiZ2V0U3luY0NMSU9wdGlvbnMiLCJzeW5jIiwiZGVmYXVsdCIsInRyYW5zcG9ydHMiLCJjb25zb2xlIiwibGV2ZWwiLCJwcmV2aW91c0NXRCIsInByb2Nlc3MiLCJjd2QiLCJzY3JpcHREaXJlY3RvcnkiLCJ1cmwiLCJjaGRpciIsImpvaW4iLCJzdWNjZXNzIiwiZXhpdENvZGUiXSwibWFwcGluZ3MiOiJBQUFBLHNEQUFzRDtBQUV0RDs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0NBcUJDLEdBRUQsT0FBT0EsVUFBVSxPQUFPO0FBQ3hCLE9BQU9DLGFBQWEsVUFBVTtBQUM5QixPQUFPQyxhQUFhLDBCQUEwQjtBQUM5QyxTQUFTQyxpQkFBaUIsRUFBRUMsSUFBSSxRQUFRLHVCQUF1QjtBQUUvREgsUUFBUUksT0FBTyxDQUFDQyxVQUFVLENBQUNDLE9BQU8sQ0FBQ0MsS0FBSyxHQUFHO0FBRXpDLENBQUE7SUFDQSxNQUFNQyxjQUFjQyxRQUFRQyxHQUFHO0lBRS9CLHdFQUF3RTtJQUN4RSxNQUFNQyxrQkFBa0JWLFFBQVMsWUFBWVcsR0FBRztJQUNoREgsUUFBUUksS0FBSyxDQUFFZCxLQUFLZSxJQUFJLENBQUVILGlCQUFpQjtJQUUzQyxNQUFNSSxVQUFVLE1BQU1aLEtBQU1EO0lBRTVCTyxRQUFRSSxLQUFLLENBQUVMO0lBRWZDLFFBQVFPLFFBQVEsR0FBR0QsVUFBVSxJQUFJO0FBQ25DLENBQUEifQ==

@@ -1,0 +1,1 @@
+import winston from"winston";import{gitMutableExecute}from"./gitMutex.js";export const gitAdd=async file=>{winston.info(`git add ${file}`);return gitMutableExecute(["add",file],"..")};

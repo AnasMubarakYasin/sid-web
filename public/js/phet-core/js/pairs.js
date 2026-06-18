@@ -1,0 +1,1 @@
+import phetCore from"./phetCore.js";function pairs(array){const result=[];const length=array.length;if(length>1){for(let i=0;i<length-1;i++){const first=array[i];for(let j=i+1;j<length;j++){result.push([first,array[j]])}}}return result}phetCore.register("pairs",pairs);export default pairs;

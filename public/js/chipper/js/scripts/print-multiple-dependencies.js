@@ -1,0 +1,1 @@
+import assert from"assert";import getPhetLibs from"../grunt/getPhetLibs.js";assert(typeof process.argv[2]==="string","Provide the repo name as the first parameter");const repos=process.argv[2].split(",");const result={};for(const repo of repos){result[repo]=getPhetLibs(repo).filter(dependency=>dependency!=="babel").sort()}console.log(JSON.stringify(result,null,2));
