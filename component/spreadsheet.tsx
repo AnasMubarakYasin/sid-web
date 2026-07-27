@@ -84,11 +84,11 @@ export default function Spreadsheet(props: {
         onafterchanges={(instance, changes) => {
           props.onUpdate?.(instance.getData());
         }}
-        onevent={(event, ...args) => {
-          console.log("[spreadsheet]", event);
-        }}
+        // onevent={(event, ...args) => {
+        //   console.log("[spreadsheet]", event);
+        // }}
       >
-        <JSWorksheet minDimensions={[6, 6]} data={props.data} />
+        <JSWorksheet minDimensions={[4, 6]} data={props.data} />
       </JSpreadsheet>
     </>
   );

@@ -126,8 +126,6 @@ export default function Lobby({ lab }: { lab: number }) {
 
   return (
     <Box
-      className="w-container"
-      // hidden={experiment.lobby}
       inert={
         experiment.process == "connecting" ||
         experiment.process == "disconnected"
@@ -139,118 +137,115 @@ export default function Lobby({ lab }: { lab: number }) {
         },
       ]}
     >
-      <div className="flex flex-col gap-4">
-        <Paper
-          variant="outlined"
-          elevation={4}
-          className="w-stretch flex flex-col gap-6 p-8 max-sm:p-4 self-center justify-center"
-        >
-          <header className="flex flex-col gap-2">
-            <Typography component="h2" variant="h5">
-              Preparing Experiment
+      <Paper
+        variant="outlined"
+        elevation={4}
+        className="w-stretch flex flex-col gap-6 p-8 max-sm:p-4 self-center justify-center"
+      >
+        <header className="flex flex-col gap-2">
+          <Typography component="h2" variant="h5">
+            Preparing Experiment
+          </Typography>
+          <Typography component="p" variant="body1">
+            Set a Experiment Subject, Manage Students.
+          </Typography>
+        </header>
+        <div>
+          <Typography component="p" variant="body1">
+            Lab: {lab}
+          </Typography>
+          <Typography component="p" variant="body1">
+            Status: {experiment.status}
+          </Typography>
+        </div>
+        {experiment.status == "waiting" && (
+          <Box component="div" className="flex flex-col gap-1">
+            <Typography component="label" htmlFor="subject">
+              Subject
             </Typography>
-            <Typography component="p" variant="body1">
-              Set a Experiment Subject, Manage Students.
-            </Typography>
-          </header>
-          <div>
-            <Typography component="p" variant="body1">
-              Lab: {lab}
-            </Typography>
-            <Typography component="p" variant="body1">
-              Status: {experiment.status}
-            </Typography>
-          </div>
-          {experiment.status == "waiting" && (
-            <Box component="div" className="flex flex-col gap-1">
-              <Typography component="label" htmlFor="subject">
-                Subject
-              </Typography>
-              <Select
-                id="subject"
-                label=""
-                variant="outlined"
-                fullWidth
-                value={
-                  experiment.subject ? experiment.subject.id.toString() : ""
+            <Select
+              id="subject"
+              label=""
+              variant="outlined"
+              fullWidth
+              value={experiment.subject ? experiment.subject.id.toString() : ""}
+              onChange={handleChange}
+              displayEmpty
+              renderValue={(selected: string) => {
+                if (selected) {
+                  return (
+                    <div className="text-[16px] font-400">
+                      {experiment.subject!.title}
+                    </div>
+                  );
+                } else {
+                  return (
+                    <div className="text-[16px] font-400 opacity-50">
+                      Choose Subject
+                    </div>
+                  );
                 }
-                onChange={handleChange}
-                displayEmpty
-                renderValue={(selected: string) => {
-                  if (selected) {
-                    return (
-                      <div className="text-[16px] font-400">
-                        {experiment.subject!.title}
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <div className="text-[16px] font-400 opacity-50">
-                        Choose Subject
-                      </div>
-                    );
-                  }
-                }}
-              >
-                {subjects.data?.data.map((item: any) => (
-                  <MenuItem key={"options_" + item.id} value={item.id + ""}>
-                    {item.title}
-                  </MenuItem>
-                ))}
-              </Select>
-            </Box>
-          )}
-          <div>
-            <Typography component="h3" variant="h6">
-              {experiment.subject && experiment.subject.title}
-            </Typography>
-            <Typography component="p" variant="body1">
-              {experiment.subject && experiment.subject.description}
-            </Typography>
-          </div>
+              }}
+            >
+              {subjects.data?.data.map((item: any) => (
+                <MenuItem key={"options_" + item.id} value={item.id + ""}>
+                  {item.title}
+                </MenuItem>
+              ))}
+            </Select>
+          </Box>
+        )}
+        <div>
+          <Typography component="h3" variant="h6">
+            {experiment.subject && experiment.subject.title}
+          </Typography>
+          <Typography component="p" variant="body1">
+            {experiment.subject && experiment.subject.description}
+          </Typography>
+        </div>
 
-          <div className="flex flex-col gap-2">
-            <Typography component="p" variant="body1">
-              Teacher
-            </Typography>
-            <div className="flex gap-2">
-              {/* {experiment.teachers.map((value, index) => (
+        <div className="flex flex-col gap-2">
+          <Typography component="p" variant="body1">
+            Teacher
+          </Typography>
+          <div className="flex gap-2">
+            {/* {experiment.teachers.map((value, index) => (
                 <Tooltip key={"teacher_" + value.id} title={value.name}>
                   <Avatar alt={value.name} />
                 </Tooltip>
               ))} */}
-              {experiment.teachers.map((value, index) => (
-                <MAvatar
-                  key={"teacher_" + value.id}
-                  user={value}
-                  onKick={value.id == user.id ? undefined : onKick}
-                />
-              ))}
-              {!experiment.teachers.length && <Avatar className="opacity-0" />}
-            </div>
+            {experiment.teachers.map((value, index) => (
+              <MAvatar
+                key={"teacher_" + value.id}
+                user={value}
+                onKick={value.id == user.id ? undefined : onKick}
+              />
+            ))}
+            {!experiment.teachers.length && <Avatar className="opacity-0" />}
           </div>
+        </div>
 
-          <div className="flex flex-col gap-2">
-            <Typography component="p" variant="body1">
-              Students
-            </Typography>
-            <Paper variant="outlined" square={false} className="flex gap-2 p-4">
-              {/* {experiment.students.map((value, index) => (
+        <div className="flex flex-col gap-2">
+          <Typography component="p" variant="body1">
+            Students
+          </Typography>
+          <Paper variant="outlined" square={false} className="flex gap-2 p-4">
+            {/* {experiment.students.map((value, index) => (
                 <Tooltip key={"student_" + value.id} title={value.name}>
                   <Avatar alt={value.name} />
                 </Tooltip>
               ))} */}
-              {experiment.students.map((value, index) => (
-                <MAvatar
-                  key={"student_" + value.id}
-                  user={value}
-                  onKick={value.id == user.id ? undefined : onKick}
-                />
-              ))}
-              {!experiment.students.length && <Avatar className="opacity-0" />}
-            </Paper>
-          </div>
-          <div className="flex flex-col gap-2">
+            {experiment.students.map((value, index) => (
+              <MAvatar
+                key={"student_" + value.id}
+                user={value}
+                onKick={value.id == user.id ? undefined : onKick}
+              />
+            ))}
+            {!experiment.students.length && <Avatar className="opacity-0" />}
+          </Paper>
+        </div>
+        {/* <div className="flex flex-col gap-2">
             <Typography component="p" variant="body1">
               Groups
             </Typography>
@@ -360,19 +355,18 @@ export default function Lobby({ lab }: { lab: number }) {
                 </Paper>
               ))}
             </Box>
-          </div>
-          {experiment.status == "waiting" && (
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={() => experiment.start()}
-              fullWidth={false}
-            >
-              Mulai
-            </Button>
-          )}
-        </Paper>
-      </div>
+          </div> */}
+        {experiment.status == "waiting" && (
+          <Button
+            color="primary"
+            variant="contained"
+            onClick={() => experiment.start()}
+            fullWidth={false}
+          >
+            Mulai
+          </Button>
+        )}
+      </Paper>
     </Box>
   );
 }

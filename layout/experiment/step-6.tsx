@@ -76,26 +76,36 @@ export default function Step6({ lab }: { lab: number }) {
   }, [experiment.oplog]);
 
   return (
-    <div className="w-container h-stretch">
-      <div className="flex flex-col gap-4 max-sm:p-1">
+    <Box
+      className="flex flex-col gap-4 max-sm:p-1"
+      inert={
+        experiment.process == "connecting" ||
+        experiment.process == "disconnected"
+      }
+      sx={[
+        (experiment.process == "connecting" ||
+          experiment.process == "disconnected") && {
+          opacity: "0.6",
+        },
+      ]}
+    >
+      <Paper
+        variant="outlined"
+        elevation={4}
+        className="w-stretch flex flex-col gap-6 p-8 max-sm:p-4 self-center justify-center"
+      >
+        <header className="flex flex-col gap-2">
+          <Typography component="h2" variant="h5">
+            Communicate and Reflection
+          </Typography>
+          <Typography component="p" variant="body1"></Typography>
+        </header>
         <Paper
           variant="outlined"
           elevation={4}
-          className="w-stretch flex flex-col gap-6 p-8 max-sm:p-4 self-center justify-center"
-        >
-          <header className="flex flex-col gap-2">
-            <Typography component="h2" variant="h5">
-              Communicate and Reflection
-            </Typography>
-            <Typography component="p" variant="body1"></Typography>
-          </header>
-          <Paper
-            variant="outlined"
-            elevation={4}
-            className="w-stretch md:w-182 h-80 md:h-122 p-1 self-center justify-center"
-          ></Paper>
-        </Paper>
-      </div>
-    </div>
+          className="w-stretch md:w-182 h-80 md:h-122 p-1 self-center justify-center"
+        ></Paper>
+      </Paper>
+    </Box>
   );
 }

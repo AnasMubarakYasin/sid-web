@@ -4,11 +4,20 @@ import { ApiResponse } from ".";
 import { Subject } from "./subject";
 import { User } from "./user";
 
-const PORT = process.env.NEXT_PUBLIC_PORT;
-const ADDR = process.env.NEXT_PUBLIC_ADDR;
-const WS_ADDR = process.env.NEXT_PUBLIC_WS_ADDR;
-const LOCAL = process.env.NEXT_PUBLIC_LOCAL;
-const api = "/experiment";
+// const PORT = process.env.NEXT_PUBLIC_PORT;
+// const ADDR = process.env.NEXT_PUBLIC_ADDR;
+// const LOCAL = process.env.NEXT_PUBLIC_LOCAL;
+
+const wsaddr = process.env.NEXT_PUBLIC_LOCAL
+  ? process.env.NEXT_PUBLIC_WS_ADDR
+  : "";
+const addr = process.env.NEXT_PUBLIC_LOCAL
+  ? process.env.NEXT_PUBLIC_ADDR
+  : location.origin;
+
+// const wsaddr = "";
+// const addr = location.origin;
+const api = "/api/experiment";
 let token = "";
 
 export interface Experiment {
@@ -35,13 +44,14 @@ export function getToken() {
 }
 
 export async function createLab(param: { admin_id?: number }) {
-  const response = await fetch(`/api/experiment/lab`, {
+  const response = await fetch(`${addr}${api}/lab`, {
     headers: {
       authorization: `Bearer ${token}`,
       "content-type": "application/json",
       accept: "application/json",
     },
     method: "POST",
+    // mode: 'cors',
     body: JSON.stringify(param),
   });
   const data: ApiResponse = await response.json();
@@ -53,13 +63,14 @@ export async function createLab(param: { admin_id?: number }) {
 }
 
 export async function removeLab(param: { id?: number }) {
-  const response = await fetch(`/api/experiment/lab/` + param.id, {
+  const response = await fetch(`${addr}${api}/lab/${param.id}`, {
     headers: {
       authorization: `Bearer ${token}`,
       "content-type": "application/json",
       accept: "application/json",
     },
     method: "DELETE",
+    // mode: 'cors',
   });
   const data: ApiResponse = await response.json();
   if (data?.success) {
@@ -70,13 +81,14 @@ export async function removeLab(param: { id?: number }) {
 }
 
 export async function create(param: Omit<Experiment, "id">) {
-  const response = await fetch(`/api/experiment`, {
+  const response = await fetch(`${addr}${api}/`, {
     headers: {
       authorization: `Bearer ${token}`,
       "content-type": "application/json",
       accept: "application/json",
     },
     method: "POST",
+    // mode: 'cors',
     body: JSON.stringify(param),
   });
   const data: ApiResponse = await response.json();
@@ -87,13 +99,14 @@ export async function create(param: Omit<Experiment, "id">) {
   }
 }
 export async function update(param: Experiment) {
-  const response = await fetch(`/api/experiment/` + param.id, {
+  const response = await fetch(`${addr}${api}/${param.id}`, {
     headers: {
       authorization: `Bearer ${token}`,
       "content-type": "application/json",
       accept: "application/json",
     },
     method: "PUT",
+    // mode: 'cors',
     body: JSON.stringify(param),
   });
   const data: ApiResponse = await response.json();
@@ -104,13 +117,14 @@ export async function update(param: Experiment) {
   }
 }
 export async function remove(param: Pick<Experiment, "id">) {
-  const response = await fetch(`/api/experiment/` + param.id, {
+  const response = await fetch(`${addr}${api}/${param.id}`, {
     headers: {
       authorization: `Bearer ${token}`,
       "content-type": "application/json",
       accept: "application/json",
     },
     method: "DELETE",
+    // mode: 'cors',
   });
   const data: ApiResponse = await response.json();
   if (data?.success) {
@@ -120,13 +134,14 @@ export async function remove(param: Pick<Experiment, "id">) {
   }
 }
 export async function list() {
-  const response = await fetch(`/api/experiment`, {
+  const response = await fetch(`${addr}${api}/`, {
     headers: {
       authorization: `Bearer ${token}`,
       "content-type": "application/json",
       accept: "application/json",
     },
     method: "GET",
+    // mode: 'cors',
   });
   const data: ApiResponse = await response.json();
   if (data?.success) {
@@ -136,13 +151,14 @@ export async function list() {
   }
 }
 export async function get(param: Pick<Experiment, "id">) {
-  const response = await fetch(`/api/experiment/` + param.id, {
+  const response = await fetch(`${addr}${api}/${param.id}`, {
     headers: {
       authorization: `Bearer ${token}`,
       "content-type": "application/json",
       accept: "application/json",
     },
     method: "GET",
+    // mode: 'cors',
   });
   const data: ApiResponse = await response.json();
   if (data?.success) {
@@ -153,8 +169,8 @@ export async function get(param: Pick<Experiment, "id">) {
 }
 
 export class EventStream {
-  url: string = "/api/event/experiment";
-  // url: string = ADDR + "/event/experiment";
+  // url: string = "/event/experiment";
+  url: string = `${addr}/event/experiment`;
   connection?: Response;
   intervalid?: any;
   event: EventTarget = new EventTarget();
@@ -168,6 +184,7 @@ export class EventStream {
     try {
       this.connection = await fetch(this.url, {
         method: "GET",
+        // mode: 'cors',
         headers: {
           authorization: `Bearer ${token}`,
           accept: "text/event-stream",
@@ -358,25 +375,15 @@ export interface ExperimentMessageError {
 export class Collaboration {
   lab: number = 0;
   // url: string = "/api/message/experiment/";
-  url: string = WS_ADDR + "/message/experiment/";
+  url: string = wsaddr + "/message/experiment/";
   connection?: WebSocket;
   intervalid: any;
   retry = true;
   timeout = 1e3 * 5;
   constructor(param: {}) {
-    // if (location.hostname != "localhost") {
-    // const base = `ws://${location.hostname}:${PORT}`;
     // console.log("base", base);
-    // }
-    let protocol = "ws";
-    let port = PORT;
-    if (!LOCAL) {
-      if (isSecureContext) {
-        protocol = "wss";
-      }
-      port = location.port;
-    }
-    this.url = `${protocol}://${location.hostname}:${port}/message/experiment/`;
+    // let protocol = isSecureContext ? "wss" : "ws";
+    // this.url = `${protocol}://${location.hostname}:${location.port}/message/experiment/`;
   }
   connect() {
     if (this.connection) {

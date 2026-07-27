@@ -26,18 +26,19 @@ const CustomMain = styled("main", {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
+  backgroundColor: "inherit",
   variants: [
     {
       props: ({ wide }) => wide,
       style: {
-        padding: theme.spacing(2),
+        // padding: theme.spacing(2),
         marginTop: "58px",
       },
     },
     {
       props: ({ wide }) => !wide,
       style: {
-        padding: theme.spacing(4),
+        // padding: theme.spacing(4),
         marginTop: "66px",
         marginLeft: `-${drawerWidth}px`,
       },
@@ -61,10 +62,12 @@ export default function Main(props: { children: ReactNode }) {
 
   return (
     <CustomMain wide={isSmallSize} open={openSideBar}>
-      {!authorized && (
-        <Skeleton variant="rounded" width="100%" height="100%"></Skeleton>
-      )}
-      {authorized && props.children}
+      <div className="p-4 md:p-8 bg-inherit">
+        {!authorized && (
+          <Skeleton variant="rounded" width="100%" height="100%"></Skeleton>
+        )}
+        {authorized && props.children}
+      </div>
     </CustomMain>
   );
 }

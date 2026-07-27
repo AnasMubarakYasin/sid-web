@@ -1,7 +1,9 @@
 "use client";
 
-// const addr = process.env.NEXT_PUBLIC_ADDR;
-const api = "/user";
+const addr = process.env.NEXT_PUBLIC_LOCAL
+  ? process.env.NEXT_PUBLIC_ADDR
+  : location.origin;
+const path = "/api/user";
 let token = "";
 
 export interface User {
@@ -22,7 +24,7 @@ export async function signup(param: {
   password: string;
   confirm: string;
 }) {
-  const response = await fetch(`/api/user/sign-up`, {
+  const response = await fetch(`${addr}${path}/sign-up`, {
     headers: { "content-type": "application/json", accept: "application/json" },
     method: "POST",
     body: JSON.stringify(param),
@@ -35,7 +37,7 @@ export async function signup(param: {
   }
 }
 export async function signin(param: { username: string; password: string }) {
-  const response = await fetch(`/api/user/sign-in`, {
+  const response = await fetch(`${addr}${path}/sign-in`, {
     headers: { "content-type": "application/json", accept: "application/json" },
     method: "POST",
     body: JSON.stringify(param),
@@ -48,7 +50,7 @@ export async function signin(param: { username: string; password: string }) {
   }
 }
 export async function signout() {
-  const response = await fetch(`/api/user/sign-out`, {
+  const response = await fetch(`${addr}${path}/sign-out`, {
     headers: { "content-type": "application/json", accept: "application/json" },
     method: "POST",
     body: JSON.stringify({}),
@@ -61,7 +63,7 @@ export async function signout() {
   }
 }
 export async function auth(token: string) {
-  const response = await fetch(`/api/user/auth`, {
+  const response = await fetch(`${addr}${path}/auth`, {
     headers: {
       authorization: `Bearer ${token}`,
       accept: "application/json",
@@ -77,7 +79,7 @@ export async function auth(token: string) {
 }
 
 export async function authz(token: string, param: string) {
-  const response = await fetch(`/api/user/authz` + param, {
+  const response = await fetch(`${addr}${path}/authz` + param, {
     headers: {
       authorization: `Bearer ${token}`,
       accept: "application/json",

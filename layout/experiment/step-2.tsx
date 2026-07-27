@@ -110,7 +110,7 @@ export default function Step2({ lab }: { lab: number }) {
 
   return (
     <Box
-      className="w-container h-stretch"
+      className="flex flex-col gap-4 max-sm:p-1"
       inert={
         experiment.process == "connecting" ||
         experiment.process == "disconnected"
@@ -122,101 +122,99 @@ export default function Step2({ lab }: { lab: number }) {
         },
       ]}
     >
-      <div className="flex flex-col gap-4 max-sm:p-1">
+      <Paper
+        variant="outlined"
+        elevation={4}
+        className="w-stretch flex flex-col gap-6 p-8 max-sm:p-4 self-center justify-center"
+      >
+        <header className="flex flex-col gap-2">
+          <Typography component="h2" variant="h5">
+            Question Formulation
+          </Typography>
+          <Typography component="p" variant="body1">
+            Berdasarkan fenomena yang kamu amati, rumuskan masalah yang akan
+            kamu selidiki.
+          </Typography>
+        </header>
         <Paper
           variant="outlined"
           elevation={4}
-          className="w-stretch flex flex-col gap-6 p-8 max-sm:p-4 self-center justify-center"
+          className="w-stretch md:w-182 p-1 self-center justify-center"
         >
-          <header className="flex flex-col gap-2">
-            <Typography component="h2" variant="h5">
-              Question Formulation
-            </Typography>
-            <Typography component="p" variant="body1">
-              Berdasarkan fenomena yang kamu amati, rumuskan masalah yang akan
-              kamu selidiki.
-            </Typography>
-          </header>
-          <Paper
-            variant="outlined"
-            elevation={4}
-            className="w-stretch md:w-182 p-1 self-center justify-center"
-          >
-            {experiment.subject &&
-              experiment.subject.questions.map((question, index) => (
-                <Box
-                  key={"question_" + index}
-                  component="div"
-                  className="flex gap-1 items-center-safe"
-                >
-                  <Checkbox
-                    id={"question_" + index}
-                    checked={experiment.questions.includes(question)}
-                    onChange={(_, checked) => {
-                      if (checked) {
-                        experiment.addQuestion(question);
-                      } else {
-                        experiment.delQuestion(question);
-                      }
-                    }}
-                  />
-                  <Typography component="label" htmlFor={"question_" + index}>
-                    {index + 1}. {question}
-                  </Typography>
-                </Box>
-              ))}
-          </Paper>
-        </Paper>
-        <Paper
-          variant="outlined"
-          elevation={4}
-          className="w-stretch flex flex-col gap-6 p-8 max-sm:p-4 self-center justify-center"
-        >
-          <header className="flex flex-col gap-2">
-            <Typography component="h2" variant="h5">
-              Hypotesis
-            </Typography>
-            <Typography component="p" variant="body1">
-              Buatlah dugaan sementara (hipotesis) berdasarkan rumusan masalah
-              yang telah kamu buat.
-            </Typography>
-          </header>
-          <Paper
-            variant="outlined"
-            elevation={4}
-            className="w-stretch md:w-182 p-1 self-center justify-center"
-          >
-            {experiment.process != "synchronized" && (
-              <Skeleton variant="rounded" width="100%" height="100%">
-                <TextList />
-              </Skeleton>
-            )}
-            {experiment.process == "synchronized" && (
-              <TextList
-                value={experiment.answers}
-                onCreate={(editor) => {
-                  ref.current = editor;
-                }}
-                onUpdate={(value) => {
-                  debounce(() => {
-                    if (experiment.process == "synchronized") {
-                      experiment.setAnswers(value);
+          {experiment.subject &&
+            experiment.subject.questions.map((question, index) => (
+              <Box
+                key={"question_" + index}
+                component="div"
+                className="flex gap-1 items-center-safe"
+              >
+                <Checkbox
+                  id={"question_" + index}
+                  checked={experiment.questions.includes(question)}
+                  onChange={(_, checked) => {
+                    if (checked) {
+                      experiment.addQuestion(question);
                     } else {
-                      dashboard.setToast({
-                        level: "warning",
-                        message: "your changes not synchronize",
-                      });
+                      experiment.delQuestion(question);
                     }
-                  }, 1000);
-                }}
-                onStep={(value) => {
-                  collaboration.publish("answers", { steps: value });
-                }}
-              />
-            )}
-          </Paper>
+                  }}
+                />
+                <Typography component="label" htmlFor={"question_" + index}>
+                  {index + 1}. {question}
+                </Typography>
+              </Box>
+            ))}
         </Paper>
-      </div>
+      </Paper>
+      <Paper
+        variant="outlined"
+        elevation={4}
+        className="w-stretch flex flex-col gap-6 p-8 max-sm:p-4 self-center justify-center"
+      >
+        <header className="flex flex-col gap-2">
+          <Typography component="h2" variant="h5">
+            Hypotesis
+          </Typography>
+          <Typography component="p" variant="body1">
+            Buatlah dugaan sementara (hipotesis) berdasarkan rumusan masalah
+            yang telah kamu buat.
+          </Typography>
+        </header>
+        <Paper
+          variant="outlined"
+          elevation={4}
+          className="w-stretch md:w-182 p-1 self-center justify-center"
+        >
+          {experiment.process != "synchronized" && (
+            <Skeleton variant="rounded" width="100%" height="100%">
+              <TextList />
+            </Skeleton>
+          )}
+          {experiment.process == "synchronized" && (
+            <TextList
+              value={experiment.answers}
+              onCreate={(editor) => {
+                ref.current = editor;
+              }}
+              onUpdate={(value) => {
+                debounce(() => {
+                  if (experiment.process == "synchronized") {
+                    experiment.setAnswers(value);
+                  } else {
+                    dashboard.setToast({
+                      level: "warning",
+                      message: "your changes not synchronize",
+                    });
+                  }
+                }, 1000);
+              }}
+              onStep={(value) => {
+                collaboration.publish("answers", { steps: value });
+              }}
+            />
+          )}
+        </Paper>
+      </Paper>
     </Box>
   );
 }

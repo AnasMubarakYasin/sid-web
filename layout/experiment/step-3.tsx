@@ -133,7 +133,7 @@ export default function Step3({ lab }: { lab: number }) {
 
   return (
     <Box
-      className="w-container h-stretch"
+      className="flex flex-col gap-4 max-sm:p-1"
       inert={
         experiment.process == "connecting" ||
         experiment.process == "disconnected"
@@ -145,65 +145,61 @@ export default function Step3({ lab }: { lab: number }) {
         },
       ]}
     >
-      <div className="flex flex-col gap-4 max-sm:p-1">
+      <Paper
+        variant="outlined"
+        elevation={4}
+        className="w-stretch flex flex-col gap-6 p-8 max-sm:p-4 self-center justify-center"
+      >
+        <header className="flex flex-col gap-2">
+          <Typography component="h2" variant="h5">
+            Investigation Design
+          </Typography>
+          <Typography component="p" variant="body1">
+            Uji hipotesismu dengan melakukan eksperimen pada simulasi berikut.
+          </Typography>
+        </header>
         <Paper
           variant="outlined"
           elevation={4}
-          className="w-stretch flex flex-col gap-6 p-8 max-sm:p-4 self-center justify-center"
+          className="w-stretch md:w-182 h-80 md:h-122 p-1 flex items-center justify-center self-center"
         >
-          <header className="flex flex-col gap-2">
-            <Typography component="h2" variant="h5">
-              Investigation Design
-            </Typography>
-            <Typography component="p" variant="body1">
-              Uji hipotesismu dengan melakukan eksperimen pada simulasi berikut.
-            </Typography>
-          </header>
-          <Paper
-            variant="outlined"
-            elevation={4}
-            className="w-stretch md:w-182 h-80 md:h-122 p-1 flex items-center justify-center self-center"
-          >
-            {/* {!enableSim && !erroredSim && (
+          {/* {!enableSim && !erroredSim && (
               <CircularProgress aria-label="Loading…" />
             )} */}
-            {experiment.process != "synchronized" && (
-              <Skeleton variant="rounded" width="100%" height="100%">
-                <iframe
-                  src="/simulation"
-                  className="w-stretch h-stretch"
-                ></iframe>
-              </Skeleton>
-            )}
-            {erroredSim && experiment.process == "synchronized" && (
-              <IconButton
-                aria-label="refresh"
-                className="self-center justify-center"
-                color="primary"
-                onClick={() => setErroredSim(false)}
-              >
-                <RefreshIcon fontSize="large" />
-              </IconButton>
-            )}
-            {enableSim &&
-              !erroredSim &&
-              experiment.process == "synchronized" && (
-                <iframe
-                  src="/simulation"
-                  // width={720}
-                  // height={480}
-                  // hidden={!enableSim}
-                  allowFullScreen
-                  className="w-stretch h-stretch"
-                  onError={(event) => {
-                    console.log("sim frame error", event);
-                    setErroredSim(true);
-                  }}
-                ></iframe>
-              )}
-          </Paper>
+          {experiment.process != "synchronized" && (
+            <Skeleton variant="rounded" width="100%" height="100%">
+              <iframe
+                src="/simulation"
+                className="w-stretch h-stretch"
+              ></iframe>
+            </Skeleton>
+          )}
+          {erroredSim && experiment.process == "synchronized" && (
+            <IconButton
+              aria-label="refresh"
+              className="self-center justify-center"
+              color="primary"
+              onClick={() => setErroredSim(false)}
+            >
+              <RefreshIcon fontSize="large" />
+            </IconButton>
+          )}
+          {enableSim && !erroredSim && experiment.process == "synchronized" && (
+            <iframe
+              src="/simulation"
+              // width={720}
+              // height={480}
+              // hidden={!enableSim}
+              allowFullScreen
+              className="w-stretch h-stretch"
+              onError={(event) => {
+                console.log("sim frame error", event);
+                setErroredSim(true);
+              }}
+            ></iframe>
+          )}
         </Paper>
-      </div>
+      </Paper>
     </Box>
   );
 }

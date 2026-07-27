@@ -35,7 +35,7 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import Spreadsheet from "@/component/spreadsheet";
-import { SpreadsheetInstance } from "jspreadsheet-ce";
+import { SpreadsheetInstance, WorksheetInstance } from "jspreadsheet-ce";
 
 import { useQuery } from "@tanstack/react-query";
 import { list, setToken } from "@/api/subject";
@@ -46,6 +46,87 @@ import { useExperimentStore } from "@/store/experiment";
 
 import { debounce } from "@/lib/utils";
 
+import { ChartsDataProvider } from "@mui/x-charts/ChartsDataProvider";
+import { ChartsSurface } from "@mui/x-charts/ChartsSurface";
+import { LinePlot, MarkPlot } from "@mui/x-charts/LineChart";
+import { ChartsLegend } from "@mui/x-charts/ChartsLegend";
+import { Toolbar } from "@mui/x-charts/Toolbar";
+import { ChartsTooltip } from "@mui/x-charts/ChartsTooltip";
+import { ChartsXAxis } from "@mui/x-charts/ChartsXAxis";
+import { ChartsYAxis } from "@mui/x-charts/ChartsYAxis";
+import { ChartsGrid } from "@mui/x-charts/ChartsGrid";
+import { ChartsAxisHighlight } from "@mui/x-charts/ChartsAxisHighlight";
+
+export function Chart({
+  sheet,
+  dataset,
+}: {
+  sheet?: WorksheetInstance;
+  dataset: any[][];
+}) {
+  const x = [];
+  const y = [];
+  const s = [];
+  if (sheet) {
+    const rows = sheet.getRowData(0) ?? [];
+    const filtered = rows.filter((value) => !!value);
+    let single = true;
+    if (filtered.length) {
+      const cols = sheet
+        .getColumnData(0)
+        .slice(1)
+        .map((value) => parseFloat(value))
+        .filter((value) => !isNaN(value));
+      x.push({ scaleType: "point", data: cols, label: rows[0] });
+      if (filtered.length > 2) {
+        single = false;
+      }
+    }
+    for (let index = 1; index < filtered.length; index++) {
+      const row = rows[index];
+      const cols = sheet
+        .getColumnData(index)
+        .slice(1)
+        .map((value) => parseFloat(value))
+        .filter((value) => !isNaN(value));
+      if (single) {
+        y.push({
+          label: row,
+        });
+      }
+      s.push({
+        type: "line",
+        data: cols,
+        label: single ? undefined : row,
+        showMark: true,
+      });
+    }
+    console.log(x, y, s);
+  }
+  const sample = [1, 10, 30, 50, 70, 90, 100];
+  return (
+    <ChartsDataProvider
+      series={s}
+      xAxis={x}
+      yAxis={y}
+      grid={{ vertical: true, horizontal: true }}
+      height={480}
+    >
+      {/* <Toolbar></Toolbar> */}
+      <ChartsLegend />
+      <ChartsTooltip />
+      <ChartsSurface>
+        <ChartsGrid vertical horizontal />
+        <ChartsXAxis />
+        <ChartsYAxis />
+        <LinePlot />
+        <MarkPlot />
+        <ChartsAxisHighlight x="line" y="line" />
+      </ChartsSurface>
+    </ChartsDataProvider>
+  );
+}
+
 export default function Step4({ lab }: { lab: number }) {
   const dashboard = useDashboardStore();
   const experiment = useExperimentStore();
@@ -55,10 +136,6 @@ export default function Step4({ lab }: { lab: number }) {
     dashboard.setTitle("Experiment");
     dashboard.setLoading(false);
   }, []);
-  //   useLayoutEffect(() => {
-  //     setToken(token!);
-  //     return () => setToken("");
-  //   }, [token]);
   useEffect(() => {
     if (lab == experiment.lab) {
       return;
@@ -103,7 +180,7 @@ export default function Step4({ lab }: { lab: number }) {
 
   return (
     <Box
-      className="w-container h-stretch"
+      className="flex flex-col gap-4 max-sm:p-1"
       inert={
         experiment.process == "connecting" ||
         experiment.process == "disconnected"
@@ -115,56 +192,64 @@ export default function Step4({ lab }: { lab: number }) {
         },
       ]}
     >
-      <div className="flex flex-col gap-4 max-sm:p-1">
+      <Paper
+        variant="outlined"
+        elevation={4}
+        className="w-stretch flex flex-col gap-6 p-8 max-sm:p-4 self-center justify-center"
+      >
+        <header className="flex flex-col gap-2">
+          <Typography component="h2" variant="h5">
+            Data Collection and Analisys
+          </Typography>
+          <Typography component="p" variant="body1">
+            Analisis data yang telah kamu peroleh dari eksperimen.
+          </Typography>
+        </header>
         <Paper
           variant="outlined"
           elevation={4}
-          className="w-stretch flex flex-col gap-6 p-8 max-sm:p-4 self-center justify-center"
+          className="w-stretch md:w-182 p-1 self-center justify-center"
         >
-          <header className="flex flex-col gap-2">
-            <Typography component="h2" variant="h5">
-              Data Collection and Analisys
-            </Typography>
-            <Typography component="p" variant="body1">
-              Analisis data yang telah kamu peroleh dari eksperimen.
-            </Typography>
-          </header>
-          <Paper
-            variant="outlined"
-            elevation={4}
-            className="w-stretch md:w-182 p-1 self-center justify-center"
-          >
-            {experiment.process != "synchronized" && (
-              <Skeleton variant="rounded" width="100%" height="100%">
-                <Spreadsheet />
-              </Skeleton>
-            )}
-            {experiment.process == "synchronized" && (
-              <Spreadsheet
-                data={experiment.collections}
-                onCreate={(sheet) => {
-                  ref.current = sheet;
-                }}
-                onChange={(value) => {
-                  collaboration.publish("collections", value);
-                }}
-                onUpdate={(data) => {
-                  debounce(() => {
-                    if (experiment.process == "synchronized") {
-                      experiment.setCollections(data);
-                    } else {
-                      dashboard.setToast({
-                        level: "warning",
-                        message: "your changes not synchronize",
-                      });
-                    }
-                  }, 1000);
-                }}
-              />
-            )}
-          </Paper>
+          {experiment.process != "synchronized" && (
+            <Skeleton variant="rounded" width="100%" height="100%">
+              <Spreadsheet />
+            </Skeleton>
+          )}
+          {experiment.process == "synchronized" && (
+            <Spreadsheet
+              data={experiment.collections}
+              onCreate={(sheet) => {
+                ref.current = sheet;
+              }}
+              onChange={(value) => {
+                collaboration.publish("collections", value);
+              }}
+              onUpdate={(data) => {
+                debounce(() => {
+                  if (experiment.process == "synchronized") {
+                    experiment.setCollections(data);
+                  } else {
+                    dashboard.setToast({
+                      level: "warning",
+                      message: "your changes not synchronize",
+                    });
+                  }
+                }, 1000);
+              }}
+            />
+          )}
         </Paper>
-      </div>
+        <Paper
+          variant="outlined"
+          elevation={4}
+          className="w-stretch md:w-182 self-center justify-center"
+        >
+          <Chart
+            sheet={ref.current?.worksheets?.[0]}
+            dataset={experiment.collections}
+          />
+        </Paper>
+      </Paper>
     </Box>
   );
 }

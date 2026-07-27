@@ -103,7 +103,7 @@ export default function Step5({ lab }: { lab: number }) {
 
   return (
     <Box
-      className="w-container h-stretch"
+      className="flex flex-col gap-4 max-sm:p-1"
       inert={
         experiment.process == "connecting" ||
         experiment.process == "disconnected"
@@ -115,57 +115,55 @@ export default function Step5({ lab }: { lab: number }) {
         },
       ]}
     >
-      <div className="flex flex-col gap-4 max-sm:p-1">
+      <Paper
+        variant="outlined"
+        elevation={4}
+        className="w-stretch flex flex-col gap-6 p-8 max-sm:p-4 self-center justify-center"
+      >
+        <header className="flex flex-col gap-2">
+          <Typography component="h2" variant="h5">
+            Explanation Construction
+          </Typography>
+          <Typography component="p" variant="body1">
+            Tarik kesimpulan berdasarkan seluruh kegiatan inquiry yang telah
+            kamu lakukan.
+          </Typography>
+        </header>
         <Paper
           variant="outlined"
           elevation={4}
-          className="w-stretch flex flex-col gap-6 p-8 max-sm:p-4 self-center justify-center"
+          className="w-stretch md:w-182 p-1 self-center justify-center"
         >
-          <header className="flex flex-col gap-2">
-            <Typography component="h2" variant="h5">
-              Explanation Construction
-            </Typography>
-            <Typography component="p" variant="body1">
-              Tarik kesimpulan berdasarkan seluruh kegiatan inquiry yang telah
-              kamu lakukan.
-            </Typography>
-          </header>
-          <Paper
-            variant="outlined"
-            elevation={4}
-            className="w-stretch md:w-182 p-1 self-center justify-center"
-          >
-            {experiment.process != "synchronized" && (
-              <Skeleton variant="rounded">
-                <TextEditor />
-              </Skeleton>
-            )}
-            {experiment.process == "synchronized" && (
-              <TextEditor
-                content={experiment.conclusion}
-                onCreate={(editor) => {
-                  ref.current = editor;
-                }}
-                onUpdate={(value) => {
-                  debounce(() => {
-                    if (experiment.process == "synchronized") {
-                      experiment.setConclusion(value);
-                    } else {
-                      dashboard.setToast({
-                        level: "warning",
-                        message: "your changes not synchronize",
-                      });
-                    }
-                  }, 1000);
-                }}
-                onStep={(value) => {
-                  collaboration.publish("conclusion", { steps: value });
-                }}
-              />
-            )}
-          </Paper>
+          {experiment.process != "synchronized" && (
+            <Skeleton variant="rounded">
+              <TextEditor />
+            </Skeleton>
+          )}
+          {experiment.process == "synchronized" && (
+            <TextEditor
+              content={experiment.conclusion}
+              onCreate={(editor) => {
+                ref.current = editor;
+              }}
+              onUpdate={(value) => {
+                debounce(() => {
+                  if (experiment.process == "synchronized") {
+                    experiment.setConclusion(value);
+                  } else {
+                    dashboard.setToast({
+                      level: "warning",
+                      message: "your changes not synchronize",
+                    });
+                  }
+                }, 1000);
+              }}
+              onStep={(value) => {
+                collaboration.publish("conclusion", { steps: value });
+              }}
+            />
+          )}
         </Paper>
-      </div>
+      </Paper>
     </Box>
   );
 }

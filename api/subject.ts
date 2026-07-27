@@ -2,8 +2,10 @@
 
 import { ApiResponse } from ".";
 
-const addr = process.env.NEXT_PUBLIC_ADDR;
-const api = "/subject";
+const addr = process.env.NEXT_PUBLIC_LOCAL
+  ? process.env.NEXT_PUBLIC_ADDR
+  : location.origin;
+const path = "/api/subject";
 let token = "";
 
 export interface Subject {
@@ -21,7 +23,7 @@ export function getToken() {
   return token;
 }
 export async function create(param: Omit<Subject, "id">) {
-  const response = await fetch(`/api/subject`, {
+  const response = await fetch(`${addr}${path}/`, {
     headers: {
       authorization: `Bearer ${token}`,
       "content-type": "application/json",
@@ -38,7 +40,7 @@ export async function create(param: Omit<Subject, "id">) {
   }
 }
 export async function update(param: Subject) {
-  const response = await fetch(`/api/subject/` + param.id, {
+  const response = await fetch(`${addr}${path}/` + param.id, {
     headers: {
       authorization: `Bearer ${token}`,
       "content-type": "application/json",
@@ -55,7 +57,7 @@ export async function update(param: Subject) {
   }
 }
 export async function remove(param: Pick<Subject, "id">) {
-  const response = await fetch(`/api/subject/` + param.id, {
+  const response = await fetch(`${addr}${path}/` + param.id, {
     headers: {
       authorization: `Bearer ${token}`,
       "content-type": "application/json",
@@ -71,7 +73,7 @@ export async function remove(param: Pick<Subject, "id">) {
   }
 }
 export async function list() {
-  const response = await fetch(`/api/subject`, {
+  const response = await fetch(`${addr}${path}/`, {
     headers: {
       authorization: `Bearer ${token}`,
       "content-type": "application/json",
@@ -87,7 +89,7 @@ export async function list() {
   }
 }
 export async function get(param: Subject) {
-  const response = await fetch(`/api/subject/` + param.id, {
+  const response = await fetch(`${addr}${path}/` + param.id, {
     headers: {
       authorization: `Bearer ${token}`,
       "content-type": "application/json",

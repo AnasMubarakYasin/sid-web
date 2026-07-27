@@ -473,13 +473,13 @@ export default function Page() {
   };
   function resize() {
     setTimeout(() => {
-      apiRef.current!.autosizeColumns({
-        disableColumnVirtualization: true,
-        includeOutliers: true,
-        includeHeaders: true,
-        expand: true,
-      });
-    }, 300);
+      // apiRef.current!.autosizeColumns({
+      //   disableColumnVirtualization: true,
+      //   includeOutliers: true,
+      //   includeHeaders: true,
+      //   expand: true,
+      // });
+    }, 750);
   }
 
   useLayoutEffect(() => {
