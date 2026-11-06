@@ -355,6 +355,7 @@ const RichTextToolbar = () => {
 };
 
 export default function TextEditor(props: {
+  readonly?: boolean;
   content?: string;
   onCreate?: (value: Editor) => void;
   onUpdate?: (value: string) => void;
@@ -370,7 +371,7 @@ export default function TextEditor(props: {
 
   const editor = useEditor({
     // shouldRerenderOnTransaction:  false,
-    editable: true,
+    editable: props.readonly == undefined ? true : !props.readonly,
     textDirection: "auto",
     content: props.content,
     extensions,

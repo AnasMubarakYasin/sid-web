@@ -22,10 +22,12 @@ import { useExperimentStore } from "@/store/experiment";
 import { useRouter } from "next/navigation";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { collaboration, get, removeLab } from "@/api/experiment";
+import { useUserStore } from "@/store/user";
 import { useDashboardStore } from "@/store/dashboard";
 import { useState } from "react";
 
 export default function NavBar() {
+  const user = useUserStore();
   const dashboard = useDashboardStore();
   const experiment = useExperimentStore();
   const router = useRouter();
@@ -39,7 +41,8 @@ export default function NavBar() {
   const mutation = useMutation({
     mutationFn: removeLab,
     onSuccess(result) {
-      router.replace("/student/experiment");
+      console.log("navigate to experiment list")
+      router.push("/" + user.role + "/experiment");
     },
     onError(error) {
       dashboard.setToast({
@@ -60,7 +63,7 @@ export default function NavBar() {
         <IconButton
           aria-label="Leave"
           color="primary"
-          onClick={() => router.replace("/student/experiment")}
+          onClick={() => router.push("/" + user.role + "/experiment")}
         >
           <LogoutIcon />
         </IconButton>
@@ -93,40 +96,46 @@ export default function NavBar() {
 
       <div className="grow"></div>
       <Tooltip title="Lobby">
-        <IconButton
-          aria-label="Lobby"
-          color="primary"
-          hidden={experiment.status != "started"}
-          disabled={experiment.step == 0}
-          // onClick={store.toggleLobby}
-          onClick={() => experiment.setStep(0)}
-        >
-          <HomeIcon />
-        </IconButton>
+        <div>
+          <IconButton
+            aria-label="Lobby"
+            color="primary"
+            hidden={experiment.status == "waiting"}
+            disabled={experiment.step == 0}
+            // onClick={store.toggleLobby}
+            onClick={() => experiment.setStep(0)}
+          >
+            <HomeIcon />
+          </IconButton>
+        </div>
       </Tooltip>
       <Tooltip title="Previous">
-        <IconButton
-          aria-label="Previous"
-          color="primary"
-          hidden={experiment.status != "started"}
-          disabled={experiment.step - 1 < 1}
-          onClick={() => experiment.setStep(experiment.step - 1)}
-          // onClick={() => setStep(step - 1)}
-        >
-          <ChevronLeftIcon />
-        </IconButton>
+        <div>
+          <IconButton
+            aria-label="Previous"
+            color="primary"
+            hidden={experiment.status == "waiting"}
+            disabled={experiment.step - 1 < 1}
+            onClick={() => experiment.setStep(experiment.step - 1)}
+            // onClick={() => setStep(step - 1)}
+          >
+            <ChevronLeftIcon />
+          </IconButton>
+        </div>
       </Tooltip>
       <Tooltip title="Next">
-        <IconButton
-          aria-label="Next"
-          color="primary"
-          hidden={experiment.status != "started"}
-          disabled={experiment.step + 1 > 7}
-          onClick={() => experiment.setStep(experiment.step + 1)}
-          // onClick={() => setStep(step + 1)}
-        >
-          <ChevronRightIcon />
-        </IconButton>
+        <div>
+          <IconButton
+            aria-label="Next"
+            color="primary"
+            hidden={experiment.status == "waiting"}
+            disabled={experiment.step + 1 > 7}
+            onClick={() => experiment.setStep(experiment.step + 1)}
+            // onClick={() => setStep(step + 1)}
+          >
+            <ChevronRightIcon />
+          </IconButton>
+        </div>
       </Tooltip>
 
       {/* <Button
@@ -147,7 +156,7 @@ export default function NavBar() {
         <IconButton
           aria-label="open menu steps"
           color="primary"
-          hidden={experiment.status != "started"}
+          hidden={experiment.status == "waiting"}
           onClick={() => experiment.setOpenSideNav(!experiment.openSideNav)}
         >
           <MenuIcon />

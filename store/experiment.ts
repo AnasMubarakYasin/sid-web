@@ -16,6 +16,7 @@ export interface DefaultExperimentState {
 
 export interface ExperimentState {
   lab: number | null;
+  description: string;
   subject: Subject | null;
   teachers: User[];
   students: User[];
@@ -50,6 +51,8 @@ export interface ExperimentState {
   delGroup(index: number): void;
   joinGroup(index: number, student: User): void;
   leaveGroup(index: number, student: User): void;
+
+  setDescription(value: string): void;
   setSubject(value: Subject): void;
   addQuestion(value: string): void;
   delQuestion(value: string): void;
@@ -58,6 +61,7 @@ export interface ExperimentState {
   setCollections(value: string[][]): void;
   setConclusion(value: string): void;
 
+  setDescriptionUSync(value: string): void; // non oplog
   setSubjectUSync(value: Subject): void; // non oplog
   setStatusUSync(value: string): void; // non oplog
 
@@ -85,6 +89,7 @@ export const experimentSlice: StateCreator<
 > = persist(
   (set, get, store) => ({
     lab: null,
+    description: "",
     subject: null,
     teachers: [],
     students: [],
@@ -151,6 +156,9 @@ export const experimentSlice: StateCreator<
       if (value.attr == "all" || value.attr == "groups") {
         change.groups = value.groups ?? [];
       }
+      if (value.attr == "all" || value.attr == "description") {
+        change.description = value.description ?? "";
+      }
       if (value.attr == "all" || value.attr == "subject") {
         change.subject = value.subject;
       }
@@ -159,13 +167,16 @@ export const experimentSlice: StateCreator<
         if (value.status == "started" && get().process == "synchronized") {
           change.step = 1;
           change.stepping = true;
+        } else if (value.status == "finished" && get().process == "synchronized") {
+          change.step = 0;
+          change.stepping = true;
         }
       }
       if (value.attr == "all" || value.attr == "questions") {
         change.questions = value.questions ?? [];
       }
       if (value.attr == "all" || value.attr == "answers") {
-        change.answers = value.answers ?? []
+        change.answers = value.answers ?? [];
       }
       if (value.attr == "all" || value.attr == "simulation") {
         change.simulation = value.simulation;
@@ -228,6 +239,12 @@ export const experimentSlice: StateCreator<
         hasGroup: false,
       });
     },
+    setDescription(description) {
+      set({
+        oplog: "description-" + (count += 1),
+        description,
+      });
+    },
     setSubject(subject) {
       set({
         oplog: "subject-" + (count += 1),
@@ -271,6 +288,11 @@ export const experimentSlice: StateCreator<
       });
     },
 
+    setDescriptionUSync(value) {
+      set({
+        description: value,
+      });
+    },
     setSubjectUSync(value) {
       set({
         subject: value,
@@ -315,7 +337,15 @@ export const experimentSlice: StateCreator<
       });
     },
     end() {
-      set({ lobby: true, started: false, ended: true, step: 0 });
+      set({
+        oplog: "status-" + (count += 1),
+        status: "finished",
+        lobby: true,
+        started: false,
+        ended: true,
+        step: 0,
+        stepping: true,
+      });
     },
     setStep(value, publish = true) {
       set({ step: value, stepping: publish });
@@ -333,6 +363,7 @@ export const experimentSlice: StateCreator<
       teachers: [],
       students: [],
       groups: [],
+      description: "",
       subject: null,
       status: null,
       questions: [],

@@ -13,7 +13,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import { setToken, signup } from "@/api/user";
 import { useState } from "react";
@@ -22,8 +22,9 @@ import { useMutation } from "@tanstack/react-query";
 
 export default function Page() {
   const router = useRouter();
+  const search = useSearchParams();
   const [username, setUsername] = useState("");
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState(search.has("key") ? "" : "student");
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const { login } = useUserStore();
@@ -38,7 +39,7 @@ export default function Page() {
         token: result.meta.token,
       });
       setToken(result.meta.token);
-      router.replace("/student");
+      router.replace("/" + result.data.role);
     },
   });
   function onSubmit(event: Event) {
@@ -96,48 +97,51 @@ export default function Page() {
                 disabled={mutation.isPending}
               />
             </Box>
-            <Box component="div" className="flex flex-col gap-1">
-              <Typography component="label" htmlFor="role">
-                Role
-              </Typography>
-              {/* <FormControl fullWidth> */}
-              {/* <Typography component="label" htmlFor="subject">
+            {search.has("key") && (
+              <Box component="div" className="flex flex-col gap-1">
+                <Typography component="label" htmlFor="role">
+                  Role
+                </Typography>
+                {/* <FormControl fullWidth> */}
+                {/* <Typography component="label" htmlFor="subject">
                   Subject
                 </Typography> */}
-              {/* <InputLabel id="subject">Subject</InputLabel> */}
-              <Select
-                id="role"
-                // labelId="subject"
-                label=""
-                variant="outlined"
-                // placeholder="simplename"
-                fullWidth
-                onChange={(event) => setRole(event.target.value)}
-                value={role}
-                disabled={mutation.isPending}
-                displayEmpty
-                renderValue={(selected: string) => {
-                  if (selected) {
-                    return (
-                      <div className="text-[16px] font-400">{selected}</div>
-                    );
-                  } else {
-                    return (
-                      <div className="text-[16px] font-400 opacity-50">
-                        choose role
-                      </div>
-                    );
-                  }
-                }}
-              >
-                {["teacher", "student"].map((item) => (
-                  <MenuItem key={item} value={item}>
-                    {item}
-                  </MenuItem>
-                ))}
-              </Select>
-              {/* </FormControl> */}
-            </Box>
+                {/* <InputLabel id="subject">Subject</InputLabel> */}
+                <Select
+                  id="role"
+                  // labelId="subject"
+                  label=""
+                  variant="outlined"
+                  // placeholder="simplename"
+                  fullWidth
+                  onChange={(event) => setRole(event.target.value)}
+                  value={role}
+                  disabled={mutation.isPending}
+                  displayEmpty
+                  renderValue={(selected: string) => {
+                    if (selected) {
+                      return (
+                        <div className="text-[16px] font-400">{selected}</div>
+                      );
+                    } else {
+                      return (
+                        <div className="text-[16px] font-400 opacity-50">
+                          choose role
+                        </div>
+                      );
+                    }
+                  }}
+                >
+                  {["teacher", "student"].map((item) => (
+                    <MenuItem key={item} value={item}>
+                      {item}
+                    </MenuItem>
+                  ))}
+                </Select>
+                {/* </FormControl> */}
+              </Box>
+            )}
+
             <Box component="div" className="flex flex-col gap-1">
               <Typography component="label" htmlFor="password">
                 Password

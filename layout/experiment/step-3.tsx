@@ -118,13 +118,16 @@ export default function Step3({ lab }: { lab: number }) {
       if (experiment.oplog.endsWith("0")) {
         return;
       }
-      if (experiment.oplog.startsWith("simulation")) {
-        collaboration.sync({
-          attr: "simulation",
-          simulation: experiment.simulation,
-        });
+      if (experiment.status == "started") {
+        if (experiment.oplog.startsWith("simulation")) {
+          collaboration.sync({
+            attr: "simulation",
+            simulation: experiment.simulation,
+          });
+        }
+      } else {
+        console.warn("upstream while status finished");
       }
-      // console.log("upstream", experiment.oplog);
     }
   }, [experiment.oplog]);
   // useEffect(() => {

@@ -62,7 +62,7 @@ export default function Main(props: { children: ReactNode }) {
 
   return (
     <CustomMain wide={isSmallSize} open={openSideBar}>
-      <div className="p-4 md:p-8 bg-inherit">
+      <div className="p-4 md:p-8 bg-inherit w-stretch h-stretch">
         {!authorized && (
           <Skeleton variant="rounded" width="100%" height="100%"></Skeleton>
         )}

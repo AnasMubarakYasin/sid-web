@@ -32,6 +32,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import MenuIcon from "@mui/icons-material/Menu";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ScienceIcon from "@mui/icons-material/Science";
+import SummarizeIcon from "@mui/icons-material/Summarize";
 import LightbulbIcon from "@mui/icons-material/Lightbulb";
 import LogoutIcon from "@mui/icons-material/Logout";
 import ImportContactsIcon from "@mui/icons-material/ImportContacts";
@@ -52,10 +53,13 @@ const DrawerHeader = styled("header")(({ theme }) => ({
 
 const drawerWidth = 240;
 
-export default function Sidebar() {
+export default function Sidebar(props: {
+  report?: boolean;
+  subject?: boolean;
+}) {
   const { path, isSmallSize, openSideBar, setOpenSideBar } =
     useDashboardStore();
-  const { authenticated } = useUserStore();
+  const { authenticated, role } = useUserStore();
 
   //   const theme = useTheme();
   //   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
@@ -127,8 +131,8 @@ export default function Sidebar() {
             <ListItem disablePadding>
               <ListItemButton
                 LinkComponent={NextLinkComposed}
-                href="/student"
-                selected={path == "/student"}
+                href={"/" + role}
+                selected={path == "/" + role}
               >
                 <ListItemIcon>
                   <DashboardIcon />
@@ -139,8 +143,8 @@ export default function Sidebar() {
             <ListItem disablePadding>
               <ListItemButton
                 LinkComponent={NextLinkComposed}
-                href="/student/experiment"
-                selected={path == "/student/experiment"}
+                href={"/" + role + "/experiment"}
+                selected={path == "/" + role + "/experiment"}
               >
                 <ListItemIcon>
                   <ScienceIcon />
@@ -148,30 +152,34 @@ export default function Sidebar() {
                 <ListItemText primary={"Experiment"} />
               </ListItemButton>
             </ListItem>
-            {/* <ListItem disablePadding>
-              <ListItemButton
-                LinkComponent={NextLinkComposed}
-                href="/student/discoveries"
-                selected={path == "/student/discoveries"}
-              >
-                <ListItemIcon>
-                  <LightbulbIcon />
-                </ListItemIcon>
-                <ListItemText primary={"Discoveries"} />
-              </ListItemButton>
-            </ListItem> */}
-            <ListItem disablePadding>
-              <ListItemButton
-                LinkComponent={NextLinkComposed}
-                href="/student/subject"
-                selected={path == "/student/subject"}
-              >
-                <ListItemIcon>
-                  <ImportContactsIcon />
-                </ListItemIcon>
-                <ListItemText primary={"Subject"} />
-              </ListItemButton>
-            </ListItem>
+            {((props.report ?? true) || props.report) && (
+              <ListItem disablePadding>
+                <ListItemButton
+                  LinkComponent={NextLinkComposed}
+                  href={"/" + role + "/report"}
+                  selected={path == "/" + role + "/report"}
+                >
+                  <ListItemIcon>
+                    <SummarizeIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"Report"} />
+                </ListItemButton>
+              </ListItem>
+            )}
+            {((props.subject ?? true) || props.subject) && (
+              <ListItem disablePadding>
+                <ListItemButton
+                  LinkComponent={NextLinkComposed}
+                  href={"/" + role + "/subject"}
+                  selected={path == "/" + role + "/subject"}
+                >
+                  <ListItemIcon>
+                    <ImportContactsIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={"Subject"} />
+                </ListItemButton>
+              </ListItem>
+            )}
           </List>
         </>
       )}

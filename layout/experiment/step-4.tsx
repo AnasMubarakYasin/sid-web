@@ -148,13 +148,16 @@ export default function Step4({ lab }: { lab: number }) {
       if (experiment.oplog.endsWith("0")) {
         return;
       }
-      if (experiment.oplog.startsWith("collections")) {
-        collaboration.sync({
-          attr: "collections",
-          collections: experiment.collections,
-        });
+      if (experiment.status == "started") {
+        if (experiment.oplog.startsWith("collections")) {
+          collaboration.sync({
+            attr: "collections",
+            collections: experiment.collections,
+          });
+        }
+      } else {
+        console.warn("upstream while status finished");
       }
-      console.log("upstream", experiment.oplog);
     }
   }, [experiment.oplog]);
   useEffect(() => {
@@ -217,6 +220,7 @@ export default function Step4({ lab }: { lab: number }) {
           )}
           {experiment.process == "synchronized" && (
             <Spreadsheet
+              readonly={experiment.status == "finished"}
               data={experiment.collections}
               onCreate={(sheet) => {
                 ref.current = sheet;

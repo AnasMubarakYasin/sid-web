@@ -18,6 +18,7 @@ const addr = process.env.NEXT_PUBLIC_LOCAL
 // const wsaddr = "";
 // const addr = location.origin;
 const api = "/api/experiment";
+const mode = process.env.NEXT_PUBLIC_LOCAL ? "cors" : undefined;
 let token = "";
 
 export interface Experiment {
@@ -28,6 +29,17 @@ export interface Experiment {
   description: string;
 
   questions: string[];
+
+  created_at: string;
+}
+export interface ExperimentReport {
+  id: number;
+  description: string;
+  teachers: any[];
+  students: any[];
+  subject: any;
+
+  created_at: string;
 }
 
 export interface Group {
@@ -51,7 +63,7 @@ export async function createLab(param: { admin_id?: number }) {
       accept: "application/json",
     },
     method: "POST",
-    // mode: 'cors',
+    mode,
     body: JSON.stringify(param),
   });
   const data: ApiResponse = await response.json();
@@ -70,7 +82,7 @@ export async function removeLab(param: { id?: number }) {
       accept: "application/json",
     },
     method: "DELETE",
-    // mode: 'cors',
+    mode,
   });
   const data: ApiResponse = await response.json();
   if (data?.success) {
@@ -88,7 +100,7 @@ export async function create(param: Omit<Experiment, "id">) {
       accept: "application/json",
     },
     method: "POST",
-    // mode: 'cors',
+    mode,
     body: JSON.stringify(param),
   });
   const data: ApiResponse = await response.json();
@@ -106,7 +118,7 @@ export async function update(param: Experiment) {
       accept: "application/json",
     },
     method: "PUT",
-    // mode: 'cors',
+    mode,
     body: JSON.stringify(param),
   });
   const data: ApiResponse = await response.json();
@@ -124,7 +136,7 @@ export async function remove(param: Pick<Experiment, "id">) {
       accept: "application/json",
     },
     method: "DELETE",
-    // mode: 'cors',
+    mode,
   });
   const data: ApiResponse = await response.json();
   if (data?.success) {
@@ -141,7 +153,7 @@ export async function list() {
       accept: "application/json",
     },
     method: "GET",
-    // mode: 'cors',
+    mode,
   });
   const data: ApiResponse = await response.json();
   if (data?.success) {
@@ -158,7 +170,24 @@ export async function get(param: Pick<Experiment, "id">) {
       accept: "application/json",
     },
     method: "GET",
-    // mode: 'cors',
+    mode,
+  });
+  const data: ApiResponse = await response.json();
+  if (data?.success) {
+    return data;
+  } else {
+    throw new Error(data.error!.message, { cause: data.error!.code });
+  }
+}
+export async function report(param: Pick<Experiment, "id">) {
+  const response = await fetch(`${addr}${api}/${param.id}/report`, {
+    headers: {
+      authorization: `Bearer ${token}`,
+      "content-type": "application/json",
+      accept: "application/json",
+    },
+    method: "GET",
+    mode,
   });
   const data: ApiResponse = await response.json();
   if (data?.success) {
@@ -184,14 +213,13 @@ export class EventStream {
     try {
       this.connection = await fetch(this.url, {
         method: "GET",
-        // mode: 'cors',
+        mode,
         headers: {
           authorization: `Bearer ${token}`,
           accept: "text/event-stream",
           connection: "keep-alive",
           "cache-control": "no-cache",
         },
-        mode: "cors",
         signal: this.aborter.signal,
       });
       // console.log(response);
@@ -319,6 +347,7 @@ export interface ExperimentSync {
   teachers?: User[];
   students?: User[];
   groups?: Group[];
+  description?: string;
   subject?: Subject;
   status?: string;
 
@@ -345,6 +374,7 @@ export interface ExperimentMessage {
   students?: User[];
   groups?: Group[];
   user?: User;
+  description?: string;
   subject?: Subject;
   status?: string;
 
@@ -368,6 +398,7 @@ export interface ExperimentMessage {
 export interface ExperimentMessageError {
   type: string;
   attr?: string;
+  description?: string;
   subject?: Subject;
   status?: string;
   error: { code: string; message: string };
@@ -509,9 +540,9 @@ export class Collaboration {
     //   }, 1e3 * 5);
     // }
   };
-  onError = (event: ErrorEvent) => {
-    // console.log("onError:", event);
-    console.error(event.error);
+  onError = (event: Event) => {
+    console.log("onError:", event);
+    // console.error(event.error);
   };
 
   onConnected() {
@@ -547,6 +578,7 @@ export class Collaboration {
       type: "sync",
       attr: experiment.attr ?? "groups",
       groups: experiment.groups,
+      description: experiment.description,
       subject: experiment.subject,
       teachers: experiment.teachers,
       students: experiment.students,

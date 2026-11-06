@@ -495,7 +495,7 @@ export default function Page() {
   }, [apiRef]);
 
   return (
-    <div className="w-container h-stretch">
+    <div className="">
       <DataGrid
         apiRef={apiRef}
         showToolbar
@@ -508,6 +508,12 @@ export default function Page() {
           setToast({ level: "error", message: error.message });
         }}
         columns={[
+          {
+            field: "id",
+            headerName: "ID",
+            type: "string",
+            hideable: true,
+          },
           {
             field: "title",
             headerName: "Title",

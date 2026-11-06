@@ -72,13 +72,16 @@ export default function Step5({ lab }: { lab: number }) {
       if (experiment.oplog.endsWith("0")) {
         return;
       }
-      if (experiment.oplog.startsWith("conclusion")) {
-        collaboration.sync({
-          attr: "conclusion",
-          conclusion: experiment.conclusion,
-        });
+      if (experiment.status == "started") {
+        if (experiment.oplog.startsWith("conclusion")) {
+          collaboration.sync({
+            attr: "conclusion",
+            conclusion: experiment.conclusion,
+          });
+        }
+      } else {
+        console.warn("upstream while status finished");
       }
-      console.log("upstream", experiment.oplog);
     }
   }, [experiment.oplog]);
   useEffect(() => {
@@ -141,6 +144,7 @@ export default function Step5({ lab }: { lab: number }) {
           )}
           {experiment.process == "synchronized" && (
             <TextEditor
+              readonly={experiment.status == "finished"}
               content={experiment.conclusion}
               onCreate={(editor) => {
                 ref.current = editor;

@@ -29,6 +29,7 @@ const JSpreadsheet = JSpreadsheetCE as TJSpreadsheet;
 const JSWorksheet = JSWorksheetCE as TJSWorksheet;
 
 export default function Spreadsheet(props: {
+  readonly?: boolean;
   data?: any[][];
   onCreate?: (value: SpreadsheetInstance) => void;
   onChange?: (value: { col: any; row: any; nval: any; oval: any }) => void;
@@ -43,8 +44,7 @@ export default function Spreadsheet(props: {
     toolbar.items.push({
       tooltip: "Italic",
       content: "italic",
-      onclick: function () {
-      },
+      onclick: function () {},
     });
     toolbar.items.splice(2, 1);
     toolbar.items.pop();
@@ -88,7 +88,11 @@ export default function Spreadsheet(props: {
         //   console.log("[spreadsheet]", event);
         // }}
       >
-        <JSWorksheet minDimensions={[4, 6]} data={props.data} />
+        <JSWorksheet
+          editable={props.readonly == undefined ? true : !props.readonly}
+          minDimensions={[4, 6]}
+          data={props.data}
+        />
       </JSpreadsheet>
     </>
   );

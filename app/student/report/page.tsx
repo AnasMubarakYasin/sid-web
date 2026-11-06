@@ -40,17 +40,17 @@ import { useUserStore } from "@/store/user";
 import { NextLinkComposed } from "@/component/link";
 
 export default function Page() {
-  const router = useRouter();
+  // const router = useRouter();
   const user = useUserStore();
   const dashboard = useDashboardStore();
-  const experiment = useExperimentStore();
+  // const experiment = useExperimentStore();
   const query = useQuery({
     queryKey: ["experiments"],
     queryFn: list,
   });
-
+  console.log(query.data)
   useLayoutEffect(() => {
-    dashboard.setTitle("Discoveries");
+    dashboard.setTitle("Report");
     dashboard.setLoading(false);
   }, []);
   useLayoutEffect(() => {
@@ -103,7 +103,7 @@ export default function Page() {
           <Card key={"experiment_" + item.id} elevation={4} variant="outlined">
             <CardActionArea
               LinkComponent={NextLinkComposed}
-              href={"/student/discoveries/" + item.id}
+              href={"/student/report/" + item.id}
             >
               {/* <CardMedia
             component="img"
@@ -114,6 +114,9 @@ export default function Page() {
               <CardContent>
                 <Typography variant="h5" component="h2" gutterBottom>
                   {item.title || "Experiment " + item.id}
+                </Typography>
+                <Typography variant="body2" component="p" className="opacity-70">
+                  {new Date(item.created_at).toLocaleDateString()}
                 </Typography>
                 <Typography variant="body1" component="p">
                   {item.description || "-"}

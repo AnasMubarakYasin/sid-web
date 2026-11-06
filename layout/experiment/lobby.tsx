@@ -18,6 +18,7 @@ import Tooltip from "@mui/material/Tooltip";
 import Skeleton from "@mui/material/Skeleton";
 import Avatar from "@mui/material/Avatar";
 import MenuItem from "@mui/material/MenuItem";
+import TextField from "@mui/material/TextField";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 import AddIcon from "@mui/icons-material/Add";
@@ -79,9 +80,9 @@ export default function Lobby({ lab }: { lab: number }) {
     //   query_experiment.isSuccess && !query_experiment.data?.data,
     // );
     // if (query_experiment.isError) {
-    //   router.replace("/student/experiment");
+    //   router.push("/student/experiment");
     // } else if (query_experiment.isSuccess && !query_experiment.data.data) {
-    //   router.replace("/student/experiment");
+    //   router.push("/student/experiment");
     // } else if (query_experiment.isPending || query_experiment.isPaused) {
     // } else {
     //   experiment.setLab(lab);
@@ -103,6 +104,12 @@ export default function Lobby({ lab }: { lab: number }) {
         collaboration.sync({
           attr: "groups",
           groups: experiment.groups,
+        });
+      }
+      if (experiment.oplog.startsWith("description")) {
+        collaboration.sync({
+          attr: "description",
+          description: experiment.description!,
         });
       }
       if (experiment.oplog.startsWith("subject")) {
@@ -158,6 +165,23 @@ export default function Lobby({ lab }: { lab: number }) {
             Status: {experiment.status}
           </Typography>
         </div>
+        <Box component="div" className="flex flex-col gap-1">
+          <Typography component="label" htmlFor="description">
+            Description
+          </Typography>
+          <TextField
+            id="description"
+            name="description"
+            autoComplete="description"
+            label=""
+            variant="outlined"
+            placeholder="Information"
+            fullWidth
+            onChange={(event) => experiment.setDescription(event.target.value)}
+            value={experiment.description ?? ""}
+            disabled={experiment.status == "finished"}
+          />
+        </Box>
         {experiment.status == "waiting" && (
           <Box component="div" className="flex flex-col gap-1">
             <Typography component="label" htmlFor="subject">
@@ -364,6 +388,16 @@ export default function Lobby({ lab }: { lab: number }) {
             fullWidth={false}
           >
             Mulai
+          </Button>
+        )}
+        {experiment.status == "started" && (
+          <Button
+            color="primary"
+            variant="contained"
+            onClick={() => experiment.end()}
+            fullWidth={false}
+          >
+            Selesai
           </Button>
         )}
       </Paper>

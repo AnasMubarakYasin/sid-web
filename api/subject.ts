@@ -88,7 +88,7 @@ export async function list() {
     throw new Error(data.error.message, { cause: data.error.code });
   }
 }
-export async function get(param: Subject) {
+export async function get(param: Pick<Subject, "id">) {
   const response = await fetch(`${addr}${path}/` + param.id, {
     headers: {
       authorization: `Bearer ${token}`,

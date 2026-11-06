@@ -73,19 +73,22 @@ export default function Step2({ lab }: { lab: number }) {
       if (experiment.oplog.endsWith("0")) {
         return;
       }
-      if (experiment.oplog.startsWith("questions")) {
-        collaboration.sync({
-          attr: "questions",
-          questions: experiment.questions,
-        });
+      if (experiment.status == "started") {
+        if (experiment.oplog.startsWith("questions")) {
+          collaboration.sync({
+            attr: "questions",
+            questions: experiment.questions,
+          });
+        }
+        if (experiment.oplog.startsWith("answers")) {
+          collaboration.sync({
+            attr: "answers",
+            answers: experiment.answers,
+          });
+        }
+      } else {
+        console.warn("upstream while status finished");
       }
-      if (experiment.oplog.startsWith("answers")) {
-        collaboration.sync({
-          attr: "answers",
-          answers: experiment.answers,
-        });
-      }
-      console.log("upstream", experiment.oplog);
     }
   }, [experiment.oplog]);
   useEffect(() => {
@@ -150,6 +153,7 @@ export default function Step2({ lab }: { lab: number }) {
               >
                 <Checkbox
                   id={"question_" + index}
+                  readOnly={experiment.status == "finished"}
                   checked={experiment.questions.includes(question)}
                   onChange={(_, checked) => {
                     if (checked) {
@@ -192,6 +196,7 @@ export default function Step2({ lab }: { lab: number }) {
           )}
           {experiment.process == "synchronized" && (
             <TextList
+              readonly={experiment.status == "finished"}
               value={experiment.answers}
               onCreate={(editor) => {
                 ref.current = editor;

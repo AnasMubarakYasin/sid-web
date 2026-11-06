@@ -48,7 +48,7 @@ export default function Page() {
     mutationFn: createLab,
     onSuccess(result) {
       // experiment.setLab(result.data.id);
-      router.replace("/student/experiment/" + result.data.id);
+      router.push("/student/experiment/" + result.data.id);
       setTimeout(() => {}, 1000);
     },
   });
@@ -115,7 +115,7 @@ export default function Page() {
                 disabled={mutation.data && mutation.data.data.id == item.id}
                 onClick={() => {
                   // experiment.setLab(item.id);
-                  router.replace("/student/experiment/" + item.id);
+                  router.push("/student/experiment/" + item.id);
                 }}
               >
                 <LoginIcon />
@@ -123,7 +123,7 @@ export default function Page() {
             </Tooltip>
           </Paper>
         ))}
-      {query.isSuccess && (
+      {/* {query.isSuccess && (
         <Paper
           variant="outlined"
           elevation={4}
@@ -140,7 +140,7 @@ export default function Page() {
             </IconButton>
           </Tooltip>
         </Paper>
-      )}
+      )} */}
     </div>
   );
 }

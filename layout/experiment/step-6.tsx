@@ -65,13 +65,17 @@ export default function Step6({ lab }: { lab: number }) {
       if (experiment.oplog.endsWith("0")) {
         return;
       }
-      //   if (experiment.oplog.startsWith("questions")) {
-      //     collaboration.sync({
-      //       attr: "questions",
-      //       questions: experiment.questions,
-      //     });
-      //   }
-      console.log("upstream", experiment.oplog);
+      if (experiment.status == "started") {
+        //   if (experiment.oplog.startsWith("questions")) {
+        //     collaboration.sync({
+        //       attr: "questions",
+        //       questions: experiment.questions,
+        //     });
+        //   }
+        console.log("upstream", experiment.oplog);
+      } else {
+        console.warn("upstream while status finished");
+      }
     }
   }, [experiment.oplog]);
 

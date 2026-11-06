@@ -113,6 +113,7 @@ function convert(value: string[]) {
 }
 
 export default function TextList(props: {
+  readonly?: boolean;
   value?: string[];
   onCreate?: (value: Editor) => void;
   onUpdate?: (value: string[]) => void;
@@ -120,7 +121,7 @@ export default function TextList(props: {
 }) {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const editor = useEditor({
-    editable: true,
+    editable: props.readonly == undefined ? true : !props.readonly,
     textDirection: "auto",
     extensions,
     // extensions: [
@@ -202,7 +203,7 @@ export default function TextList(props: {
     <RichTextProvider editor={editor!}>
       <RichTextToolbar />
 
-      <EditorContent editor={editor} className="text-list"/>
+      <EditorContent editor={editor} className="text-list" />
     </RichTextProvider>
   );
 }

@@ -33,7 +33,7 @@ export default function Page() {
         token: result.meta.token,
       });
       setToken(result.meta.token);
-      router.replace("/student");
+      router.replace("/" + result.data.role);
     },
   });
   function onSubmit(event: SubmitEvent) {

@@ -60,7 +60,7 @@ export default function Layout({
             level: "error",
             message: "Experiment not exists",
           });
-          router.replace("/student/experiment");
+          router.push("/student/experiment");
         }
       });
     };
@@ -83,11 +83,11 @@ export default function Layout({
         level: "warning",
         message: "You was kicked",
       });
-      router.replace("/student/experiment");
+      router.push("/student/experiment");
     };
     collaboration.onDestroy = () => {
       playRoomDeletedSound();
-      router.replace("/student/experiment");
+      router.push("/student/experiment");
     };
     collaboration.onSync = (data) => {
       // console.log("[sync]", data);
@@ -100,7 +100,10 @@ export default function Layout({
         message: data.error.message,
       });
       if (data.error.code == "UNAUTHORIZED") {
-        router.replace("/student/experiment");
+        router.push("/student/experiment");
+      }
+      if (data.attr == "description") {
+        experiment.setDescriptionUSync(data.description!);
       }
       if (data.attr == "subject") {
         experiment.setSubjectUSync(data.subject!);
@@ -155,7 +158,7 @@ export default function Layout({
     }
   }, [experiment.lab, experiment.step, experiment.stepping]);
   useEffect(() => {
-    console.log("process", experiment.process)
+    console.log("process", experiment.process);
   }, [experiment.process]);
 
   return (
